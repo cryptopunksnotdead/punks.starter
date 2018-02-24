@@ -1,6 +1,6 @@
 # Awesome Functional
 
-An awesome collection of all things functional in ruby (incl. functional-style programming, pattern matching, immutability, and more)
+A collection of all awesome things functional in ruby (incl. functional-style programming, pattern matching, immutability, and more)
 
 _Contributions welcome. Anything missing? Send in a pull request. Thanks._
 
