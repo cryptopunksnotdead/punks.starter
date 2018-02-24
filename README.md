@@ -6,6 +6,18 @@ _Contributions welcome. Anything missing? Send in a pull request. Thanks._
 
 
 
+## Quotes & Comments
+
+> In reality, the idea [functional programming (FP) in ruby] is simple, and it boils down to three key points:
+>
+> - Stop relying on mutable state
+> - Separate data from behavior
+> - Embrace #call as the primary interface for most objects,
+>   where everything is designed as a data pipeline: data-in, data-out, that's it.
+>
+>  Source: [Piotr Solnica @ Redddit](https://www.reddit.com/r/ruby/comments/7y7gvw/functional_programming_in_ruby/)
+
+
 
 ## Articles
 
