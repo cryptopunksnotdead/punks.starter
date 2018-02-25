@@ -1,4 +1,4 @@
-# Awesome Functional
+# Awesome Functional [Programming (FP)]
 
 A collection of all awesome things functional in ruby (incl. functional-style programming, pattern matching, immutability, and more)
 
