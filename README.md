@@ -35,7 +35,7 @@ _Contributions welcome. Anything missing? Send in a pull request. Thanks._
 
 ### Freezing / Immutability
 
-**Ice Nine** (github: [dkubb/ice_nine](https://github.com/dkubb/ice_nine), gem: [ice_nine](https://rubygems.org/gems/ice_nine)) by Dan Kubb etal  - Deep (Recursive) Freeze Ruby Objects
+**Ice Nine** (github: [dkubb/ice_nine](https://github.com/dkubb/ice_nine), gem: [ice_nine](https://rubygems.org/gems/ice_nine)) by Dan Kubb et al  - Deep (Recursive) Freeze Ruby Objects
 
 ```ruby
 require 'ice_nine'
