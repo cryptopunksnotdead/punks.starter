@@ -71,14 +71,14 @@ class Color < Enum
   def self.keys()    [:red, :blue, :green]; end
   def self.members() [RED, BLUE, GREEN]; end
 
-  def self.value( index ) @members[index]; end
+  def self.value( index ) members[index]; end
   def self.zero() value(0); end
 
   def self.key( key )
     @hash ||= Hash[ keys.zip( members ) ]
     @hash[ key ]
   end
-  def self.[]( key )  self.key( key ); end
+  def self.[]( key ) self.key( key ); end
 
   def red?()   self == RED; end
   def blue?()  self == BLUE; end
