@@ -172,7 +172,7 @@ and so on.
 - [Ruby Sample Contracts for the Universum Blockchain/World Computer Runtime](https://github.com/s6ruby/universum-contracts)
 
 
-## More Safe Data Structure (Array, Hash, Struct)
+## More Safe Data Structures (Array, Hash, Struct)
 
 [Safe Data Structures (Array, Hash, Struct)](https://github.com/s6ruby/safestruct) - Say goodbye to null / nil (and maybe) and the Billion-Dollar mistake. Say hello to zero and the Billon-Dollar fix.
 
