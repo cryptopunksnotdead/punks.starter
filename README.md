@@ -6,7 +6,6 @@ enums library / gem - safe enumeration types - a set of symbolic keys bound to u
 * bugs  :: [github.com/s6ruby/enums/issues](https://github.com/s6ruby/enums/issues)
 * gem   :: [rubygems.org/gems/enums](https://rubygems.org/gems/enums)
 * rdoc  :: [rubydoc.info/gems/enums](http://rubydoc.info/gems/enums)
-* forum :: [wwwmake](http://groups.google.com/group/wwwmake)
 
 
 ##  Why `enums` in Ruby?
@@ -48,7 +47,7 @@ Why? Why not? Discuss.
 Enum.new( 'Color', :red, :green, :blue )
 ```
 
-(auto-)builds a class and code like:
+(Auto-)builds a class and code like:
 
 ``` ruby
 class Enum
@@ -121,6 +120,61 @@ color.is_a? Enum     #=> true
 color.is_a? Color    #=> true
 ...
 ```
+
+Let's try another example:
+
+``` ruby
+Enum.new( 'State', :fundraising, :expired_refund, :successful )
+
+State.values  #=> [0, 1, 2]
+State.keys    #=> [:fundraising, :expired_refund, :successful]
+
+State.members            #=> [FUNDRAISING, EXPIRED_REFUND, SUCCESSFUL]
+                         #    -or-
+                         #   [<State @key=:fundraising,    @value=0>,
+                         #    <Safe  @key=:expired_refund, @value=1>,
+                         #    <State @key=:successful,     @value=2>]
+State.members[0].key     #=> :fundraising
+State.members[0].value   #=> 0
+State.members[1].key     #=> :expired_refund
+State.members[1].value   #=> 1
+
+State.fundraising.value  #=> 0
+State.fundraising.key    #=> :fundraising
+State::FUNDRAISING.value #=> 0
+State::FUNDRAISING.key   #=> :fundraising
+
+state = State.fundraising
+state.fundraising?       #=> true
+state.value              #=> 0
+
+State(0)                 #=> State::FUNDRAISING
+State(1)                 #=> State::EXPIRED_REFUND
+State(2)                 #=> State::SUCCESSFUL
+
+State.zero               # same as State(0)
+State(0) == State.zero   #=> true
+State(1) == State.zero   #=> false
+
+State.value(0)           #=> State::FUNDRAISING
+State[:fundraising]      #=> State::FUNDRAISING
+State.key(:fundraising)  # same as State[:fundraising]
+# ...
+```
+
+and so on.
+
+
+
+## More "Real World" Enum Samples
+
+- [The "Red Paper" about sruby](https://github.com/s6ruby/redpaper) - Small, Smart, Secure, Safe, Solid & Sound (S6) Ruby - The Ruby Programming Language for Contract / Transaction Scripts on the Blockchain World Computer - Yes, It's Just Ruby
+- [Ruby Sample Contracts for the Universum Blockchain/World Computer Runtime](https://github.com/s6ruby/universum-contracts)
+
+
+## More Safe Data Structure (Array, Hash, Struct)
+
+[Safe Data Structures (Array, Hash, Struct)](https://github.com/s6ruby/safestruct) - Say goodbye to null / nil (and maybe) and the Billion-Dollar mistake. Say hello to zero and the Billon-Dollar fix.
 
 
 
