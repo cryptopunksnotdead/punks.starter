@@ -1,14 +1,19 @@
 # encoding: utf-8
 
-require 'pp'
-
-require_relative 'enum'
-
-
-include Safe   ## make all enums (and "convenience" converters) global
+##
+#  to run use
+#     ruby -I ./lib -I ./test test/test_enum.rb
 
 
-## State = Enum.new( :fundraising, :expired_refund, :successful)
+require 'helper'
+
+
+class TestEnum < MiniTest::Test
+
+   include Safe   ## make all enums (and "convenience" converters) global
+
+
+def test_state
 pp Enum.new( 'State', :fundraising, :expired_refund, :successful )
 
 
@@ -55,8 +60,9 @@ pp State(1) == State.zero
 pp State.value(0)
 pp State.key(:fundraising)
 pp State[:fundraising]
+end
 
-
+def test_color
 pp Enum.new( 'Color', :red, :green, :blue )
 pp Color.zero
 pp Color(0)
@@ -74,3 +80,9 @@ pp color.red?
 pp color == Color.red
 pp color.blue?
 pp color == Color.blue
+
+pp Color::RED
+pp Color.members
+end
+
+end # class TestEnum

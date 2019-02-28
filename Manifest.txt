@@ -1,0 +1,9 @@
+CHANGELOG.md
+LICENSE.md
+Manifest.txt
+README.md
+Rakefile
+lib/enums.rb
+lib/enums/version.rb
+test/helper.rb
+test/test_enum.rb

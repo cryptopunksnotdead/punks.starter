@@ -1,5 +1,12 @@
 # encoding: utf-8
 
+## stdlibs
+require 'pp'
+
+
+## our own code
+require 'enums/version'    # note: let version always go first
+
 ##################################
 ## auto-create/builds enum class.
 ##
@@ -156,3 +163,6 @@ RUBY
   end
 end  # class Enum
 end # module Safe
+
+
+puts Enums.banner   # say hello
