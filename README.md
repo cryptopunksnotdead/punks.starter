@@ -45,7 +45,12 @@ Why? Why not? Discuss.
 
 ``` ruby
 Enum.new( 'Color', :red, :green, :blue )
+# or
+enum 'Color', :red, :green, :blue
+# or
+enum 'Color', [:red, :green, :blue]
 ```
+
 
 (Auto-)builds a class and code like:
 
@@ -100,6 +105,8 @@ Color.zero           #=> same as Color(0)
 Color.red            #=> Color::RED
 Color.values         #=> [0, 1, 2]
 Color.keys           #=> [:red, :green, :blue]
+Color.size           #=> 3
+Color.length         #=> same as Color.size
 Color.members        #=> [RED, GREEN, BLUE]
                      #    -or-
                      #   [<Color @key=:red,   @value=0>,
@@ -125,9 +132,16 @@ Let's try another example:
 
 ``` ruby
 Enum.new( 'State', :fundraising, :expired_refund, :successful )
+# or
+enum 'State', :fundraising, :expired_refund, :successful
+# or
+enum 'State', [:fundraising, :expired_refund, :successful]
+
 
 State.values  #=> [0, 1, 2]
 State.keys    #=> [:fundraising, :expired_refund, :successful]
+State.size    #=> 3
+State.length  #=> same as State.size
 
 State.members            #=> [FUNDRAISING, EXPIRED_REFUND, SUCCESSFUL]
                          #    -or-
@@ -147,6 +161,8 @@ State::FUNDRAISING.key   #=> :fundraising
 state = State.fundraising
 state.fundraising?       #=> true
 state.value              #=> 0
+state.is_a? Enum         #=> true
+state.is_a? State        #=> true
 
 State(0)                 #=> State::FUNDRAISING
 State(1)                 #=> State::EXPIRED_REFUND

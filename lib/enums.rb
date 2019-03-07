@@ -48,6 +48,13 @@ require 'enums/version'    # note: let version always go first
 
 module Safe
 
+## note: use ClassMethods pattern for auto-including class methods
+def self.included( klass )
+  klass.extend( ClassMethods )
+end
+module ClassMethods; end
+
+
 
 ## base class for enum
 class Enum
@@ -91,6 +98,10 @@ class Enum
     @values
   end
 
+  def self.size() keys.size; end
+  def self.length() size; end   ## alias (as is the ruby tradition)
+
+
   def self.convert( arg )
     ## todo/check: support keys too - why? why not?
     ## e.g. Color(0), Color(1)
@@ -103,6 +114,9 @@ class Enum
   ###################
   ##  meta-programming "macro" - build class (on the fly)
   def self.build_class( class_name, *keys )
+
+    ## todo/fix:
+    ##  check class name MUST start with uppercase letter
 
     ## check if all keys are symbols and follow the ruby id(entifier) naming rules
     keys.each do |key|
@@ -143,17 +157,21 @@ RUBY
       end
 RUBY
 
-    ## note: use Safe (module) and NOT Object for namespacing
-    ##   use include Enum to make all enums and convenience converters global
+    ## note: use Object for "namespacing"
+    ##   make all enums convenience converters (always) global
+    ##     including uppercase methods (e.g. State(), Color(), etc.) does NOT work otherwise (with other module includes)
 
     ## add global convenience converter function
     ##  e.g. State(0) is same as State.convert(0)
-    Safe.class_eval( <<RUBY )
+    ##       Color(0) is same as Color.convert(0)
+    Object.class_eval( <<RUBY )
       def #{class_name}( arg )
          #{class_name}.convert( arg )
       end
 RUBY
 
+    ## note: use Safe (module) and NO Object for namespacing
+    ##   use include Enum to make all enums and convenience converters global
     Safe.const_set( class_name, klass )   ## returns klass (plus sets global constant class name)
   end
 
@@ -162,6 +180,24 @@ RUBY
     alias_method :new,     :build_class    # replace original version with create
   end
 end  # class Enum
+
+
+module ClassMethods
+  def enum( class_name, *args )
+    ########################################
+    # note: lets you use:
+    #   enum 'Color', :red, :green, :blue
+    #    -or-
+    #   enum 'Color', [:red, :green, :blue]
+    if args[0].is_a?( Array )
+      keys = args[0]
+    else
+      keys = args
+    end
+
+    Enum.new( class_name, *keys )
+  end
+end # module ClassMethods
 end # module Safe
 
 
