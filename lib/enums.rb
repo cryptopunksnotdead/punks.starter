@@ -171,7 +171,7 @@ RUBY
 RUBY
 
     ## note: use Safe (module) and NO Object for namespacing
-    ##   use include Enum to make all enums and convenience converters global
+    ##   use include Safe to make all enums constants and machinery global
     Safe.const_set( class_name, klass )   ## returns klass (plus sets global constant class name)
   end
 
