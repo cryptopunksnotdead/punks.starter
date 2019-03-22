@@ -1,5 +1,19 @@
 # Notes
 
+## Todos
+
+- [ ]  allow / add support equal `==` by integer or symbol - why? why not? e.g.
+
+``` ruby
+color == :red    #=> ???
+color == 0       #=> ???
+```
+
+or always use color == `Color.red` ???
+
+
+
+
 ## Enums in Ruby
 
 No library needed, just use symbols :-) e.g.
@@ -34,5 +48,3 @@ Robust enumerated type support in Python  - *RETIRED*, see (new) enum Data Type 
 
 The Python Standard Library - enum Data Type - Support for Enumeration in Python 3+
 <https://docs.python.org/3/library/enum>
-
-

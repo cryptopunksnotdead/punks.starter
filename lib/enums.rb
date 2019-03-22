@@ -11,7 +11,7 @@ require 'enums/version'    # note: let version always go first
 ## auto-create/builds enum class.
 ##
 ## Example:
-##   State = Enum.new( :fundraising, :expired_refund, :successful)
+##   Enum.new( :State, :fundraising, :expired_refund, :successful)
 ##     auto-creates/builds:
 ##
 ##  class Enum
@@ -46,19 +46,29 @@ require 'enums/version'    # note: let version always go first
 ##  pp state.successful?             #=> false
 
 
+
 module Safe
 
 ## note: use ClassMethods pattern for auto-including class methods
+##   note ClassMethods module is called SafeHelper
 def self.included( klass )
-  klass.extend( ClassMethods )
+  klass.extend( SafeHelper )
 end
-module ClassMethods; end
 
+module SafeHelper; end
+## note: also extends (include a helper methods to Safe itself)
+##  lets you use:
+##  module Safe
+##    enum :Color, :red, :green, :blue
+##  end
+extend SafeHelper
 
 
 ## base class for enum
 class Enum
   ## return a new Enum read-only class
+  attr_reader :key
+  attr_reader :value
 
   def initialize( key, value )
     @key   = key
@@ -67,10 +77,7 @@ class Enum
     self
   end
 
-  ## add read-only attribute readers
-  ##  just use attr_reader!!! - why? why not?
-  def key()   @key;   end
-  def value() @value; end
+
 
   def self.value( index )
     ## todo/fix: check for out-of-bound / unknown enum
@@ -79,6 +86,8 @@ class Enum
     ## pp values
     members[ index ]
   end
+
+  def zero?() self == self.class.zero; end
 
   def self.zero
     members[0]
@@ -157,14 +166,14 @@ RUBY
       end
 RUBY
 
-    ## note: use Object for "namespacing"
-    ##   make all enums convenience converters (always) global
+    ## note: use Kernel for "namespacing"
+    ##   make all enums Kernel convenience converters (always) global
     ##     including uppercase methods (e.g. State(), Color(), etc.) does NOT work otherwise (with other module includes)
 
     ## add global convenience converter function
     ##  e.g. State(0) is same as State.convert(0)
     ##       Color(0) is same as Color.convert(0)
-    Object.class_eval( <<RUBY )
+    Kernel.class_eval( <<RUBY )
       def #{class_name}( arg )
          #{class_name}.convert( arg )
       end
@@ -175,6 +184,7 @@ RUBY
     Safe.const_set( class_name, klass )   ## returns klass (plus sets global constant class name)
   end
 
+
   class << self
     alias_method :old_new, :new       # note: store "old" orginal version of new
     alias_method :new,     :build_class    # replace original version with create
@@ -182,13 +192,13 @@ RUBY
 end  # class Enum
 
 
-module ClassMethods
+module SafeHelper
   def enum( class_name, *args )
     ########################################
     # note: lets you use:
-    #   enum 'Color', :red, :green, :blue
+    #   enum :Color, :red, :green, :blue
     #    -or-
-    #   enum 'Color', [:red, :green, :blue]
+    #   enum :Color, [:red, :green, :blue]
     if args[0].is_a?( Array )
       keys = args[0]
     else
@@ -197,7 +207,7 @@ module ClassMethods
 
     Enum.new( class_name, *keys )
   end
-end # module ClassMethods
+end # module SafeHelper
 end # module Safe
 
 

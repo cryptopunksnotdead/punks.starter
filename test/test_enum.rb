@@ -8,27 +8,29 @@
 require 'helper'
 
 
+module Safe
+  ## Enum.new( 'State', :fundraising, :expired_refund, :successful )
+  enum :State, :fundraising, :expired_refund, :successful
+
+  pp State
+  pp State(0)
+
+  puts "Safe.constants:"
+  pp Safe.constants  #=> [:SafeHelper, :Enum, :State, :Color]
+  puts "Enum.constants:"
+  pp Enum.constants  #=> []
+end
+
+
 class TestEnum < MiniTest::Test
 
    include Safe   ## make all enums (and "convenience" converters) global
 
-
-   ## Enum.new( 'State', :fundraising, :expired_refund, :successful )
-   enum 'State', :fundraising, :expired_refund, :successful
-
-   pp State
-   pp State(0)
-
    ## Enum.new( 'Color', :red, :green, :blue )
-   enum 'Color', :red, :green, :blue
+   enum :Color, :red, :green, :blue
 
    pp Color
    pp Color(0)
-
-   puts "Safe.constants:"
-   pp Safe.constants  #=> [:ClassMethods, :Enum, :State, :Color]
-   puts "Enum.constants:"
-   pp Enum.constants  #=> []
 
 
 def test_state
@@ -70,6 +72,11 @@ def test_state
   pp State.zero
   assert_equal true,  State(0) == State.zero
   assert_equal false, State(1) == State.zero
+
+  assert_equal true,  State(0).zero?
+  assert_equal true,  State.zero.zero?
+  assert_equal false, State(1).zero?
+  assert_equal false, State(2).zero?
 
   assert_equal State.fundraising, State.value(0)
   assert_equal State.fundraising, State.key(:fundraising)

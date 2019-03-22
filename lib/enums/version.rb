@@ -1,11 +1,12 @@
 # encoding: utf-8
 
-## note: use a (new) class Enums  (with s!! at the end) for version info
-class Enums
+## note: use a (new) module Enums  (with s!! at the end) for version info
+##   why? avoids "pollution" Enum namespace with (library) version info etc.
+module Enums
 
   MAJOR = 1
   MINOR = 1
-  PATCH = 0
+  PATCH = 1
   VERSION = [MAJOR,MINOR,PATCH].join('.')
 
   def self.version
@@ -20,4 +21,4 @@ class Enums
     "#{File.expand_path( File.dirname(File.dirname(File.dirname(__FILE__))) )}"
   end
 
-end # class Enums
+end # module Enums

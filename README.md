@@ -44,11 +44,11 @@ Why? Why not? Discuss.
 ## Usage
 
 ``` ruby
-Enum.new( 'Color', :red, :green, :blue )
+Enum.new( :Color, :red, :green, :blue )
 # or
-enum 'Color', :red, :green, :blue
+enum :Color, :red, :green, :blue
 # or
-enum 'Color', [:red, :green, :blue]
+enum :Color, [:red, :green, :blue]
 ```
 
 
@@ -131,11 +131,11 @@ color.is_a? Color    #=> true
 Let's try another example:
 
 ``` ruby
-Enum.new( 'State', :fundraising, :expired_refund, :successful )
+Enum.new( :State, :fundraising, :expired_refund, :successful )
 # or
-enum 'State', :fundraising, :expired_refund, :successful
+enum :State, :fundraising, :expired_refund, :successful
 # or
-enum 'State', [:fundraising, :expired_refund, :successful]
+enum :State, [:fundraising, :expired_refund, :successful]
 
 
 State.values  #=> [0, 1, 2]
