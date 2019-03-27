@@ -49,6 +49,11 @@ Enum.new( :Color, :red, :green, :blue )
 enum :Color, :red, :green, :blue
 # or
 enum :Color, [:red, :green, :blue]
+# or
+enum :Color, {red:   0, 
+              green: 1,
+              blue:  2}
+
 ```
 
 
@@ -143,6 +148,10 @@ Enum.new( :State, :fundraising, :expired_refund, :successful )
 enum :State, :fundraising, :expired_refund, :successful
 # or
 enum :State, [:fundraising, :expired_refund, :successful]
+# or
+enum :State, {fundraising:    0, 
+              expired_refund: 1, 
+              successful:     2}
 
 
 State.values  #=> [0, 1, 2]
@@ -186,6 +195,187 @@ State.key(:fundraising)  # same as State[:fundraising]
 ```
 
 and so on.
+
+
+
+
+### What about enums with flags and bitwise-operators for set (`|`) / unset (`&~`) / toggle (`^`)?
+
+Use the `flags` option or the `Flag` class. Example:
+
+``` ruby
+Flag.new( :FileAttrib, :read_only, :hidden, :system, :archive )
+# -or -
+enum :FileAttrib, [:read_only, :hidden, :system, :archive], flags: true
+# -or -
+enum :FileAttrib, :read_only, :hidden, :system, :archive, flags: true
+# -or -
+enum :FileAttrib, { read_only: 1<<0,    # 2^0 = 1  = 0b00000001
+                    hidden:    1<<1,    # 2^1 = 2  = 0b00000010
+                    system:    1<<2,    # 2^2 = 4  = 0b00000100
+                    archive:   1<<5,    # 2^5 = 32 = 0b00100000
+                  },
+                  flags: true
+```
+
+(Auto-)builds a class and code like:
+
+``` ruby
+class Flag
+  def initialize( key, value )
+    @key   = key
+    @value = value
+  end
+end
+
+
+class FileAttrib < Flag
+
+  READ_ONLY = new( :read_only, 1<<0 )
+  HIDDEN    = new( :hidden,    1<<1 )
+  SYSTEM    = new( :system,    1<<2 )
+  ARCHIVE   = new( :archive,   1<<3 )
+
+  def self.read_only() READ_ONLY; end
+  def self.hidden()    HIDDEN; end
+  def self.system()    SYSTEM; end
+  def self.archive()   ARCHIVE; end
+
+  def self.values()  [1<<0,1<<1,1<<2,1<<3]; end
+  def self.keys()    [:read_only, :hidden, :system, :archive]; end
+  def self.members() [READ_ONLY, HIDDEN, SYSTEM, ARCHIVE]; end
+
+  def self.zero() @zero ||= new(0); end
+
+  def self.key( key )
+    @hash_by_key ||= Hash[ keys.zip( members ) ]
+    @hash_by_key[ key ]
+  end
+  def self.[]( key ) self.key( key ); end
+
+  def read_only?()  member?( READ_ONLY ); end
+  def hidden?()     member?( HIDDEN ); end
+  def system?()     member?( SYSTEM ); end
+  def archive?()    member?( ARCHIVE ); end
+
+  def member?( other ) @value & other.value == other.value; end
+
+  def bitwise_or( other )
+    self.class.new( @value | other.value )
+  end
+  alias_method :|,    :bitwise_or
+  alias_method :set,  :bitwise_or
+  alias_method :flag, :bitwise_or
+
+  def bitwise_and( other )
+    self.class.new( @value & other.value )
+  end
+  alias_method :&, :bitwise_and
+
+  def unset( other )
+    self.class.new( @value & ~other.value )
+  end
+  alias_method :unflag, :unset
+
+  def bitwise_xor( other )
+    self.class.new( @value ^ other.value )
+  end
+  alias_method :^,      :bitwise_xor
+  alias_method :toggle, :bitwise_xor
+
+  # ...
+
+  def initialize( *args )
+    # ...
+  end
+end
+
+
+def FileAttrib( *args )
+  FileAttrib.new( *args )
+end
+```
+
+Use like:
+
+``` ruby
+FileAttrib.values  #=> [1, 2, 4, 8]
+FileAttrib.keys    #=> [:read_only, :hidden, :system, :archive]
+
+FileAttrib.read_only                      #=> <FileAttrib @key=:read_only, @value=1>
+FileAttrib::READ_ONLY                     #=> <FileAttrib @key=:read_only, @value=1>
+FileAttribs[:read_only]                    #=> <FileAttrib @key=:read_only, @value=1>
+
+FileAttrib(0)                             #=> <FileAttrib @key=:0000, @value=0>
+FileAttrib.read_only | FileAttrib.hidden  #=> <FileAttrib @key=:0011, @value=3>
+# -or-
+FileAttrib.new( FileAttrib.read_only | FileAttrib.hidden )
+FileAttrib.new( FileAttrib::READ_ONLY | FileAttrib::HIDDEN )
+FileAttrib.new( :read_only, :hidden )
+# -or-
+FileAttrib( FileAttrib.read_only | FileAttrib.hidden )
+FileAttrib( FileAttrib::READ_ONLY | FileAttrib::HIDDEN )
+FileAttrib( :read_only, :hidden )
+#=> <FileAttrib @key=:0011, @value=3>
+
+attrib  = FileAttrib.new        #=> <FileAttrib @key=:0000, @value=0>
+attrib |= FileAttrib.read_only  #=> <FileAttrib @key=:0001, @value=1>
+attrib.read_only?               #=> true
+# -or-
+attrib.member?( FileAttrib.read_only )                #=> true
+attrib.member?( FileAttrib.READ_ONLY )                #=> true
+attrib.member?( :read_only )                          #=> true
+attrib & FileAttrib.read_only == FileAttrib.read_only #=> true
+
+attrib ^= FileAttrib.read_only  #=> <FileAttrib @key=:0000, @value=0>
+attrib.read_only?               #=> false
+attrib ^= FileAttrib.read_only  #=> <FileAttrib @key=:0001, @value=1>
+attrib.read_only?               #=> true
+
+attrib &= ~FileAttrib.read_only #=> <FileAttrib @key=:0000, @value=0>
+attrib.read_only?               #=> false
+
+attrib.is_a? Flag               #=> true
+attrib.is_a? FileAttrib         #=> true
+# ...
+```
+
+and so on.
+
+
+### What about enums for (algebraic) union data types with variants?
+
+Yes, yes, yes. Use the `Union` class or the `data` helper from the safedata library.
+Note, now you can go "wild" and use strings, arrays or really anything or nothing (that is, unit types) for your values. Example:
+
+``` ruby
+data :Color, :Red, [1],
+             :Green, [2],
+             :Blue, [3]
+
+# -or-
+
+data :Color, :Red, ['red'],
+             :Green, ['green'],
+             :Blue, ['blue']
+
+# -or-
+
+data :Color, :Red, [1,'red'],
+             :Green, [2, 'green'],
+             :Blue, [3, 'blue']
+
+# -or-
+
+data :Color, :Red, [255, 0, 0],
+             :Green, [0, 255, 0],
+             :Blue, [0, 0, 255],
+             :Other, [:r, :g, :b]
+```
+
+and so on and so forth.
+See the [safedata library documentation for more »](https://github.com/s6ruby/safedata)
+
 
 
 
