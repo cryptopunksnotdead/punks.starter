@@ -76,12 +76,16 @@ class Color < Enum
   def self.keys()    [:red, :blue, :green]; end
   def self.members() [RED, BLUE, GREEN]; end
 
-  def self.value( index ) members[index]; end
-  def self.zero() value(0); end
+  def self.zero() members[0]; end
+
+  def self.value( value )
+    @hash_by_value ||= Hash[ values.zip( members ) ]
+    @hash_by_value[ value ]
+  end
 
   def self.key( key )
-    @hash ||= Hash[ keys.zip( members ) ]
-    @hash[ key ]
+    @hash_by_key ||= Hash[ keys.zip( members ) ]
+    @hash_by_key[ key ]
   end
   def self.[]( key ) self.key( key ); end
 
@@ -90,10 +94,13 @@ class Color < Enum
   def green?() self == GREEN; end
 end
 
-def Color( arg )
-  Color.value( arg )
+
+def Color( index )
+  Color.members[ index ]
 end
 ```
+
+
 
 
 Use like:
