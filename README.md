@@ -50,9 +50,9 @@ enum :Color, :red, :green, :blue
 # or
 enum :Color, [:red, :green, :blue]
 # or
-enum :Color, {red:   0, 
-              green: 1,
-              blue:  2}
+enum :Color, { red:   0, 
+               green: 1,
+               blue:  2 }
 
 ```
 
@@ -149,9 +149,9 @@ enum :State, :fundraising, :expired_refund, :successful
 # or
 enum :State, [:fundraising, :expired_refund, :successful]
 # or
-enum :State, {fundraising:    0, 
-              expired_refund: 1, 
-              successful:     2}
+enum :State, { fundraising:    0, 
+               expired_refund: 1, 
+               successful:     2 }
 
 
 State.values  #=> [0, 1, 2]
