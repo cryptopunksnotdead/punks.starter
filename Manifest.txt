@@ -4,6 +4,11 @@ Manifest.txt
 README.md
 Rakefile
 lib/enums.rb
+lib/enums/enum.rb
+lib/enums/enum_builder.rb
+lib/enums/flags.rb
+lib/enums/flags_builder.rb
 lib/enums/version.rb
 test/helper.rb
 test/test_enum.rb
+test/test_flags.rb

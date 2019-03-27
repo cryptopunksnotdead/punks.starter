@@ -1,15 +1,6 @@
-require 'pp'
+# encoding: utf-8
 
-## Example:
-##   Enum.new( :State, :fundraising, :expired_refund, :successful)
-##     auto-creates/builds:
-
-class Enum
-  def initialize( key, value )
-      @key   = key
-      @value = value
-  end
-end
+require_relative 'enum'
 
 class State < Enum
 

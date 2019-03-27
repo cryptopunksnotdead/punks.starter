@@ -29,15 +29,22 @@ end # module Safe
 
 require 'enums/enum'
 require 'enums/enum_builder'
-
-
+require 'enums/flags'
+require 'enums/flags_builder'
 
 
 
 
 module Safe
 module SafeHelper
-  def enum( class_name, *args )
+  def enum( class_name, *args, flags: false, options: {} )
+
+    ## note: allow "standalone" option flags or
+    ## option hash
+    defaults = { flags: flags }
+    options = defaults.merge( options )
+    pp options
+
     ########################################
     # note: lets you use:
     #   enum :Color, :red, :green, :blue
@@ -49,7 +56,11 @@ module SafeHelper
       keys = args
     end
 
-    Enum.new( class_name, *keys )
+    if options[:flags]
+      Flags.new( class_name, *keys )
+    else
+      Enum.new( class_name, *keys )
+    end
   end
 end # module SafeHelper
 end # module Safe

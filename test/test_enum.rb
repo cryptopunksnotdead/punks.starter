@@ -9,7 +9,7 @@ require 'helper'
 
 
 module Safe
-  ## Enum.new( 'State', :fundraising, :expired_refund, :successful )
+  ## Enum.new( :State, :fundraising, :expired_refund, :successful )
   enum :State, :fundraising, :expired_refund, :successful
 
   pp State

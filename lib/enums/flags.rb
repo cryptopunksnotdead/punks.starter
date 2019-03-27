@@ -1,92 +1,193 @@
-require 'pp'
+# encoding: utf-8
+
+###############################
+## base class for flag/flags
 
 
-class Enum
 
-  private
+module Safe
+class Flag
 
-  def self.enum_attr(name, num)
-    name = name.to_s
+  attr_reader :key
+  attr_reader :value
 
-    define_method(name + '?') do
-      @attrs & num != 0
+  def initialize( key, value )
+    @key   = key
+    @value = value
+    self.freeze   ## make "immutable"
+    self
+  end
+
+
+  def self._typecheck!( o )
+    if self == o.class
+      o
+    else
+      raise TypeError.new( "[Flag] flag >#{name}< type expected; got >#{o.class.inspect}<" )
     end
+  end
 
-    define_method(name + '=') do |set|
-      if set
-        @attrs |= num
-      else
-        @attrs &= ~num
+  def self._value!( o )
+    if o.is_a? Integer
+      o
+    else
+      _typecheck!( o )
+      o.value
+    end
+  end
+
+  def bitwise_or( other )   ## bitwise-or
+    ## note: returns "plain" integer
+    @value | self.class._value!( other )
+  end
+  alias_method :|, :bitwise_or
+
+  def bitwise_inverse()  ## bitwise-inverse
+    ## note: returns "plain" integer
+     ~@value
+  end
+  alias_method :~, :bitwise_inverse
+
+
+  def coerce( other )
+    puts "[Flag] coerce( self= >#{self.inspect}<, other= >#{other.inspect}< #{other.class.name} )"
+    if other.is_a?( Integer )
+      [other, @value]
+    else
+      raise TypeError.new( "[Flag] coerce - wrong type >#{other.inspect}< #{other.class.name} - Integer number expected" )
+    end
+  end
+end  # class Flag
+
+
+
+class Flags
+  attr_reader :value
+
+  def initialize( *args )
+    if args.size == 0
+      @value = 0   ## same as new(0)
+    elsif args.size == 1 && args[0].is_a?(Integer)
+      @value = args[0]
+    else
+      ## assume flag object or symbols
+      @value = 0
+      args.each do |arg|
+        flag = _typecast_flag!( arg )
+        @value |= flag.value
       end
     end
+    self.freeze  ## make "immutable" - should be a value object like an integer number!!!
+    self # return self for chaining
   end
 
-  public
 
-  def initialize(attrs = 0)
-    @attrs = attrs
+  def _value_for_flag!( o )
+    self.class::Flag._value!( o )
   end
 
-  def to_i
-    @attrs
-  end
-end
-
-
-class Flag
-  def initialize( key, power )
-    ## start with power (base) 0
-    ## e.g. 2^0 = 1 = 0001
-    #       2^1 = 2 = 0010
-    #       2^2 = 3 = 00010
-
-    @key  = key
-    @flag = 2**power
+  def _typecheck_flag!( o )
+    self.class::Flag._typecheck!( o )
   end
 
-  def to_s
-    @flag.to_s(2)
+  def _typecast_flag!( o )
+    if o.is_a? Symbol   ## auto-convert symbol to flag
+      o = self.class.key( o )  ## lookup symbol in "parent" flags class
+    end
+    _typecheck_flag!( o )
   end
-end
-
-f1 = Flag.new( :readonly, 0 )
-pp f1
-pp f1.to_s
-
-f2 = Flag.new( :hidden, 1 )
-pp f2
-pp f2.to_s
-
-f3 = Flag.new( :system, 2 )
-pp f3
-pp f3.to_s
-
-f4 = Flag.new( :system, 3 )
-pp f4
-pp f4.to_s
 
 
-__END__
-class FileAttributes < Enum
-  READONLY = 0b0001      # 2^1 = 2
-  enum_attr :hidden,         0b0010      # 2^2 = 4
-  enum_attr :system,         0b0100      # 2^3 = 8
-  enum_attr :directory,      0b1000      # 2^4 = 16
-  enum_attr :archive,        0b1_0000    # 2^5 = 32
-  enum_attr :in_rom,         0b10_0000   # 2^6 = 64
-  enum_attr :normal,         0b100_0000
-  enum_attr :temporary,      0x0100
-  enum_attr :sparse,         0x0200
-  enum_attr :reparse_point,  0x0400
-  enum_attr :compressed,     0x0800
-  enum_attr :rom_module,     0x2000
-end
+  def member?( other ) _member?(_typecast_flag!( other )); end
+  def _member?( other ) @value & other.value  != 0; end
 
 
-pp example = FileAttributes.new(3)
-pp example.readonly?
-pp example.hidden?
-pp example.system?
-pp example.system = true
-pp example.system?
-pp example.to_i
+  def bitwise_or( other )
+    _unsafe_bitwise_or( _value_for_flag!( other ) )
+  end
+  alias_method :|, :bitwise_or
+
+  def _unsafe_bitwise_or( other )   ## always assumes other is an integer
+    self.class.new( @value | other )
+  end
+
+  def set( other )  ## typesafe version of bitwise-or (|=) (no "plain" Integer allowed)
+    _unsafe_bitwise_or( _typecast_flag!( other ).value )
+  end
+  alias_method :flag, :set
+
+
+  def bitwise_and( other )
+    _unsafe_bitwise_and( _value_for_flag!( other ) )
+  end
+  alias_method :&, :bitwise_and
+
+  def _unsafe_bitwise_and( other )
+    self.class.new( @value & other )
+  end
+
+
+  def unset( other )  ## typesafe version of bitwise-and/bitwise-inverse (&=~) (no "plain" Integer allowed)
+    _unsafe_bitwise_and( ~_typecast_flag!( other ).value )
+  end
+  alias_method :unflag, :unset
+
+
+  def bitwise_xor( other )
+    _unsafe_bitwise_xor( _value_for_flag!( other ))
+  end
+  alias_method :^, :bitwise_xor
+
+  def _unsafe_bitwise_xor( other )
+    self.class.new( @value ^ other )
+  end
+
+  def toggle( other ) ## typesafe version of bitwise-xor (^=) (no "plain" Integer allowed)
+    _unsafe_bitwise_xor( _typecast_flag!( other ).value )
+  end
+
+
+
+  def self.keys()
+    # note: does NOT include none - why? why not?
+    @keys ||= members.map { |member| member.key }.freeze
+  end
+
+  def self.key( key )
+    @hash_by_key ||= Hash[ keys.zip( members ) ].freeze
+    @hash_by_key[key]
+  end
+
+  def self.[]( key )  ## convenience alias for key
+    self.key( key )
+  end
+
+
+  def self.values()
+    # note: does NOT include none - why? why not?
+    @values ||= members.map { |member| member.value }.freeze
+  end
+
+
+  def self.convert( *args )
+    new( *args )
+  end
+
+  def self.zero() @zero ||= new(0); end
+  def zero?() @value == 0; end
+
+  ### todo/fix:
+  ##  add ==/eql?
+  ##   for self AND flag AND integer
+  ##     always compare integer value
+
+
+  ## add size|length too why? why not?
+  ## add value() lookup?
+  ##   not for now - why? combined values are undefined!! what to return??
+
+  ## add to_i, to_int - why? why not?
+  ## def to_i()   @value; end
+  ## def to_int() @value; end
+end  # class Flags
+end # module Safe
