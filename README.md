@@ -231,21 +231,25 @@ end
 
 class FileAttrib < Flag
 
+  NONE      = new( :none,      0    )
   READ_ONLY = new( :read_only, 1<<0 )
   HIDDEN    = new( :hidden,    1<<1 )
   SYSTEM    = new( :system,    1<<2 )
   ARCHIVE   = new( :archive,   1<<3 )
+  ALL       = new( :all,       1<<0|1<<1|1<<2|1<<3 )
 
+  def self.none()      NONE; end
   def self.read_only() READ_ONLY; end
   def self.hidden()    HIDDEN; end
   def self.system()    SYSTEM; end
   def self.archive()   ARCHIVE; end
+  def self.all()       ALL; end
 
   def self.values()  [1<<0,1<<1,1<<2,1<<3]; end
   def self.keys()    [:read_only, :hidden, :system, :archive]; end
   def self.members() [READ_ONLY, HIDDEN, SYSTEM, ARCHIVE]; end
 
-  def self.zero() @zero ||= new(0); end
+  def self.zero() @zero ||= NONE; end
 
   def self.key( key )
     @hash_by_key ||= Hash[ keys.zip( members ) ]
@@ -284,10 +288,6 @@ class FileAttrib < Flag
   alias_method :toggle, :bitwise_xor
 
   # ...
-
-  def initialize( *args )
-    # ...
-  end
 end
 
 
