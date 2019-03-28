@@ -11,29 +11,31 @@ class FileAttrib < Flag
   ## e.g. 2^0 or 1<<0 = 1 = 0001
   #       2^1 or 1<<1 = 2 = 0010
   #       2^2 or 1<<2 = 4 = 00010
-  ## NONE     new( :none, 0 )  ## (always auto-added) built-in default
+  NONE      = new( :none,      0 )      ## (always auto-added) built-in default
   READ_ONLY = new( :read_only, 1<<0 )
   HIDDEN    = new( :hidden,    1<<1 )
   SYSTEM    = new( :system,    1<<2 )
   ARCHIVE   = new( :archive,   1<<3 )
-  ## (always auto-add) built-in default ALL for all flags or-ed together - why? why not?
+  ALL       = new( :all,       1<<0|1<<1|1<<2|1<<3 )  ## (always auto-add) built-in default ALL for all flags or-ed together
 
-  ## def self.none()     NONE;     end
+  def self.none()      NONE;     end
   def self.read_only() READ_ONLY; end
   def self.hidden()    HIDDEN;   end
   def self.system()    SYSTEM;   end
   def self.archive()   ARCHIVE;  end
+  def self.all()       ALL;      end
 
   def self.members()
-    # note: does NOT include none - why? why not?
-    ## use flags - why? why not?
+    # note: does NOT include none
     @members ||= [READ_ONLY, HIDDEN, SYSTEM, ARCHIVE].freeze
   end
 
+  def none?()      @value == 0; end
   def read_only?() _member?( READ_ONLY ); end
   def hidden?()    _member?( HIDDEN ); end
   def system?()    _member?( SYSTEM ); end
   def archive?()   _member?( ARCHIVE ); end
+  def all?()       @value == 1<<0|1<<1|1<<2|1<<3; end
 end  # class FileAttrib
 
 
@@ -42,15 +44,19 @@ module Kernel
 end # module Kernel
 
 
+pp FileAttrib.none
 pp FileAttrib.read_only
 pp FileAttrib.hidden
 pp FileAttrib.system
 pp FileAttrib.archive
+pp FileAttrib.all
 
+pp FileAttrib::NONE
 pp FileAttrib::READ_ONLY
 pp FileAttrib::HIDDEN
 pp FileAttrib::SYSTEM
 pp FileAttrib::ARCHIVE
+pp FileAttrib::ALL
 
 pp FileAttrib[:read_only]
 pp FileAttrib[:hidden]
@@ -65,30 +71,21 @@ pp FileAttrib.read_only.is_a? FileAttrib
 
 
 
-pp FileAttrib.new
-pp FileAttrib.new(0)
-pp FileAttrib.new( 1<<1 | 1<<3 )
-pp FileAttrib.new( FileAttrib.read_only, FileAttrib.hidden )
-pp FileAttrib.new( FileAttrib.read_only | FileAttrib.hidden )
-pp FileAttrib.new( FileAttrib.read_only | FileAttrib.hidden | FileAttrib.archive )
-pp FileAttrib.new( FileAttrib::READ_ONLY | FileAttrib::HIDDEN )
-pp FileAttrib.new( FileAttrib::READ_ONLY, FileAttrib::HIDDEN )
-pp FileAttrib.new( :read_only, :hidden )
-
-pp FileAttrib.zero
 pp FileAttrib(0)
-pp FileAttrib( :read_only )
-pp FileAttrib( :read_only, :hidden )
-
+pp FileAttrib.zero
+pp FileAttrib.none
+pp FileAttrib( 1<<1 | 1<<3 )
 pp FileAttrib( FileAttrib.read_only, FileAttrib.hidden )
 pp FileAttrib( FileAttrib.read_only | FileAttrib.hidden )
 pp FileAttrib( FileAttrib.read_only | FileAttrib.hidden | FileAttrib.archive )
 pp FileAttrib( FileAttrib::READ_ONLY | FileAttrib::HIDDEN )
 pp FileAttrib( FileAttrib::READ_ONLY, FileAttrib::HIDDEN )
+pp FileAttrib( :read_only )
+pp FileAttrib( :read_only, :hidden )
 
 
 
-pp attrib = FileAttrib.new
+pp attrib = FileAttrib.none
 pp attrib.is_a? Flag
 pp attrib.is_a? FileAttrib
 
@@ -156,3 +153,4 @@ pp FileAttrib.read_only == FileAttrib.read_only
 pp FileAttrib.read_only == FileAttrib::READ_ONLY
 pp FileAttrib.read_only == FileAttrib.hidden
 pp FileAttrib.zero == 0
+
