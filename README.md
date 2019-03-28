@@ -294,7 +294,7 @@ end
 
 
 def FileAttrib( *args )
-  FileAttrib.new( *args )
+  FileAttrib.convert( *args )
 end
 ```
 
