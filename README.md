@@ -258,10 +258,10 @@ class FileAttrib < Flag
   def self.[]( key ) self.key( key ); end
 
   def none?         @value == 0; end
-  def read_only?()  member?( READ_ONLY ); end
-  def hidden?()     member?( HIDDEN ); end
-  def system?()     member?( SYSTEM ); end
-  def archive?()    member?( ARCHIVE ); end
+  def read_only?()  @value & 1<<0 == 1<<0; end
+  def hidden?()     @value & 1<<1 == 1<<1; end
+  def system?()     @value & 1<<2 == 1<<2; end
+  def archive?()    @value & 1<<3 == 1<<3; end
   def all?()        @value == 1<<0|1<<1|1<<2|1<<3; end
 
   def member?( other ) @value & other.value == other.value; end
