@@ -306,20 +306,16 @@ FileAttrib.read_only                      #=> <FileAttrib @key=:read_only, @valu
 FileAttrib::READ_ONLY                     #=> <FileAttrib @key=:read_only, @value=1>
 FileAttribs[:read_only]                    #=> <FileAttrib @key=:read_only, @value=1>
 
-FileAttrib(0)                             #=> <FileAttrib @key=:0000, @value=0>
+FileAttrib(0)                             #=> <FileAttrib @key=:none, @value=0>
 FileAttrib.read_only | FileAttrib.hidden  #=> <FileAttrib @key=:0011, @value=3>
-# -or-
-FileAttrib.new( FileAttrib.read_only | FileAttrib.hidden )
-FileAttrib.new( FileAttrib::READ_ONLY | FileAttrib::HIDDEN )
-FileAttrib.new( :read_only, :hidden )
 # -or-
 FileAttrib( FileAttrib.read_only | FileAttrib.hidden )
 FileAttrib( FileAttrib::READ_ONLY | FileAttrib::HIDDEN )
 FileAttrib( :read_only, :hidden )
 #=> <FileAttrib @key=:0011, @value=3>
 
-attrib  = FileAttrib.new        #=> <FileAttrib @key=:0000, @value=0>
-attrib |= FileAttrib.read_only  #=> <FileAttrib @key=:0001, @value=1>
+attrib  = FileAttrib.none       #=> <FileAttrib @key=:none, @value=0>
+attrib |= FileAttrib.read_only  #=> <FileAttrib @key=:read_only, @value=1>
 attrib.read_only?               #=> true
 # -or-
 attrib.member?( FileAttrib.read_only )                #=> true
@@ -327,12 +323,12 @@ attrib.member?( FileAttrib.READ_ONLY )                #=> true
 attrib.member?( :read_only )                          #=> true
 attrib & FileAttrib.read_only == FileAttrib.read_only #=> true
 
-attrib ^= FileAttrib.read_only  #=> <FileAttrib @key=:0000, @value=0>
+attrib ^= FileAttrib.read_only  #=> <FileAttrib @key=:none, @value=0>
 attrib.read_only?               #=> false
-attrib ^= FileAttrib.read_only  #=> <FileAttrib @key=:0001, @value=1>
+attrib ^= FileAttrib.read_only  #=> <FileAttrib @key=:read_ony, @value=1>
 attrib.read_only?               #=> true
 
-attrib &= ~FileAttrib.read_only #=> <FileAttrib @key=:0000, @value=0>
+attrib &= ~FileAttrib.read_only #=> <FileAttrib @key=:none, @value=0>
 attrib.read_only?               #=> false
 
 attrib.is_a? Flag               #=> true
