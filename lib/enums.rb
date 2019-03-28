@@ -29,15 +29,20 @@ end # module Safe
 
 require 'enums/enum'
 require 'enums/enum_builder'
-require 'enums/flags'
-require 'enums/flags_builder'
+require 'enums/flag'
+require 'enums/flag_builder'
 
 
 
 
 module Safe
+
+  ## note make Flags an alias of Flag
+  Flags = Flag
+
+
 module SafeHelper
-  def enum( class_name, *args, flags: false, options: {} )
+  def enum( class_name, *args, flags: false, options: {}, **kwargs )
 
     ## note: allow "standalone" option flags or
     ## option hash
@@ -50,16 +55,14 @@ module SafeHelper
     #   enum :Color, :red, :green, :blue
     #    -or-
     #   enum :Color, [:red, :green, :blue]
-    if args[0].is_a?( Array )
-      keys = args[0]
-    else
-      keys = args
+    if args.size > 0 && args[0].is_a?( Array )
+      args = args[0]
     end
 
     if options[:flags]
-      Flags.new( class_name, *keys )
+      Flag.new( class_name, *args, **kwargs )
     else
-      Enum.new( class_name, *keys )
+      Enum.new( class_name, *args, **kwargs )
     end
   end
 end # module SafeHelper

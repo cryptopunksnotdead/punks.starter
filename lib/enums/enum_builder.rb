@@ -7,13 +7,23 @@ class Enum
 
 ###################
 ##  meta-programming "macro" - build class (on the fly)
-def self.build_class( class_name, *keys )
+def self.build_class( class_name, *args, **kwargs )
+
+  if args.size > 0
+    keys   = args
+    values = (0...keys.size).to_a   # note: use ... (exclusive) range
+    e = Hash[ keys.zip( values ) ]
+  else
+    ## assume kwargs
+    e = kwargs
+  end
+
 
   ## todo/fix:
   ##  check class name MUST start with uppercase letter
 
   ## check if all keys are symbols and follow the ruby id(entifier) naming rules
-  keys.each do |key|
+  e.keys.each do |key|
     if key.is_a?( Symbol ) && key =~ /\A[a-z][a-zA-Z0-9_]*\z/
     else
       raise ArgumentError.new( "[Enum] arguments to Enum.new must be all symbols following the ruby id naming rules; >#{key}< failed" )
@@ -23,13 +33,13 @@ def self.build_class( class_name, *keys )
   klass = Class.new( Enum )
 
   ## add self.new too - note: call/forward to "old" orginal self.new of Event (base) class
-  klass.define_singleton_method( :new ) do |*args|
-    old_new( *args )
+  klass.define_singleton_method( :new ) do |*new_args|
+    old_new( *new_args )
   end
 
-  keys.each_with_index do |key,index|
+  e.each do |key,value|
     klass.class_eval( <<RUBY )
-      #{key.upcase} = new( :#{key}, #{index} )
+      #{key.upcase} = new( :#{key}, #{value} )
 
       def #{key}?
         self == #{key.upcase}
@@ -43,7 +53,7 @@ RUBY
 
   klass.class_eval( <<RUBY )
     def self.members
-      @members ||= [#{keys.map {|key|key.upcase}.join(',')}].freeze
+      @members ||= [#{e.keys.map {|key|key.upcase}.join(',')}].freeze
     end
 RUBY
 

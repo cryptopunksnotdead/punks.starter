@@ -32,6 +32,10 @@ class TestEnum < MiniTest::Test
    pp Color
    pp Color(0)
 
+   enum :Roman, {i: 1, iv: 4, v: 5, ix: 9, x: 10 }
+   pp Roman
+   pp Roman(0)   ## first member by index
+
 
 def test_state
   assert_equal [:FUNDRAISING, :EXPIRED_REFUND, :SUCCESSFUL], State.constants

@@ -47,6 +47,10 @@ class Enum
   end
 
 
+  def self.zero() members[0]; end
+  def zero?() self == self.class.zero; end
+
+
   def self.size() keys.size; end
   def self.length() size; end   ## alias (as is the ruby tradition)
 
@@ -58,8 +62,5 @@ class Enum
     ## note: will ALWAYS look-up by (member) index and NOT by value (integer number value might be different!!)
     members[ arg ]
   end
-
-  def self.zero() members[0]; end
-  def zero?() self == self.class.zero; end
 end  # class Enum
 end  # module Safe
