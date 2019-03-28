@@ -336,6 +336,60 @@ attrib.is_a? FileAttrib         #=> true
 # ...
 ```
 
+
+Let's try another example:
+
+``` ruby
+Flag.new( :TextStyle, :bold, :italic, :underline )
+# -or -
+enum :TextStyle, [:bold, :italic, :underline], flags: true
+# -or -
+enum :TextStyle, :bold, :italic, :underline, flags: true
+# -or -
+enum :TextStyle, { bold:      1<<0,
+                   italic:    1<<1,
+                   underline: 1<<2
+                 },
+                 flags: true
+
+
+TextStyle.values  #=> [1, 2, 4]
+TextStyle.keys    #=> [:bold, :italic, :underline]
+
+TextStyle.bold                      #=> <TextStyle @key=:bold, @value=1>
+TextStyle::BOLD                     #=> <TextStyle @key=:bold, @value=1>
+TextStyle[:bold]                    #=> <TextStyle @key=:bold, @value=1>
+
+TextStyle(0)                        #=> <TextStyle @key=:none, @value=0>
+TextStyle.bold | TextStyle.italic   #=> <TextStyle @key=:0011, @value=3>
+# -or-
+TextStyle( TextStyle.bold | TextStyle.italic )
+TextStyle( TextStyle::BOLD | TextStyle::ITALIC )
+TextStyle( :bold, :italic )
+#=> <TextStyle @key=:0011, @value=3>
+
+style  = TextStyle.none   #=> <TextStyle @key=:none, @value=0>
+style |= TextStyle.bold   #=> <TextStyle @key=:bold, @value=1>
+style.bold?               #=> true
+# -or-
+style.member?( TextStyle.bold )             #=> true
+style.member?( TextStyle.BOLD )             #=> true
+style.member?( :bold )                      #=> true
+style & TextStyle.bold == TextStyle.bold    #=> true
+
+style ^= TextStyle.bold   #=> <TextStyle @key=:none, @value=0>
+style.bold?               #=> false
+style ^= TextStyle.bold   #=> <TextStyle @key=:bold, @value=1>
+style.bold?               #=> true
+
+style &= ~TextStyle.bold  #=> <TextStyle @key=:none, @value=0>
+style.bold?               #=> false
+
+style.is_a? Flag          #=> true
+style.is_a? TextStyle     #=> true
+# ...
+```
+
 and so on.
 
 
