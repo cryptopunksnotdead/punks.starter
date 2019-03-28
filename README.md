@@ -249,7 +249,7 @@ class FileAttrib < Flag
   def self.keys()    [:read_only, :hidden, :system, :archive]; end
   def self.members() [READ_ONLY, HIDDEN, SYSTEM, ARCHIVE]; end
 
-  def self.zero() @zero ||= NONE; end
+  def self.zero() NONE; end
 
   def self.key( key )
     @hash_by_key ||= Hash[ keys.zip( members ) ]
