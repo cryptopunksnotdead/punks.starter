@@ -210,10 +210,10 @@ enum :FileAttrib, [:read_only, :hidden, :system, :archive], flags: true
 # -or -
 enum :FileAttrib, :read_only, :hidden, :system, :archive, flags: true
 # -or -
-enum :FileAttrib, { read_only: 1<<0,    # 2^0 = 1  = 0b00000001
-                    hidden:    1<<1,    # 2^1 = 2  = 0b00000010
-                    system:    1<<2,    # 2^2 = 4  = 0b00000100
-                    archive:   1<<5,    # 2^5 = 32 = 0b00100000
+enum :FileAttrib, { read_only: Bit(0)  # 1<<0,    # 2^0 = 1  = 0b00000001
+                    hidden:    Bit(1)  # 1<<1,    # 2^1 = 2  = 0b00000010
+                    system:    Bit(2)  # 1<<2,    # 2^2 = 4  = 0b00000100
+                    archive:   Bit(5)  # 1<<5,    # 2^5 = 32 = 0b00100000
                   },
                   flags: true
 ```
@@ -232,11 +232,11 @@ end
 class FileAttrib < Flag
 
   NONE      = new( :none,      0    )
-  READ_ONLY = new( :read_only, 1<<0 )
+  READ_ONLY = new( :read_only, Bit(0) )
   HIDDEN    = new( :hidden,    1<<1 )
   SYSTEM    = new( :system,    1<<2 )
   ARCHIVE   = new( :archive,   1<<3 )
-  ALL       = new( :all,       1<<0|1<<1|1<<2|1<<3 )
+  ALL       = new( :all,       Bit(0)|Bit(1)|Bit(2)|Bit(3) )
 
   def self.none()      NONE; end
   def self.read_only() READ_ONLY; end
@@ -245,7 +245,7 @@ class FileAttrib < Flag
   def self.archive()   ARCHIVE; end
   def self.all()       ALL; end
 
-  def self.values()  [1<<0,1<<1,1<<2,1<<3]; end
+  def self.values()  [Bit(0),Bit(1),1<<2,1<<3]; end
   def self.keys()    [:read_only, :hidden, :system, :archive]; end
   def self.members() [READ_ONLY, HIDDEN, SYSTEM, ARCHIVE]; end
 
@@ -258,8 +258,8 @@ class FileAttrib < Flag
   def self.[]( key ) self.key( key ); end
 
   def none?         @value == 0; end
-  def read_only?()  @value & 1<<0 == 1<<0; end
-  def hidden?()     @value & 1<<1 == 1<<1; end
+  def read_only?()  @value & Bit(0) == Bit(0); end
+  def hidden?()     @value & Bit(1) == Bit(1); end
   def system?()     @value & 1<<2 == 1<<2; end
   def archive?()    @value & 1<<3 == 1<<3; end
   def all?()        @value == 1<<0|1<<1|1<<2|1<<3; end
@@ -348,9 +348,9 @@ enum :TextStyle, [:bold, :italic, :underline], flags: true
 # -or -
 enum :TextStyle, :bold, :italic, :underline, flags: true
 # -or -
-enum :TextStyle, { bold:      1<<0,
-                   italic:    1<<1,
-                   underline: 1<<2
+enum :TextStyle, { bold:      Bit(0),
+                   italic:    Bit(1),
+                   underline: Bit(2)
                  },
                  flags: true
 
@@ -399,6 +399,21 @@ style.is_a? TextStyle     #=> true
 ```
 
 and so on.
+
+
+#### What's `Bit()`?
+
+`Bit()` is a bit conversion helper defined as `def Bit(n) 1<<n; end`. Example:
+
+
+| `Bit(0)`  |   `1<<0`   |  `0b00000001` |  `2^0 = 1` |  `0x01` |
+| `Bit(1)`  |   `1<<1`   |  `0b0010` |  `2^1 = 2` |  `0x02` |
+| `Bit(2)`  |   `1<<2`   |  `0b0100` |  `2^1 = 2` |  `0x04` |
+| ...       |
+
+
+
+
 
 
 ### What about enums for (algebraic) union data types with variants?
