@@ -1,6 +1,6 @@
 # Enums - Safe Enumeration Types
 
-enums library / gem - safe enumeration types - a set of symbolic keys bound to unique integer numbers
+enums library / gem - safe enumeration types - a set of symbolic keys bound to unique integer numbers (incl. bit flags option)
 
 * home  :: [github.com/s6ruby/enums](https://github.com/s6ruby/enums)
 * bugs  :: [github.com/s6ruby/enums/issues](https://github.com/s6ruby/enums/issues)
@@ -50,7 +50,7 @@ enum :Color, :red, :green, :blue
 # or
 enum :Color, [:red, :green, :blue]
 # or
-enum :Color, { red:   0, 
+enum :Color, { red:   0,
                green: 1,
                blue:  2 }
 
@@ -149,8 +149,8 @@ enum :State, :fundraising, :expired_refund, :successful
 # or
 enum :State, [:fundraising, :expired_refund, :successful]
 # or
-enum :State, { fundraising:    0, 
-               expired_refund: 1, 
+enum :State, { fundraising:    0,
+               expired_refund: 1,
                successful:     2 }
 
 
@@ -386,6 +386,12 @@ style.bold?               #=> true
 
 style &= ~TextStyle.bold  #=> <TextStyle @key=:none, @value=0>
 style.bold?               #=> false
+
+style = TextStyle.bold | TextStyle.italic | TextStyle.underline
+#=> <TextStyle @key=:all, @value=7>
+style & TextStyle.all == TextStyle.all  #=> true
+style & TextStyle.all != 0              #=> true
+style.all?                              #=> true
 
 style.is_a? Flag          #=> true
 style.is_a? TextStyle     #=> true

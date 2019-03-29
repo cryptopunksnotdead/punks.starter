@@ -60,6 +60,19 @@ def test_attrib
   assert_equal :read_only, FileAttrib.read_only.key
   assert_equal 1<<0,       FileAttrib::READ_ONLY.value
   assert_equal :read_only, FileAttrib::READ_ONLY.key
+
+  attrib = FileAttrib.read_only | FileAttrib.hidden
+  assert_equal false, attrib.none?
+  assert_equal false, attrib & FileAttrib.all == FileAttrib.all
+  assert_equal false, attrib.all?
+  assert_equal true,  attrib.read_only?
+  assert_equal true,  attrib.hidden?
+
+  attrib |= FileAttrib.system
+  attrib |= FileAttrib.archive
+  assert_equal true,  attrib & FileAttrib.all == FileAttrib.all
+  assert_equal true,  attrib.all?
+  assert_equal false, attrib.none?
 end
 
 def test_text_style
@@ -70,6 +83,9 @@ def test_text_style
 
    style = TextStyle(0)
    assert_equal true, style == 0
+   assert_equal true, style.zero?
+   assert_equal true, style.none?
+
    style |= TextStyle.bold
    assert_equal true, style.member?( :bold )
    assert_equal true, style.member?( TextStyle.bold )
@@ -83,6 +99,11 @@ def test_text_style
    assert_equal true, style.member?( TextStyle.italic )
    assert_equal true, style & TextStyle.italic == TextStyle.italic
    assert_equal true, style & TextStyle.italic != 0
+
+   style = TextStyle.bold | TextStyle.italic | TextStyle.underline
+   assert_equal true, style & TextStyle.all == TextStyle.all
+   assert_equal true, style & TextStyle.all != 0
+   assert_equal true, style.all?
 end
 
 

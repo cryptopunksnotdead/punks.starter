@@ -44,12 +44,15 @@ def self.build_class( class_name, *args, **kwargs )
       end
 
       def #{key}?
-        _member?( #{key.upcase} )
+        @value & #{value} == #{value}
       end
 RUBY
   end
 
   klass.class_eval( <<RUBY )
+    NONE = new( :none, 0 )
+    ALL  = new( :all, #{f.values.reduce( 0 ) { |sum, value| sum|value }} )
+
     def self.members
       @members ||= [#{f.keys.map {|key|key.upcase}.join(',')}].freeze
     end

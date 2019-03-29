@@ -49,8 +49,10 @@ class Flag
   alias_method :eql?, :==
 
 
-  def member?( other ) _member?(_typecast_flag!( other )); end
-  def _member?( other ) @value & other.value == other.value; end
+  def member?( other )
+    other = _typecast_flag!( other )
+    @value & other.value == other.value
+  end
 
 
   def bitwise_or( other )
@@ -127,6 +129,11 @@ class Flag
 
   def self.zero() @zero ||= self::NONE; end
   def zero?() @value == 0; end
+
+  def self.none() self::NONE; end
+  def none?() @value == 0; end
+  def self.all() self::ALL; end
+  def all?() @value & self.class::ALL.value == self.class::ALL.value; end
 
 
   def self.convert( *args )
