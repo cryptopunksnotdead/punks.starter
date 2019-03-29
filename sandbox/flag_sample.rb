@@ -18,24 +18,20 @@ class FileAttrib < Flag
   ARCHIVE   = new( :archive,   1<<3 )
   ALL       = new( :all,       1<<0|1<<1|1<<2|1<<3 )  ## (always auto-add) built-in default ALL for all flags or-ed together
 
-  def self.none()      NONE;     end
   def self.read_only() READ_ONLY; end
   def self.hidden()    HIDDEN;   end
   def self.system()    SYSTEM;   end
   def self.archive()   ARCHIVE;  end
-  def self.all()       ALL;      end
 
   def self.members()
     # note: does NOT include none
     @members ||= [READ_ONLY, HIDDEN, SYSTEM, ARCHIVE].freeze
   end
 
-  def none?()      @value == 0; end
-  def read_only?() _member?( READ_ONLY ); end
-  def hidden?()    _member?( HIDDEN ); end
-  def system?()    _member?( SYSTEM ); end
-  def archive?()   _member?( ARCHIVE ); end
-  def all?()       @value == 1<<0|1<<1|1<<2|1<<3; end
+  def read_only?() @value & 1<<0 == 1<<0; end
+  def hidden?()    @value & 1<<1 == 1<<1; end
+  def system?()    @value & 1<<2 == 1<<2; end
+  def archive?()   @value & 1<<3 == 1<<3; end
 end  # class FileAttrib
 
 
@@ -137,7 +133,7 @@ pp FileAttrib.members
 pp FileAttrib.keys
 pp FileAttrib.values
 
-attrib = FileAttrib( FileAttrib.read_only | FileAttrib.hidden )
+attrib = FileAttrib.read_only | FileAttrib.hidden
 pp attrib
 pp attrib.read_only?
 pp attrib & FileAttrib.read_only
@@ -154,3 +150,10 @@ pp FileAttrib.read_only == FileAttrib::READ_ONLY
 pp FileAttrib.read_only == FileAttrib.hidden
 pp FileAttrib.zero == 0
 
+pp attrib = FileAttrib.read_only | FileAttrib.hidden
+pp attrib & FileAttrib.all == FileAttrib.all
+pp attrib |= FileAttrib.system
+pp attrib |= FileAttrib.archive
+pp attrib & FileAttrib.all == FileAttrib.all
+pp attrib.all?
+pp attrib.none?
