@@ -18,7 +18,7 @@ class Flag
   end
 
   def self._typecheck_flag!( o )
-    if self == o.class
+    if o.instance_of?( self )
       o
     else
       raise TypeError.new( "[Flag] flag >#{name}< type expected; got >#{o.class.inspect}<" )
@@ -38,12 +38,10 @@ class Flag
 
 
   def ==( other )
-    if self.class == other.class
-      @value == other.value
-    elsif other.is_a?( Integer )  ## note: also allow compare by "plain" integer
-      @value == other
+    if other.is_a?( Integer ) && other == 0   ## note: only allow compare by zero (0) integer - why? why not?
+      @value == 0
     else
-      false
+      @value == _typecheck_flag!( other ).value
     end
   end
   alias_method :eql?, :==
@@ -103,8 +101,8 @@ class Flag
     @hash_by_key[key]
   end
 
-  def self.[]( key )  ## convenience alias for key
-    self.key( key )
+  class << self
+    alias_method :[], :key  ## convenience alias for key
   end
 
 
@@ -154,8 +152,13 @@ class Flag
 
   ## add size|length too why? why not?
 
+
   ## add to_i, to_int - why? why not?
-  ## def to_i()   @value; end
-  ## def to_int() @value; end
+  def to_i()       @value; end
+  def to_int()     @value; end      ## allows Integer( .. )
+
+  def to_b()       parse_bool(); end
+  def parse_bool() @value != 0; end   ## nonzero == true, zero == false like numbers
+  alias_method :to_bool, :parse_bool
 end  # class Flag
 end # module Safe
