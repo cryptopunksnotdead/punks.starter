@@ -56,7 +56,7 @@ module SafeHelper
     ## option hash
     defaults = { flags: flags }
     options = defaults.merge( options )
-    pp options
+    ##  pp options
 
     ########################################
     # note: lets you use:
