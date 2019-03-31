@@ -1,6 +1,6 @@
 # Enums - Safe Enumeration Types
 
-enums library / gem - safe enumeration types - a set of symbolic keys bound to unique integer numbers (incl. bit flags option)
+enums library / gem - safe enum / enumeration types - a set of symbolic keys bound to unique integer numbers (incl. bit flags option)
 
 * home  :: [github.com/s6ruby/enums](https://github.com/s6ruby/enums)
 * bugs  :: [github.com/s6ruby/enums/issues](https://github.com/s6ruby/enums/issues)
