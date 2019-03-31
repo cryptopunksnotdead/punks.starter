@@ -5,7 +5,7 @@ Hoe.spec 'enums' do
 
   self.version = Enums::VERSION
 
-  self.summary = "enums - safe enumeration types - a set of symbolic keys bound to unique integer numbers (incl. bit flags option)"
+  self.summary = "enums - safe enum / enumeration types - a set of symbolic keys bound to unique integer numbers (incl. bit flags option)"
   self.description = summary
 
   self.urls    = ['https://github.com/s6ruby/enums']
