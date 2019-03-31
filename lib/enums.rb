@@ -10,9 +10,9 @@ require 'enums/version'    # note: let version always go first
 
 ## forward declarations
 module Safe
-  
+
   ## todo/check/discuss: auto-include SafeHelper - why? why not?
-  
+
   ## note: use ClassMethods pattern for auto-including class methods
   ##   note ClassMethods module is called SafeHelper
   def self.included( klass )
@@ -32,6 +32,8 @@ end # module Safe
 module Kernel
   def Bit( n ) 1 << n; end     ## add "global" bit conversion helper
 end
+
+
 
 require 'enums/enum'
 require 'enums/enum_builder'

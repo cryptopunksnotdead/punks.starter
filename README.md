@@ -32,8 +32,8 @@ module Color
   BLUE  = 1
   GREEN = 2
 end
-Color::RED   #=> 0
-Color::BLUE  #=> 1
+Color::RED       #=> 0
+Color::BLUE      #=> 1
 Color.constants  #=> [:RED, :BLUE, :GREEN]
 # ...
 ```
@@ -210,13 +210,29 @@ enum :FileAttrib, [:read_only, :hidden, :system, :archive], flags: true
 # -or -
 enum :FileAttrib, :read_only, :hidden, :system, :archive, flags: true
 # -or -
-enum :FileAttrib, { read_only: Bit(0)  # 1<<0,    # 2^0 = 1  = 0b00000001
-                    hidden:    Bit(1)  # 1<<1,    # 2^1 = 2  = 0b00000010
-                    system:    Bit(2)  # 1<<2,    # 2^2 = 4  = 0b00000100
-                    archive:   Bit(5)  # 1<<5,    # 2^5 = 32 = 0b00100000
+enum :FileAttrib, { read_only: Bit(0),
+                    hidden:    Bit(1),
+                    system:    Bit(2),
+                    archive:   Bit(5),
                   },
                   flags: true
 ```
+
+Aside: What's `Bit()`?
+
+`Bit()` is a bit conversion helper defined as `def Bit(n) 1 << n; end`. Example:
+
+|           | Bit Shift  | Binary        | Decimal     | Hex     |
+|-----------|------------|---------------|-------------|---------|
+| `Bit(0)`  |   `1<<0`   |  `0b00000001` |  `2^0 = 1`  |  `0x01` |
+| `Bit(1)`  |   `1<<1`   |  `0b00000010` |  `2^1 = 2`  |  `0x02` |
+| `Bit(2)`  |   `1<<2`   |  `0b00000100` |  `2^2 = 4`  |  `0x04` |
+| `Bit(3)`  |   `1<<3`   |  `0b00001000` |  `2^3 = 8`  |  `0x08` |
+| `Bit(4)`  |   `1<<4`   |  `0b00010000` |  `2^4 = 16` |  `0x10` |
+| `Bit(5)`  |   `1<<5`   |  `0b00100000` |  `2^5 = 32` |  `0x20` |
+| ...       |
+
+
 
 (Auto-)builds a class and code like:
 
@@ -233,9 +249,9 @@ class FileAttrib < Flag
 
   NONE      = new( :none,      0    )
   READ_ONLY = new( :read_only, Bit(0) )
-  HIDDEN    = new( :hidden,    1<<1 )
-  SYSTEM    = new( :system,    1<<2 )
-  ARCHIVE   = new( :archive,   1<<3 )
+  HIDDEN    = new( :hidden,    Bit(1) )
+  SYSTEM    = new( :system,    Bit(2) )
+  ARCHIVE   = new( :archive,   Bit(3) )
   ALL       = new( :all,       Bit(0)|Bit(1)|Bit(2)|Bit(3) )
 
   def self.none()      NONE; end
@@ -245,7 +261,7 @@ class FileAttrib < Flag
   def self.archive()   ARCHIVE; end
   def self.all()       ALL; end
 
-  def self.values()  [Bit(0),Bit(1),1<<2,1<<3]; end
+  def self.values()  [Bit(0),Bit(1),Bit(2),Bit(3)]; end
   def self.keys()    [:read_only, :hidden, :system, :archive]; end
   def self.members() [READ_ONLY, HIDDEN, SYSTEM, ARCHIVE]; end
 
@@ -260,9 +276,9 @@ class FileAttrib < Flag
   def none?         @value == 0; end
   def read_only?()  @value & Bit(0) == Bit(0); end
   def hidden?()     @value & Bit(1) == Bit(1); end
-  def system?()     @value & 1<<2 == 1<<2; end
-  def archive?()    @value & 1<<3 == 1<<3; end
-  def all?()        @value == 1<<0|1<<1|1<<2|1<<3; end
+  def system?()     @value & Bit(2) == Bit(2); end
+  def archive?()    @value & Bit(3) == Bit(3); end
+  def all?()        @value == Bit(0)|Bit(1)|Bit(2)|Bit(3); end
 
   def member?( other ) @value & other.value == other.value; end
 
@@ -399,19 +415,6 @@ style.is_a? TextStyle     #=> true
 ```
 
 and so on.
-
-
-#### What's `Bit()`?
-
-`Bit()` is a bit conversion helper defined as `def Bit(n) 1<<n; end`. Example:
-
-
-| `Bit(0)`  |   `1<<0`   |  `0b00000001` |  `2^0 = 1` |  `0x01` |
-| `Bit(1)`  |   `1<<1`   |  `0b0010` |  `2^1 = 2` |  `0x02` |
-| `Bit(2)`  |   `1<<2`   |  `0b0100` |  `2^1 = 2` |  `0x04` |
-| ...       |
-
-
 
 
 
