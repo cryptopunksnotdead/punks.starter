@@ -157,8 +157,7 @@ class Flag
   def to_i()       @value; end
   def to_int()     @value; end      ## allows Integer( .. )
 
-  def to_b()       parse_bool(); end
-  def parse_bool() @value != 0; end   ## nonzero == true, zero == false like numbers
-  alias_method :to_bool, :parse_bool
+  ## add to_b/to_bool support (see safebool @ https://github.com/s6ruby/safebool) - why? why not?  
+  # def parse_bool() @value != 0; end   ## nonzero == true, zero == false like numbers
 end  # class Flag
 end # module Safe
