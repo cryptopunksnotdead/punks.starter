@@ -158,29 +158,30 @@ end
 Yes, that's it.
 Run the script to generate algorithmically your collection.
 
-In the `/o/no1` directory you will now find
+In the `/o` directory you will now find
 two images per punk (in the orginal format, that is, 32x32
-and x20, that is, 640x640) and get
+and x20, that is, 640x640) and get:
 
 ```
- /punk0.png
-  punk0x20,png
+no1/
+  punk0.png
+  punk0x20.png
   punk1.png
-  punk1x20,png
+  punk1x20.png
   punk2.png
-  punk2x20,png
+  punk2x20.png
   punk3.png
-  punk3x20,png
+  punk3x20.png
   punk4.png
-  punk4x20,png
+  punk4x20.png
   punk5.png
-  punk5x20,png
+  punk5x20.png
   punk6.png
-  punk6x20,png
+  punk6x20.png
   punk7.png
-  punk7x20,png
+  punk7x20.png
   punk8.png
-  punk8x20,png
+  punk8x20.png
   ...
 ```
 
@@ -221,6 +222,9 @@ And let's have a looksie at the biggie 20x versions:
 
 [...]
 
+![](i/no1/punk24x20.png)
+
+
 
 Note: If you use your own artwork
 make sure your type and attribute names
@@ -229,9 +233,10 @@ match the filenames (without the `.png` extension).
 For the matching algorithm all names
 get automatically downcased and all spaces deleted,
 thus,
-`Classic` will map to `classic.png`
-and `3D Glasses` to `3dglasses.png`
-and `Knitted Cap` to `knittedcap.png` and so on.
+`Classic` will map to `classic.png` ![](dodge/classic.png)
+and `3D Glasses` to `3dglasses.png` ![](dodge/3dglasses.png)
+and `Knitted Cap` to `knittedcap.png` ![](dodge/knittedcap.png)
+and so on.
 
 
 
@@ -268,7 +273,7 @@ Yes, that's it.
 Run the script to generate algorithmically your collection
 in an all-in-one composite.
 
-Open up `punks.png` to have a lookies.
+Open up `punks.png` to have a looksie.
 
 ![](i/no1/punks.png)
 
@@ -278,14 +283,11 @@ Open up `punks.png` to have a lookies.
 
 
 
-## Collection №2 -  One Hundred Dodge Pixel Art Punks
+## Collection №2 -  One Hundred Pixel Art Punks
 
 Let's take on a bigger pixel art collection.
 Let's try one hundred punks in the classic 24x24
-format...
-
-
-To be continued...
+format...    To be continued...
 
 
 
