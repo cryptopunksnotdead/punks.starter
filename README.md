@@ -5,7 +5,7 @@ Let's start and generate algorithmically a pixel art collection in three steps:
 
 Step 1 - Generate A List of Your Pixel Art Collection in a Tabular Text Format (Spreadsheet)
 
-Step 2 - Generate All Pixel Art Images in Original Formant and in 20x
+Step 2 - Generate All Pixel Art Images in Original Format and In 20x
 
 Step 3 - Bonus: Generate an All-In-One Composite Image
 
