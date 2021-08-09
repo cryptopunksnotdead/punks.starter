@@ -1,4 +1,4 @@
-# Pixel Art Collection Quick Starter - Generate Algorithmically Your Own Curated Collection
+# Pixel Art Collection Quick Starter - Generate Algorithmically Your Own Curated (or Randomized) Collection
 
 
 Let's start and generate algorithmically a pixel art collection in three steps:
