@@ -11,8 +11,12 @@ Step 3 - Bonus: Generate an All-In-One Composite Image
 
 
 
-For the quick starter sample collection №1
-let's copy and (re)use all punk (building) blocks
+## Collection №1 -  Twenty-Five Dodge Pixel Art Punks
+
+Let's start with an exclusive twenty-five Shiba Inu dogs
+pixel art collection. Much wow. Super rare.
+
+Let's copy and (re)use all punk (building) blocks
 in the dodge series (32x32):
 
 Classic ![](dodge/classic.png),
@@ -39,10 +43,6 @@ Tiara ![](dodge/tiara.png)
 
 
 
-## Collection №1 -  Twenty-Five Dodge Pixel Art Punks
-
-Let's start with an exclusive twenty-five Shiba Inu dogs
-pixel art collection. Much wow. Super rare.
 
 
 ### Step 1 -  Generate A List of Your Pixel Art Collection -
