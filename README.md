@@ -47,7 +47,7 @@ Tiara ![](dodge/tiara.png)
 
 In the first sample let's generate the list of the pixel art collection
 by hand. Let's use a rarity & popularity distribution of
-10 classic Shibas, 7 darkies, 5 zombies and 3 aliens  -  [`dodge.csv`](no1/dodge.csv):
+10 classic Shibas, 7 darkies, 5 zombies and 3 aliens.  Example  -  [`dodge.csv`](no1/dodge.csv):
 
 ``` csv
 type,       attribute1,   attribute2
