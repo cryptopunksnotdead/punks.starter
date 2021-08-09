@@ -3,7 +3,7 @@
 
 Let's start and generate algorithmically a pixel art collection in three steps:
 
-Step 1 - Generate A List of Your Pixel Art Collection
+Step 1 - Generate A List of Your Pixel Art Collection in a Tabular Text Format (Spreadsheet)
 
 Step 2 - Generate All Pixel Art Images in Original Formant and in 20x
 
@@ -45,7 +45,7 @@ Tiara ![](dodge/tiara.png)
 
 
 
-### Step 1 -  Generate A List of Your Pixel Art Collection -
+### Step 1 -  Generate A List of Your Pixel Art Collection in Tabular Text Format (Spreadsheet)
 
 In the first sample let's generate the list of the pixel art collection
 by hand. Let's use a rarity & popularity distribution of
