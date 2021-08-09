@@ -3,11 +3,11 @@
 
 Let's start and generate algorithmically a pixel art collection in three steps:
 
-Step 1 -  Generate A List of Your Pixel Art Collection
+Step 1 - Generate A List of Your Pixel Art Collection
 
-Step 2  - Generate All Pixel Art Images in Original Formant and in 20x
+Step 2 - Generate All Pixel Art Images in Original Formant and in 20x
 
-Bonus: Step 3 -  Generate an All-In-One Composite Image
+Step 3 - Bonus: Generate an All-In-One Composite Image
 
 
 
