@@ -235,7 +235,7 @@ and so on.
 
 
 
-### Bonus: Step 3 -  Generate an All-In-One Composite Image
+### Step 3 - Bonus: Generate an All-In-One Composite Image
 
 Let's generate an all-in-one composite image holding the complete
 collection in a 5x5 grid.
