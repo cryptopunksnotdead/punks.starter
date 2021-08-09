@@ -39,9 +39,7 @@ Nerd Glasses  ![](dodge/nerdglasses.png),
 3D Glasses ![](dodge/3dglasses.png),
 Tiara ![](dodge/tiara.png)
 
-(Source: [Punk (Building) Blocks - Dodge Series (32x32)](https://github.com/cryptopunksnotdead/punks.blocks))
-
-
+(Source: [Punk (Building) Blocks - Dodge Series (32x32)](https://github.com/cryptopunksnotdead/punks.blocks#dodge-series-32x32))
 
 
 
@@ -49,8 +47,7 @@ Tiara ![](dodge/tiara.png)
 
 In the first sample let's generate the list of the pixel art collection
 by hand. Let's use a rarity & popularity distribution of
-10 classic Shibas, 7 darkies, 5 zombies and 3 aliens:
-
+10 classic Shibas, 7 darkies, 5 zombies and 3 aliens  -  [`dodge.csv`](no1/dodge.csv):
 
 ``` csv
 type,       attribute1,   attribute2
@@ -80,9 +77,6 @@ Alien,      Cap,          Small Shades
 Alien,      Headband
 Alien,      Classic Shades
 ```
-
-(Source: [`dodge.csv`](no1/dodge.csv))
-
 
 Yes, that's it.
 For the list format let's use the comma-separated values (.CSV) format supported by all spreadsheet programs.
