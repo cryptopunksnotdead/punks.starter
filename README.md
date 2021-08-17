@@ -280,8 +280,33 @@ Open up `punks.png` to have a looksie.
 ## Collection №2 -  One Hundred Pixel Art Punks
 
 Let's take on a bigger pixel art collection.
-Let's try one hundred punks in the classic 24x24
-format...    To be continued...
+Let's try to generate a pixel-perfect clone of the first one hundred punks in the original Larva Labs series in the classic 24x24
+format.    
+
+Let's copy and (re)use all punk (building) blocks
+in the original series (24x24):
+
+[...]
+
+(Source: [Punk (Building) Blocks - Original Series (24x24)](https://github.com/cryptopunksnotdead/punks.blocks#https://github.com/cryptopunksnotdead/punks.blocks#original-cryptopunks-series-2424))
+
+
+
+### Step 1 -  Generate A List of Your Pixel Art Collection in Tabular Text Format (Spreadsheet)
+
+In the second sample let's again generate the list of the pixel art collection
+by hand. Let's (re)use the rarity & popularity distribution of
+the original series, that is, ? males, ? females, and ? aliens.  Example  -  [`punks.csv`](no2/punks.csv):
+
+``` csv
+type,          attribute1,  attribute2,  attribute3
+Female  (??)  ,  Green Eye Shadow, Earring,  Blonde Bob
+Male    (??)  ,  Smile,    Mohawk
+Female  (??)  ,  Wild Hair
+...
+```
+
+To be continued...
 
 
 
