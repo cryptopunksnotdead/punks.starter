@@ -280,8 +280,8 @@ Open up `punks.png` to have a looksie.
 ## Collection №2 -  One Hundred Pixel Art Punks
 
 Let's take on a bigger pixel art collection.
-Let's try to generate a pixel-perfect clone of the first one hundred punks in the original Larva Labs series in the classic 24x24
-format.    
+Let's try to generate a pixel-perfect copy of the first one hundred punks in the original Larva Labs series in the classic 24x24
+format.
 
 Let's copy and (re)use all punk (building) blocks
 in the original series (24x24):
@@ -294,17 +294,120 @@ in the original series (24x24):
 
 ### Step 1 -  Generate A List of Your Pixel Art Collection in Tabular Text Format (Spreadsheet)
 
-In the second sample let's again generate the list of the pixel art collection
+Let's again generate the list of the pixel art collection
 by hand. Let's (re)use the rarity & popularity distribution of
-the original series, that is, ? males, ? females, and ? aliens.  Example  -  [`punks.csv`](no2/punks.csv):
+the original series that starts with 56 males and 44 females.
+
+Note: Let's use roman numerals for the four
+male and female (arche)types
+skintone variants, that is,
+I - lighter, II - light, III - dark, IV - darker.
+Example  -  [`punks.csv`](no2/punks.csv):
 
 ``` csv
-type,          attribute1,  attribute2,  attribute3
-Female  (??)  ,  Green Eye Shadow, Earring,  Blonde Bob
-Male    (??)  ,  Smile,    Mohawk
-Female  (??)  ,  Wild Hair
-...
+type,        attribute1, attribute2, attribute3, attribute4, attribute5
+Female III,  Green Eye Shadow, Earring, Blonde Bob
+Male IIII,   Smile, Mohawk
+Female II,   Wild Hair
+Male IIII,   Wild Hair, Nerd Glasses, Pipe
+Male III,    Big Shades, Wild Hair, Earring, Goat
+Female III,  Purple Eye Shadow, Half Shaved, Earring
+Male III,    Do-rag
+Female III,  Wild White Hair, Spots, Clown Eyes Blue
+Male IIII,   Messy Hair, Luxurious Beard
+Male III,    Clown Nose, Police Cap, Big Beard
+Female IIII, Blue Eye Shadow, Mohawk
+Female III,  Black Lipstick, Clown Eyes Green, Straight Hair Dark
+Female IIII, Blonde Short, Purple Lipstick
+Female II,   Big Shades, Black Lipstick, Straight Hair Blonde
+Female IIII, Pipe, Pilot Helmet, Hot Lipstick
+Male I,      Luxurious Beard, Wild Hair, Regular Shades
+Male III,    Stringy Hair, Earring, Small Shades
+Male II,     Frown, Mohawk
+Male III,    Eye Mask, Muttonchops
+Female IIII, Bandana, Horned Rim Glasses, Hot Lipstick
+Male II,     Crazy Hair
+Male II,     Messy Hair, Classic Shades, Earring
+Female IIII, Pilot Helmet, Purple Lipstick
+Male II,     Handlebars, Earring, Do-rag
+Male II,     Smile, Mohawk Dark
+Female IIII, Wild White Hair
+Female III,  Dark Hair
+Male II,     Peak Spike, Earring
+Male IIII,   Big Shades, Crazy Hair
+Female III,  Horned Rim Glasses, Half Shaved, Earring
+Male IIII,   Normal Beard Black, Cap
+Female IIII, Stringy Hair
+Male II,     Frown, VR
+Male II,     Peak Spike
+Female II,   Frumpy Hair, Purple Lipstick
+Male IIII,   Cigarette, Peak Spike, Earring, Horned Rim Glasses, Normal Beard
+Female III,  Red Mohawk
+Female IIII, Cap, Clown Eyes Blue
+Female II,   Frumpy Hair, Classic Shades, Purple Lipstick
+Male II,     Frown, Shaved Head, Regular Shades
+Male II,     Bandana, Chinstrap, Smile
+Male IIII,   Muttonchops, Wild Hair, Clown Eyes Green
+Female IIII, Wild Hair, Cigarette
+Female III,  Half Shaved
+Male II,     Messy Hair
+Male III,    Earring, Mole
+Female III,  Purple Lipstick, Straight Hair Dark
+Male IIII,   Knitted Cap
+Male II,     Big Shades, Mohawk
+Female IIII, Bandana, Purple Eye Shadow
+Male III,    Spots, Fedora
+Male III,    Muttonchops, Wild Hair, Earring
+Male IIII,   Shadow Beard, Earring, Nerd Glasses, Knitted Cap
+Female II,   Big Shades, Straight Hair
+Male IIII,   Hoodie
+Male II,     Eye Patch
+Male IIII,   Shaved Head
+Male II,     Headband
+Male III,    Normal Beard Black, Hoodie
+Male I,      Muttonchops, Cowboy Hat
+Female II,   Stringy Hair, Purple Lipstick
+Female II,   Dark Hair
+Female IIII, Hot Lipstick, Earring, Mohawk Dark, Clown Eyes Blue
+Male IIII,   Earring, Shaved Head, Small Shades
+Female III,  Straight Hair Blonde, Purple Lipstick
+Female III,  Eye Mask, Headband
+Female IIII, Tassle Hat
+Female IIII, Half Shaved, Purple Lipstick, 3D Glasses
+Male IIII,   Nerd Glasses, Do-rag
+Male III,    Normal Beard Black, Fedora
+Female III,  Crazy Hair, Regular Shades, Earring, Cigarette
+Female II,   Green Eye Shadow, Half Shaved, Purple Lipstick
+Male IIII,   Fedora, Earring, Nerd Glasses, Normal Beard
+Female III,  Black Lipstick, Bandana, Earring
+Male IIII,   Shadow Beard, Earring, Mohawk Dark
+Male II,     Shadow Beard, Knitted Cap, Eye Patch
+Male II,     Cigarette, Do-rag
+Male IIII,   Stringy Hair, Handlebars
+Male III,    Handlebars, Knitted Cap, Eye Patch
+Male IIII,   Normal Beard, Mohawk Dark
+Male I,      Wild Hair, Mustache
+Male II,     Headband, Small Shades
+Male I,      Headband
+Male II,     Vape, Shaved Head, Small Shades
+Male II,     Messy Hair, Big Shades, Earring
+Female IIII, Crazy Hair
+Female IIII, Knitted Cap, Green Eye Shadow, Hot Lipstick, Earring
+Male II,     Hoodie, Earring
+Female II,   Cap, Hot Lipstick
+Female IIII, Choker
+Male III,    Hoodie, Eye Patch
+Female II,   Clown Nose, Straight Hair
+Female II,   Pink With Hat, Purple Lipstick, Nerd Glasses
+Female II,   Bandana
+Female IIII, Pink With Hat, Regular Shades, Earring
+Male III,    Earring, Mohawk
+Female II,   Blonde Bob
+Male III,    Wild Hair
+Female II,   Black Lipstick, Welding Goggles, Dark Hair
+Male III,    Cigarette, Hoodie
 ```
+
 
 To be continued...
 
