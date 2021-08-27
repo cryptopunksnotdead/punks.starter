@@ -36,11 +36,15 @@ class Art
           ## hack for doge hats - cut off / clean top (ears)
           if @dir.index( 'dodge' ) && ['beanie',
                                        'cap',
+                                       'forwardcap',
+                                       'bandana',
                                        'cowboyhat',
+                                       'fedora',
+                                       'tophat',
                                        'knittedcap'].include?( basename )
              puts "  apply dodge hat hack..."
-             ## "wipe-out" pixel lines 7,8,9 (top)
-             [7,8,9].each do |y|
+             ## "wipe-out" pixel lines 3,4,5 (top)
+             [3,4,5].each do |y|
                img.width.times do |x|
                   img[ x, y ] = Color::TRANSPARENT
                end

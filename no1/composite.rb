@@ -15,8 +15,8 @@ puts "  #{recs.size} punk(s)"
 art = Art.new( dir: './dodge' )
 
 
-## 5x5 grid with every tile 32x32
-punks = CompositeImage.new( 5, 5, width: 32, height: 32 )
+## 5x5 grid with every tile 24x24
+punks = CompositeImage.new( 5, 5 )
 
 recs.each_with_index do |rec,i|
   punk = art.generate( rec )

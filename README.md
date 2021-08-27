@@ -17,18 +17,24 @@ Let's start with an exclusive twenty-five Shiba Inu dogs
 pixel art collection. Much wow. Super rare.
 
 Let's copy and (re)use all punk (building) blocks
-in the dodge series (32x32):
+in the dodge series (24x24):
 
 Classic ![](dodge/classic.png),
 Dark ![](dodge/dark.png),
 Zombie ![](dodge/zombie.png),
 Alien ![](dodge/alien.png)
 
+
 Attributes -
+Crazy Hair ![](dodge/crazyhair.png),
 Beanie ![](dodge/beanie.png),
 Cap  ![](dodge/cap.png),
+Cap Forward ![](dodge/capforward.png),
 Knitted Cap ![](dodge/knittedcap.png),
+Fedora ![](dodge/fedora.png),
 Cowboy Hat ![](dodge/cowboyhat.png),
+Top Hat ![](dodge/tophat.png),
+Bandana ![](dodge/bandana.png),
 Headband ![](dodge/headband.png),
 Regular Shades  ![](dodge/regularshades.png),
 Classic Shades ![](dodge/classicshades.png),
@@ -39,7 +45,8 @@ Nerd Glasses  ![](dodge/nerdglasses.png),
 3D Glasses ![](dodge/3dglasses.png),
 Tiara ![](dodge/tiara.png)
 
-(Source: [Punk (Building) Blocks - Dodge Series (32x32)](https://github.com/cryptopunksnotdead/punks.blocks#dodge-series-32x32))
+
+(Source: [Punk (Building) Blocks - Dodge Series (24x24)](https://github.com/cryptopunksnotdead/punks.blocks#dodge-series-24x24))
 
 
 
@@ -126,7 +133,7 @@ Zombie,     Knitted Cap,  Regular Shades
 Now the "magic" let's read in the list
 in the comma-separated values (.CSV) format
 and generate all pixel art images in the original format
-(32x32) and in 20x (640x640).
+(24x24) and in 20x (480x480).
 
 
 ``` ruby
@@ -153,8 +160,8 @@ Yes, that's it.
 Run the script to generate algorithmically your collection.
 
 In the `/o` directory you will now find
-two images per punk (in the orginal format, that is, 32x32
-and x20, that is, 640x640) and get:
+two images per punk (in the orginal format, that is, 24x24
+and x20, that is, 480x480) and get:
 
 ```
 no1/
@@ -252,8 +259,8 @@ puts "  #{recs.size} punk(s)"
 art = Art.new( dir: './dodge' )
 
 
-## 5x5 grid with every tile 32x32
-punks = CompositeImage.new( 5, 5, width: 32, height: 32 )
+## 5x5 grid with every tile 24x24
+punks = CompositeImage.new( 5, 5 )
 
 recs.each_with_index do |rec,i|
   punk = art.generate( rec )
