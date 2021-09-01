@@ -423,6 +423,79 @@ To be continued...
 
 
 
+
+
+## Appendix
+
+
+### Frequently Asked Questions (F.A.Qs)
+
+**Q:  Can I use a different pixel format for the collection e.g. 16x16 (instead of the classic 24x24)?**
+
+A:
+
+
+
+
+### Troubleshooting 
+
+
+**Q: I cannot get the `./generate.rb` script to run [in Powershell / in Sublime / in ...]?**
+
+A: Make sure you run the script in the "top-level", that is, punks.starter and you use no1/generate.rb  - the "top-level"
+./generate.rb script is a helper (library) script and does NOT run by itself e.g.:
+
+```
+/punks.starter
+   generate.rb
+   /no1
+      dodge.csv
+      generate.rb
+```
+
+And run inside the /punks.starter directory:
+
+```
+$ ruby no1/generate.rb          # start in /punks.starter
+```
+
+
+**Q: When running `ruby no1/generate.rb` (in /punks.starter) I get the ruby error `wrong number of arguments (given 2, expected 1) (ArgumentError)`?**
+
+```
+punks.starter> $ ruby no1/generate.rb
+pixelart/0.2.2 on Ruby 3.0.2 (2021-07-07) [x64-mingw32] 
+  ruby/gems/3.0.0/gems/csvreader-1.2.4/lib/csvreader/parser_std.rb:116:in `parse': wrong number of arguments (given 2, expected 1) (ArgumentError)
+    [...]
+    from punks.starter/generate.rb:8:in `read_csv'
+    from no1/generate.rb:10:in `<main>'
+```
+
+A: Sorry for the trouble - this is a ruby 3.x non-backwards-compatibility issue. 
+For now the scripts currently run only on the ruby 2.x series. If you can downgrade to the 2.x series and retry.
+
+To check that reading your .csv dataset works use something like (save as `testcsv.rb` in `/punks.starter`, 
+for example and run as `ruby ./testcsv.rb`):
+
+``` ruby
+require 'csvreader'
+
+def read_csv( path )
+  CsvHash.read( path )
+end
+
+recs = read_csv( './no1/dodge.csv' )
+puts "  #{recs.size} punk(s)"
+#=>  25 records
+
+Of course you might change `dodge.csv` to `punks.csv` or such and the record size will be different 
+depending on how many records you have and so on. 
+
+
+
+
+
+
 ## Questions? Comments?
 
 Post them on the [CryptoPunksDev reddit](https://old.reddit.com/r/CryptoPunksDev). Thanks.
