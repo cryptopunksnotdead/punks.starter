@@ -475,7 +475,7 @@ $ ruby no1/generate.rb          # start in /punks.starter
 ```
 
 
-**Q: When running `ruby no1/generate.rb` (in /punks.starter) I get the ruby error `wrong number of arguments (given 2, expected 1) (ArgumentError)` after upgrading to ruby 3.x, before that all was fine, please help.**
+**Q: When running `ruby no1/generate.rb` (in /punks.starter) I get the error `wrong number of arguments (given 2, expected 1) (ArgumentError)` after upgrading to ruby 3.x, before that all was fine, please help.**
 
 ```
 punks.starter> $ ruby no1/generate.rb
@@ -487,9 +487,9 @@ pixelart/0.2.2 on Ruby 3.0.2 (2021-07-07)
 ```
 
 
-A: Sorry for the trouble -  
+A: Sorry for the trouble -  this is a known issue / bug - 
 the scripts run only on the ruby 2.x series for now. 
-This is a ruby 3.x non-backwards-compatibility issue that needs to get fixed. 
+This is a ruby 3.x non-backwards-compatibility issue (with keyword arguments) that needs to get fixed. 
 If you can downgrade to the 2.x series and retry.
 
 To check that reading your .csv dataset works use something like (save as `testcsv.rb` in `/punks.starter`, 
