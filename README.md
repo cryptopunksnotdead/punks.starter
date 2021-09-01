@@ -503,8 +503,8 @@ def read_csv( path )
 end
 
 recs = read_csv( './no1/dodge.csv' )
-puts "  #{recs.size} punk(s)"
-#=>  25 records
+puts "  #{recs.size} record(s)"
+#=>  25 record(s)
 ```
 
 Of course you might change `dodge.csv` to `punks.csv` or such and the record size will be different 
