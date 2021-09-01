@@ -432,8 +432,13 @@ To be continued...
 
 **Q:  Can I use a different pixel format for the collection e.g. 16x16 (instead of the classic 24x24)?**
 
-A:
+A: Yes,  it works with any square pixel size (e.g. 16x16, 24x24, 32x32).  
+Note: If you use the `CompositeImage` the default width x height is set to 24 x 24 - if you use a different size 
+you have to pass in width and height e.g.  
 
+``` ruby
+punks = CompositeImage.new( 5, 5, width: 16, height: 16 )   # 5x5 grid with every tile 16x16
+```
 
 
 
@@ -442,8 +447,8 @@ A:
 
 **Q: I cannot get the `./generate.rb` script to run [in Powershell / in Sublime / in ...]?**
 
-A: Make sure you run the script in the "top-level", that is, punks.starter and you use no1/generate.rb  - the "top-level"
-./generate.rb script is a helper (library) script and does NOT run by itself e.g.:
+A: Make sure you run the script in the "top-level", that is, `/punks.starter` and you use `no1/generate.rb`. Note: The "top-level"
+`./generate.rb` script is a helper (library) script and does NOT run by itself e.g.:
 
 ```
 /punks.starter
@@ -453,7 +458,7 @@ A: Make sure you run the script in the "top-level", that is, punks.starter and y
       generate.rb
 ```
 
-And run inside the /punks.starter directory:
+And run inside the `/punks.starter` directory:
 
 ```
 $ ruby no1/generate.rb          # start in /punks.starter
@@ -464,8 +469,8 @@ $ ruby no1/generate.rb          # start in /punks.starter
 
 ```
 punks.starter> $ ruby no1/generate.rb
-pixelart/0.2.2 on Ruby 3.0.2 (2021-07-07) [x64-mingw32] 
-  ruby/gems/3.0.0/gems/csvreader-1.2.4/lib/csvreader/parser_std.rb:116:in `parse': wrong number of arguments (given 2, expected 1) (ArgumentError)
+pixelart/0.2.2 on Ruby 3.0.2 (2021-07-07)  
+  csvreader-1.2.4/lib/csvreader/parser_std.rb:116:in `parse': wrong number of arguments (given 2, expected 1) (ArgumentError)
     [...]
     from punks.starter/generate.rb:8:in `read_csv'
     from no1/generate.rb:10:in `<main>'
@@ -487,6 +492,7 @@ end
 recs = read_csv( './no1/dodge.csv' )
 puts "  #{recs.size} punk(s)"
 #=>  25 records
+```
 
 Of course you might change `dodge.csv` to `punks.csv` or such and the record size will be different 
 depending on how many records you have and so on. 
