@@ -437,7 +437,17 @@ Note: If you use the `CompositeImage` the default width x height is set to 24 x 
 you have to pass in width and height e.g.  
 
 ``` ruby
-punks = CompositeImage.new( 5, 5, width: 16, height: 16 )   # 5x5 grid with every tile 16x16
+composite = CompositeImage.new( 5, 5, width: 16, height: 16 )   # 5x5 grid with every tile 16x16
+```
+
+**Q: I am trying to make a composite of 30 variations with a base size of 125x125 px each. I can't seem to figure out how to adjust the settings to make it generate a composite without all of the results overlapping each other. Any ideas?**
+
+The CompositeImage defaults to width: 24, height: 24, thus, if you use a different dimension / canvas  
+you have to pass along the "custom" width and height. 
+Example with a 10x3 grid (equal to 30 tiles / variations)  and 125x125 width x height:
+
+``` ruby
+composite = CompositeImage.new( 10, 3, width: 125, height: 125 )
 ```
 
 
@@ -465,7 +475,7 @@ $ ruby no1/generate.rb          # start in /punks.starter
 ```
 
 
-**Q: When running `ruby no1/generate.rb` (in /punks.starter) I get the ruby error `wrong number of arguments (given 2, expected 1) (ArgumentError)`?**
+**Q: When running `ruby no1/generate.rb` (in /punks.starter) I get the ruby error `wrong number of arguments (given 2, expected 1) (ArgumentError)` after upgrading to ruby 3.x, before that all was fine, please help.**
 
 ```
 punks.starter> $ ruby no1/generate.rb
@@ -476,8 +486,11 @@ pixelart/0.2.2 on Ruby 3.0.2 (2021-07-07)
     from no1/generate.rb:10:in `<main>'
 ```
 
-A: Sorry for the trouble - this is a ruby 3.x non-backwards-compatibility issue. 
-For now the scripts currently run only on the ruby 2.x series. If you can downgrade to the 2.x series and retry.
+
+A: Sorry for the trouble -  
+the scripts run only on the ruby 2.x series for now. 
+This is a ruby 3.x non-backwards-compatibility issue that needs to get fixed. 
+If you can downgrade to the 2.x series and retry.
 
 To check that reading your .csv dataset works use something like (save as `testcsv.rb` in `/punks.starter`, 
 for example and run as `ruby ./testcsv.rb`):
