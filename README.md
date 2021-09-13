@@ -28,7 +28,8 @@ Alien ![](dodge/alien.png)
   sort attributes a-z for now - why? why not?
 -->
 
-Attributes -
+Attributes (by category and a-z):
+
 - Hat  -
   Bandana ![](dodge/bandana.png),
   Beanie ![](dodge/beanie.png),
@@ -143,12 +144,12 @@ and generate all pixel art images in the original format
 
 
 ``` ruby
-require './generate'
+require './boot'
 
 
 recs = read_csv( './no1/dodge.csv' )
 puts "  #{recs.size} punk(s)"
-#=>  25 records
+#=>  25 punk(s)
 
 
 art = Art.new( dir: './dodge' )
@@ -254,12 +255,12 @@ Let's generate an all-in-one composite image holding the complete
 collection in a 5x5 grid.
 
 ``` ruby
-require './generate'
+require './boot'
 
 
 recs = read_csv( './no1/dodge.csv' )
 puts "  #{recs.size} punk(s)"
-#=>  25 records
+#=>  25 punk(s)
 
 
 art = Art.new( dir: './dodge' )
@@ -293,7 +294,7 @@ Open up `punks.png` to have a looksie.
 ## Collection №2 -  The First One Hundred Pixel Art Punks
 
 Let's take on a bigger pixel art collection.
-Let's try to generate a pixel-perfect copy of the first one hundred punks in the original Larva Labs series in the classic 24x24
+Let's generate a pixel-perfect copy of the first one hundred punks in the original Larva Labs series in the classic 24x24
 format.
 
 Let's copy and (re)use all punk (building) blocks
@@ -315,7 +316,7 @@ Alien ![](original/alien.png)
   sort attributes a-z for now - why? why not?
 -->
 
-Attributes -
+Attributes (by category and a-z):
 - Hat -
   Bandana (m/f)
   ![](original/m/bandana.png)
@@ -556,115 +557,311 @@ Let's again generate the list of the pixel art collection
 by hand. Let's (re)use the rarity & popularity distribution of
 the original series that starts with 56 males and 44 females.
 
-Note: Let's use roman numerals for the four
+Note: Let's use numbers for the four
 male and female (arche)types
 skintone variants, that is,
-I - lighter, II - light, III - dark, IV - darker.
+1 - darker, 2 - dark, 3 - light, 4 - lighter.
 Example  -  [`punks.csv`](no2/punks.csv):
 
 ``` csv
 type,        attribute1, attribute2, attribute3, attribute4, attribute5
-Female III,  Green Eye Shadow, Earring, Blonde Bob
-Male IIII,   Smile, Mohawk
-Female II,   Wild Hair
-Male IIII,   Wild Hair, Nerd Glasses, Pipe
-Male III,    Big Shades, Wild Hair, Earring, Goat
-Female III,  Purple Eye Shadow, Half Shaved, Earring
-Male III,    Do-rag
-Female III,  Wild White Hair, Spots, Clown Eyes Blue
-Male IIII,   Messy Hair, Luxurious Beard
-Male III,    Clown Nose, Police Cap, Big Beard
-Female IIII, Blue Eye Shadow, Mohawk
-Female III,  Black Lipstick, Clown Eyes Green, Straight Hair Dark
-Female IIII, Blonde Short, Purple Lipstick
-Female II,   Big Shades, Black Lipstick, Straight Hair Blonde
-Female IIII, Pipe, Pilot Helmet, Hot Lipstick
-Male I,      Luxurious Beard, Wild Hair, Regular Shades
-Male III,    Stringy Hair, Earring, Small Shades
-Male II,     Frown, Mohawk
-Male III,    Eye Mask, Muttonchops
-Female IIII, Bandana, Horned Rim Glasses, Hot Lipstick
-Male II,     Crazy Hair
-Male II,     Messy Hair, Classic Shades, Earring
-Female IIII, Pilot Helmet, Purple Lipstick
-Male II,     Handlebars, Earring, Do-rag
-Male II,     Smile, Mohawk Dark
-Female IIII, Wild White Hair
-Female III,  Dark Hair
-Male II,     Peak Spike, Earring
-Male IIII,   Big Shades, Crazy Hair
-Female III,  Horned Rim Glasses, Half Shaved, Earring
-Male IIII,   Normal Beard Black, Cap
-Female IIII, Stringy Hair
-Male II,     Frown, VR
-Male II,     Peak Spike
-Female II,   Frumpy Hair, Purple Lipstick
-Male IIII,   Cigarette, Peak Spike, Earring, Horned Rim Glasses, Normal Beard
-Female III,  Red Mohawk
-Female IIII, Cap, Clown Eyes Blue
-Female II,   Frumpy Hair, Classic Shades, Purple Lipstick
-Male II,     Frown, Shaved Head, Regular Shades
-Male II,     Bandana, Chinstrap, Smile
-Male IIII,   Muttonchops, Wild Hair, Clown Eyes Green
-Female IIII, Wild Hair, Cigarette
-Female III,  Half Shaved
-Male II,     Messy Hair
-Male III,    Earring, Mole
-Female III,  Purple Lipstick, Straight Hair Dark
-Male IIII,   Knitted Cap
-Male II,     Big Shades, Mohawk
-Female IIII, Bandana, Purple Eye Shadow
-Male III,    Spots, Fedora
-Male III,    Muttonchops, Wild Hair, Earring
-Male IIII,   Shadow Beard, Earring, Nerd Glasses, Knitted Cap
-Female II,   Big Shades, Straight Hair
-Male IIII,   Hoodie
-Male II,     Eye Patch
-Male IIII,   Shaved Head
-Male II,     Headband
-Male III,    Normal Beard Black, Hoodie
-Male I,      Muttonchops, Cowboy Hat
-Female II,   Stringy Hair, Purple Lipstick
-Female II,   Dark Hair
-Female IIII, Hot Lipstick, Earring, Mohawk Dark, Clown Eyes Blue
-Male IIII,   Earring, Shaved Head, Small Shades
-Female III,  Straight Hair Blonde, Purple Lipstick
-Female III,  Eye Mask, Headband
-Female IIII, Tassle Hat
-Female IIII, Half Shaved, Purple Lipstick, 3D Glasses
-Male IIII,   Nerd Glasses, Do-rag
-Male III,    Normal Beard Black, Fedora
-Female III,  Crazy Hair, Regular Shades, Earring, Cigarette
-Female II,   Green Eye Shadow, Half Shaved, Purple Lipstick
-Male IIII,   Fedora, Earring, Nerd Glasses, Normal Beard
-Female III,  Black Lipstick, Bandana, Earring
-Male IIII,   Shadow Beard, Earring, Mohawk Dark
-Male II,     Shadow Beard, Knitted Cap, Eye Patch
-Male II,     Cigarette, Do-rag
-Male IIII,   Stringy Hair, Handlebars
-Male III,    Handlebars, Knitted Cap, Eye Patch
-Male IIII,   Normal Beard, Mohawk Dark
-Male I,      Wild Hair, Mustache
-Male II,     Headband, Small Shades
-Male I,      Headband
-Male II,     Vape, Shaved Head, Small Shades
-Male II,     Messy Hair, Big Shades, Earring
-Female IIII, Crazy Hair
-Female IIII, Knitted Cap, Green Eye Shadow, Hot Lipstick, Earring
-Male II,     Hoodie, Earring
-Female II,   Cap, Hot Lipstick
-Female IIII, Choker
-Male III,    Hoodie, Eye Patch
-Female II,   Clown Nose, Straight Hair
-Female II,   Pink With Hat, Purple Lipstick, Nerd Glasses
-Female II,   Bandana
-Female IIII, Pink With Hat, Regular Shades, Earring
-Male III,    Earring, Mohawk
-Female II,   Blonde Bob
-Male III,    Wild Hair
-Female II,   Black Lipstick, Welding Goggles, Dark Hair
-Male III,    Cigarette, Hoodie
+Female 2, Earring, Blonde Bob, Green Eye Shadow
+Male 1, Smile, Mohawk, Laser Eyes
+Female 3, Wild Hair
+Male 1, Wild Hair, Pipe, Nerd Glasses
+Male 2, Goat, Earring, Wild Hair, Big Shades
+Female 2, Earring, Half Shaved, Purple Eye Shadow
+Male 2, Do-rag, Laser Eyes Gold
+Female 2, Spots, Wild White Hair, Clown Eyes Blue
+Male 1, Luxurious Beard, Messy Hair
+Male 2, Big Beard, Police Cap, Clown Nose
+Female 1, Mohawk, Blue Eye Shadow
+Female 2, Black Lipstick, Straight Hair Dark, Clown Eyes Green
+Female 1, Purple Lipstick, Blonde Short
+Female 3, Black Lipstick, Straight Hair Blonde, Big Shades
+Female 1, Hot Lipstick, Pilot Helmet, Pipe
+Male 4, Luxurious Beard, Wild Hair, Regular Shades
+Male 2, Earring, Stringy Hair, Small Shades
+Male 3, Frown, Mohawk
+Male 2, Muttonchops, Eye Mask
+Female 1, Hot Lipstick, Bandana, Horned Rim Glasses
+Male 3, Crazy Hair
+Male 3, Earring, Messy Hair, Classic Shades
+Female 1, Purple Lipstick, Pilot Helmet
+Male 3, Handlebars, Earring, Do-rag
+Male 3, Smile, Mohawk Dark
+Female 1, Wild White Hair
+Female 2, Dark Hair
+Male 3, Earring, Peak Spike
+Male 1, Crazy Hair, Big Shades
+Female 2, Earring, Half Shaved, Horned Rim Glasses
+Male 1, Normal Beard Black, Cap
+Female 1, Stringy Hair
+Male 3, Frown, VR
+Male 3, Peak Spike
+Female 3, Purple Lipstick, Frumpy Hair
+Male 1, Normal Beard, Earring, Peak Spike, Cigarette, Horned Rim Glasses
+Female 2, Red Mohawk
+Female 1, Cap, Clown Eyes Blue
+Female 3, Purple Lipstick, Frumpy Hair, Classic Shades
+Male 3, Frown, Shaved Head, Regular Shades
+Male 3, Smile, Chinstrap, Bandana
+Male 1, Muttonchops, Wild Hair, Clown Eyes Green
+Female 1, Wild Hair, Cigarette
+Female 2, Half Shaved
+Male 3, Messy Hair
+Male 2, Mole, Earring
+Female 2, Purple Lipstick, Straight Hair Dark
+Male 1, Knitted Cap
+Male 3, Mohawk, Big Shades
+Female 1, Bandana, Purple Eye Shadow
+Male 2, Spots, Fedora
+Male 2, Muttonchops, Earring, Wild Hair
+Male 1, Shadow Beard, Earring, Knitted Cap, Nerd Glasses
+Female 3, Straight Hair, Big Shades
+Male 1, Hoodie
+Male 3, Eye Patch
+Male 1, Shaved Head
+Male 3, Headband
+Male 2, Normal Beard Black, Hoodie
+Male 4, Muttonchops, Cowboy Hat
+Female 3, Purple Lipstick, Stringy Hair
+Female 3, Dark Hair
+Female 1, Hot Lipstick, Earring, Mohawk Dark, Clown Eyes Blue
+Male 1, Earring, Shaved Head, Small Shades
+Female 2, Purple Lipstick, Straight Hair Blonde
+Female 2, Headband, Eye Mask
+Female 1, Tassle Hat
+Female 1, Purple Lipstick, Half Shaved, 3D Glasses
+Male 1, Do-rag, Nerd Glasses
+Male 2, Normal Beard Black, Fedora
+Female 2, Earring, Crazy Hair, Cigarette, Regular Shades
+Female 3, Purple Lipstick, Half Shaved, Green Eye Shadow
+Male 1, Normal Beard, Earring, Fedora, Nerd Glasses
+Female 2, Black Lipstick, Earring, Bandana
+Male 1, Shadow Beard, Earring, Mohawk Dark
+Male 3, Shadow Beard, Knitted Cap, Eye Patch
+Male 3, Do-rag, Cigarette
+Male 1, Handlebars, Stringy Hair
+Male 2, Handlebars, Knitted Cap, Eye Patch
+Male 1, Normal Beard, Mohawk Dark
+Male 4, Mustache, Wild Hair
+Male 3, Headband, Small Shades
+Male 4, Headband
+Male 3, Shaved Head, Vape, Small Shades
+Male 3, Earring, Messy Hair, Big Shades
+Female 1, Crazy Hair
+Female 1, Hot Lipstick, Earring, Knitted Cap, Green Eye Shadow
+Male 3, Earring, Hoodie
+Female 3, Hot Lipstick, Cap
+Female 1, Choker
+Male 2, Hoodie, Eye Patch
+Female 3, Straight Hair, Clown Nose
+Female 3, Purple Lipstick, Pink With Hat, Nerd Glasses
+Female 3, Bandana
+Female 1, Earring, Pink With Hat, Regular Shades
+Male 2, Earring, Mohawk
+Female 3, Blonde Bob
+Male 2, Wild Hair
+Female 3, Black Lipstick, Dark Hair, Welding Goggles
+Male 2, Hoodie, Cigarette
 ```
+
+Note - see if you can spot the never-befor-seen super rare punks
+with Laser Eyes and Laser Eyes Gold.
+
+
+
+### Step 2  - Generate All Pixel Art Images in Original Format and In 20x
+
+Now the "magic" let's read in the list
+in the comma-separated values (.CSV) format
+and generate all pixel art images in the original format
+(24x24) and in 20x (480x480).
+
+
+``` ruby
+require './boot'
+
+
+recs = read_csv( './no2/punks.csv' )
+puts "  #{recs.size} punk(s)"
+#=>  100 punk(s)
+
+art = Art.new( dir: './original',
+               qualifier: { 'm' => ['Male 1', 'Male 2', 'Male 3', 'Male 4',
+                                    'Zombie',
+                                    'Ape',
+                                    'Alien'],
+                            'f' => ['Female 1', 'Female 2', 'Female 3', 'Female 4'],
+                          }
+             )
+
+recs.each_with_index do |rec,i|
+  name = "punk#{i}"
+  punk = art.generate( rec )
+
+  punk.save( "./o/no2/#{name}.png" )
+  punk.zoom(20).save( "./o/no2/#{name}x20.png" )
+end
+```
+
+Note: The attributes (see above) come
+in two editions, that is,  m - male (stored in the `/m` directory)
+and f - female (stored in the `/f` directory).
+To map the attribute (or "qualify"
+the name with an extra auto-added directory)
+let's configure
+the "qualifier" by archetype, that is,
+Male 1/2/3/4, Zombie, Ape and Alien will auto-add the `/m` directory
+to the attribute image lookup and
+Female 1/2/3/4 will aut-add the `/f` directory.
+
+
+Yes, that's it.
+Run the script to generate algorithmically your collection.
+
+In the `/o` directory you will now find
+two images per punk (in the orginal format, that is, 24x24
+and x20, that is, 480x480) and get:
+
+```
+no2/
+  punk0.png
+  punk0x20.png
+  punk1.png
+  punk1x20.png
+  punk2.png
+  punk2x20.png
+  punk3.png
+  punk3x20.png
+  punk4.png
+  punk4x20.png
+  punk5.png
+  punk5x20.png
+  punk6.png
+  punk6x20.png
+  punk7.png
+  punk7x20.png
+  punk8.png
+  punk8x20.png
+  ...
+```
+
+Let's open up `punk0.png` to `punk99.png`:
+
+![](i/no2/punk0.png)
+![](i/no2/punk1.png)
+![](i/no2/punk2.png)
+![](i/no2/punk3.png)
+![](i/no2/punk4.png)
+![](i/no2/punk5.png)
+![](i/no2/punk6.png)
+![](i/no2/punk7.png)
+![](i/no2/punk8.png)
+![](i/no2/punk9.png)
+![](i/no2/punk10.png)
+![](i/no2/punk11.png)
+![](i/no2/punk12.png)
+![](i/no2/punk13.png)
+![](i/no2/punk14.png)
+![](i/no2/punk15.png)
+![](i/no2/punk16.png)
+![](i/no2/punk17.png)
+![](i/no2/punk18.png)
+![](i/no2/punk19.png)
+![](i/no2/punk20.png)
+![](i/no2/punk21.png)
+![](i/no2/punk22.png)
+![](i/no2/punk23.png)
+![](i/no2/punk24.png)
+![](i/no2/punk25.png)
+![](i/no2/punk26.png)
+![](i/no2/punk27.png)
+![](i/no2/punk28.png)
+![](i/no2/punk29.png)
+![](i/no2/punk30.png)
+![](i/no2/punk31.png)
+![](i/no2/punk32.png)
+![](i/no2/punk33.png)
+![](i/no2/punk34.png)
+![](i/no2/punk35.png)
+![](i/no2/punk36.png)
+![](i/no2/punk37.png)
+![](i/no2/punk38.png)
+![](i/no2/punk39.png)
+![](i/no2/punk40.png)
+![](i/no2/punk41.png)
+![](i/no2/punk42.png)
+![](i/no2/punk43.png)
+![](i/no2/punk44.png)
+![](i/no2/punk45.png)
+![](i/no2/punk46.png)
+![](i/no2/punk47.png)
+![](i/no2/punk48.png)
+![](i/no2/punk49.png)
+![](i/no2/punk50.png)
+![](i/no2/punk51.png)
+![](i/no2/punk52.png)
+![](i/no2/punk53.png)
+![](i/no2/punk54.png)
+![](i/no2/punk55.png)
+![](i/no2/punk56.png)
+![](i/no2/punk57.png)
+![](i/no2/punk58.png)
+![](i/no2/punk59.png)
+![](i/no2/punk60.png)
+![](i/no2/punk61.png)
+![](i/no2/punk62.png)
+![](i/no2/punk63.png)
+![](i/no2/punk64.png)
+![](i/no2/punk65.png)
+![](i/no2/punk66.png)
+![](i/no2/punk67.png)
+![](i/no2/punk68.png)
+![](i/no2/punk69.png)
+![](i/no2/punk70.png)
+![](i/no2/punk71.png)
+![](i/no2/punk72.png)
+![](i/no2/punk73.png)
+![](i/no2/punk74.png)
+![](i/no2/punk75.png)
+![](i/no2/punk76.png)
+![](i/no2/punk77.png)
+![](i/no2/punk78.png)
+![](i/no2/punk79.png)
+![](i/no2/punk80.png)
+![](i/no2/punk81.png)
+![](i/no2/punk82.png)
+![](i/no2/punk83.png)
+![](i/no2/punk84.png)
+![](i/no2/punk85.png)
+![](i/no2/punk86.png)
+![](i/no2/punk87.png)
+![](i/no2/punk88.png)
+![](i/no2/punk89.png)
+![](i/no2/punk90.png)
+![](i/no2/punk91.png)
+![](i/no2/punk92.png)
+![](i/no2/punk93.png)
+![](i/no2/punk94.png)
+![](i/no2/punk95.png)
+![](i/no2/punk96.png)
+![](i/no2/punk97.png)
+![](i/no2/punk98.png)
+![](i/no2/punk99.png)
+
+
+And let's have a looksie at the biggie 20x versions:
+
+![](i/no2/punk0x20.png)
+
+![](i/no2/punk1x20.png)
+
+[...]
+
+![](i/no2/punk99x20.png)
+
 
 
 To be continued...
@@ -688,7 +885,8 @@ Note: If you use the `CompositeImage` the default width x height is set to 24 x 
 you have to pass in width and height e.g.
 
 ``` ruby
-composite = CompositeImage.new( 5, 5, width: 16, height: 16 )   # 5x5 grid with every tile 16x16
+# 5x5 grid with every tile 16x16
+composite = CompositeImage.new( 5, 5, width: 16, height: 16 )
 ```
 
 **Q: I am trying to make a composite of 30 variations with a base size of 125x125 px each. I can't seem to figure out how to adjust the settings to make it generate a composite without all of the results overlapping each other. Any ideas?**
@@ -708,14 +906,16 @@ composite = CompositeImage.new( 10, 3, width: 125, height: 125 )
 
 **Q: I cannot get the `./generate.rb` script to run [in Powershell / in Sublime / in ...]?**
 
-A: Make sure you run the script in the "top-level", that is, `/punks.starter` and you use `no1/generate.rb`. Note: The "top-level"
-`./generate.rb` script is a helper (library) script and does NOT run by itself e.g.:
+A: Make sure you run the script in the "top-level", that is, `/punks.starter` and you use `no1/generate.rb` or `no2/generate.rb`:
 
 ```
 /punks.starter
-   generate.rb
+   boot.rb
    /no1
       dodge.csv
+      generate.rb
+   /no2
+      punks.csv
       generate.rb
 ```
 

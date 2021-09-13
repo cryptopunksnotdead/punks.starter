@@ -1,8 +1,8 @@
 type, attribute1, attribute2, attribute3, attribute4, attribute5
-Female 2, Earring, Blonde Bob, Green Eye Shadow
-Male 1, Smile, Mohawk, Laser Eyes
-Female 3, Wild Hair
-Male 1, Wild Hair, Pipe, Nerd Glasses
+Female 2, Earring, Blonde Bob, Green Eye Shadow,,
+Male 1, Smile, Mohawk, Laser Eyes,,
+Female 3, Wild Hair,,,,
+Male 1, Wild Hair, Pipe, Nerd Glasses,,
 Male 2, Goat, Earring, Wild Hair, Big Shades
 Female 2, Earring, Half Shaved, Purple Eye Shadow
 Male 2, Do-rag, Laser Eyes Gold
