@@ -310,7 +310,7 @@ Rosy Cheeks (m/f)
 ![](original/m/rosycheeks.png)
 ![](original/f/rosycheeks.png),
 Luxurious Beard (m)
-![](original/m/luxuriousbear.png),
+![](original/m/luxuriousbeard.png),
 Clown Hair Green (m/f)
 ![](original/m/clownhairgreen.png)
 ![](original/f/clownhairgreen.png),
@@ -333,6 +333,27 @@ Nerd Glasses (m/f)
 Regular Shades (m/f)
 ![](original/m/regularshades.png)
 ![](original/f/regularshades.png),
+Knitted Cap (m/f)
+![](original/m/knittedcap.png)
+![](original/f/knittedcap.png),
+Shadow Beard (m)
+![](original/m/shadowbeard.png),
+Frown (m)
+![](original/m/frown.png),
+Cap Forward (m)
+![](original/m/capforward.png),
+Goat (m)
+![](original/m/goat.png),
+Mole (m/f)
+![](original/m/mole.png)
+![](original/f/mole.png),
+Purple Hair (m)
+![](original/m/purplehair.png),
+Small Shades (m)
+![](original/m/smallshades.png),
+Shaved Head (m)
+![](original/m/shavedhead.png),
+
 
 [...]
 
