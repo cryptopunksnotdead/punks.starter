@@ -305,58 +305,102 @@ Zombie ![](original/zombie.png),
 Ape ![](original/ape.png),
 Alien ![](original/alien.png)
 
+
 Attributes -
-Rosy Cheeks (m/f)
-![](original/m/rosycheeks.png)
-![](original/f/rosycheeks.png),
-Luxurious Beard (m)
-![](original/m/luxuriousbeard.png),
-Clown Hair Green (m/f)
-![](original/m/clownhairgreen.png)
-![](original/f/clownhairgreen.png),
-Mohawk Dark (m/f)
-![](original/m/mohawkdark.png)
-![](original/f/mohawkdark.png),
-Cowboy Hat (m)
-![](original/m/cowboyhat.png),
-Mustache (m)
-![](original/m/mustache.png),
-Clown Nose (m/f)
-![](original/m/clownnose.png)
-![](original/f/clownnose.png),
-Cigarette (m/f)
-![](original/m/cigarette.png)
-![](original/f/cigarette.png),
-Nerd Glasses (m/f)
-![](original/m/nerdglasses.png)
-![](original/f/nerdglasses.png),
-Regular Shades (m/f)
-![](original/m/regularshades.png)
-![](original/f/regularshades.png),
-Knitted Cap (m/f)
-![](original/m/knittedcap.png)
-![](original/f/knittedcap.png),
-Shadow Beard (m)
-![](original/m/shadowbeard.png),
-Frown (m)
-![](original/m/frown.png),
-Cap Forward (m)
-![](original/m/capforward.png),
-Goat (m)
-![](original/m/goat.png),
-Mole (m/f)
-![](original/m/mole.png)
-![](original/f/mole.png),
-Purple Hair (m)
-![](original/m/purplehair.png),
-Small Shades (m)
-![](original/m/smallshades.png),
-Shaved Head (m)
-![](original/m/shavedhead.png),
-
-
-[...]
-
+Hair -
+<br>
+Hat -
+<br>
+Eyes (Glasses) -
+<br>
+Eyes (Makeup) -
+<br>
+Blemishes -
+ Mole (m/f)
+  ![](original/m/mole.png)
+  ![](original/f/mole.png),
+ Rosy Cheeks (m/f)
+  ![](original/m/rosycheeks.png)
+  ![](original/f/rosycheeks.png),
+ Spots (m/f)
+  ![](original/m/spots.png)
+  ![](original/f/spots.png),
+<br>
+Nose -
+ Clown Nose (m/f)
+  ![](original/m/clownnose.png)
+  ![](original/f/clownnose.png),
+<br>
+Ears -
+ Earring (m/f)
+  ![](original/m/earring.png)
+  ![](original/f/earring.png),
+<br>
+Mouth -
+ Buck Teeth (m)
+  ![](original/m/buckteeth.png),
+ Frown (m)
+  ![](original/m/frown.png),
+ Smile (m)
+  ![](original/m/smile.png),
+<br>
+Mouth (Makeup) -
+ Black Lipstick (f)
+  ![](original/f/blacklipstick.png),
+ Hot Lipstick (f)
+  ![](original/f/hotlipstick.png),
+ Purple Lipstick (f)
+  ![](original/f/purplelipstick.png),
+<br>
+Mouth Prop -
+ Cigarette (m/f)
+  ![](original/m/cigarette.png)
+  ![](original/f/cigarette.png),
+ Medical Mask (m/f)
+  ![](original/m/medicalmask.png)
+  ![](original/f/medicalmask.png),
+ Pipe (m/f)
+  ![](original/m/pipe.png)
+  ![](original/f/pipe.png),
+ Vape (m/f)
+  ![](original/m/vape.png)
+  ![](original/f/vape.png),
+<br>
+Beard -
+ Big Beard (m)
+  ![](original/m/bigbeard.png),
+ Chinstrap (m)
+  ![](original/m/chinstrap.png),
+ Front Beard (m)
+  ![](original/m/frontbeard.png),
+ Front Beard Dark (m)
+  ![](original/m/frontbearddark.png),
+ Goat (m)
+  ![](original/m/goat.png),
+ Handlebars (m)
+  ![](original/m/handlebars.png),
+ Luxurious Beard (m)
+  ![](original/m/luxuriousbeard.png),
+ Mustache (m)
+  ![](original/m/mustache.png),
+ Muttonchops (m)
+  ![](original/m/muttonchops.png),
+ Normal Beard (m)
+  ![](original/m/normalbeard.png),
+ Normal Beard Black (m)
+  ![](original/m/normalbeardblack.png),
+ Shadow Beard (m)
+  ![](original/m/shadowbeard.png),
+<br>
+Neck Accessory -
+ Choker (f)
+  ![](original/f/choker.png),
+ Gold Chain (m/f)
+  ![](original/m/goldchain.png)
+  ![](original/f/goldchain.png),
+ Silver Chain (m/f)
+  ![](original/m/silverchain.png)
+  ![](original/f/silverchain.png)
 
 
 Bonus - Let's add Laser Eyes (m) ![](original/m/lasereyes.png),
