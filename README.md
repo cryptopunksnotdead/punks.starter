@@ -284,7 +284,7 @@ Open up `punks.png` to have a looksie.
 
 
 
-## Collection №2 -  One Hundred Pixel Art Punks
+## Collection №2 -  The First One Hundred Pixel Art Punks
 
 Let's take on a bigger pixel art collection.
 Let's try to generate a pixel-perfect copy of the first one hundred punks in the original Larva Labs series in the classic 24x24
@@ -292,6 +292,21 @@ format.
 
 Let's copy and (re)use all punk (building) blocks
 in the original series (24x24):
+
+Male 1/2/3/4 ![](original/male1.png)
+![](original/male2.png)
+![](original/male3.png)
+![](original/male4.png),
+Female 1/2/3/4 ![](original/female1.png)
+![](original/female2.png)
+![](original/female3.png)
+![](original/female4.png),
+Zombie ![](original/zombie.png),
+Ape ![](original/ape.png),
+Alien ![](original/alien.png)
+
+Attributes -
+
 
 [...]
 
@@ -432,9 +447,9 @@ To be continued...
 
 **Q:  Can I use a different pixel format for the collection e.g. 16x16 (instead of the classic 24x24)?**
 
-A: Yes,  it works with any square pixel size (e.g. 16x16, 24x24, 32x32).  
-Note: If you use the `CompositeImage` the default width x height is set to 24 x 24 - if you use a different size 
-you have to pass in width and height e.g.  
+A: Yes,  it works with any square pixel size (e.g. 16x16, 24x24, 32x32).
+Note: If you use the `CompositeImage` the default width x height is set to 24 x 24 - if you use a different size
+you have to pass in width and height e.g.
 
 ``` ruby
 composite = CompositeImage.new( 5, 5, width: 16, height: 16 )   # 5x5 grid with every tile 16x16
@@ -442,8 +457,8 @@ composite = CompositeImage.new( 5, 5, width: 16, height: 16 )   # 5x5 grid with 
 
 **Q: I am trying to make a composite of 30 variations with a base size of 125x125 px each. I can't seem to figure out how to adjust the settings to make it generate a composite without all of the results overlapping each other. Any ideas?**
 
-The CompositeImage defaults to width: 24, height: 24, thus, if you use a different dimension / canvas  
-you have to pass along the "custom" width and height. 
+The CompositeImage defaults to width: 24, height: 24, thus, if you use a different dimension / canvas
+you have to pass along the "custom" width and height.
 Example with a 10x3 grid (equal to 30 tiles / variations)  and 125x125 width x height:
 
 ``` ruby
@@ -452,7 +467,7 @@ composite = CompositeImage.new( 10, 3, width: 125, height: 125 )
 
 
 
-### Troubleshooting 
+### Troubleshooting
 
 
 **Q: I cannot get the `./generate.rb` script to run [in Powershell / in Sublime / in ...]?**
@@ -479,7 +494,7 @@ $ ruby no1/generate.rb          # start in /punks.starter
 
 ```
 punks.starter> $ ruby no1/generate.rb
-pixelart/0.2.2 on Ruby 3.0.2 (2021-07-07)  
+pixelart/0.2.2 on Ruby 3.0.2 (2021-07-07)
   csvreader-1.2.4/lib/csvreader/parser_std.rb:116:in `parse': wrong number of arguments (given 2, expected 1) (ArgumentError)
     [...]
     from punks.starter/generate.rb:8:in `read_csv'
@@ -487,12 +502,12 @@ pixelart/0.2.2 on Ruby 3.0.2 (2021-07-07)
 ```
 
 
-A: Sorry for the trouble -  this is a known issue / bug - 
-the scripts run only on the ruby 2.x series for now. 
-This is a ruby 3.x non-backwards-compatibility issue (with keyword arguments) that needs to get fixed. 
+A: Sorry for the trouble -  this is a known issue / bug -
+the scripts run only on the ruby 2.x series for now.
+This is a ruby 3.x non-backwards-compatibility issue (with keyword arguments) that needs to get fixed.
 If you can downgrade to the 2.x series and retry.
 
-To check that reading your .csv dataset works use something like (save as `testcsv.rb` in `/punks.starter`, 
+To check that reading your .csv dataset works use something like (save as `testcsv.rb` in `/punks.starter`,
 for example and run as `ruby ./testcsv.rb`):
 
 ``` ruby
@@ -507,8 +522,8 @@ puts "  #{recs.size} record(s)"
 #=>  25 record(s)
 ```
 
-Of course you might change `dodge.csv` to `punks.csv` or such and the record size will be different 
-depending on how many records you have and so on. 
+Of course you might change `dodge.csv` to `punks.csv` or such and the record size will be different
+depending on how many records you have and so on.
 
 
 
