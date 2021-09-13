@@ -24,26 +24,32 @@ Dark ![](dodge/dark.png),
 Zombie ![](dodge/zombie.png),
 Alien ![](dodge/alien.png)
 
+<!-- note:
+  sort attributes a-z for now - why? why not?
+-->
 
 Attributes -
-Crazy Hair ![](dodge/crazyhair.png),
-Beanie ![](dodge/beanie.png),
-Cap  ![](dodge/cap.png),
-Cap Forward ![](dodge/capforward.png),
-Knitted Cap ![](dodge/knittedcap.png),
-Fedora ![](dodge/fedora.png),
-Cowboy Hat ![](dodge/cowboyhat.png),
-Top Hat ![](dodge/tophat.png),
-Bandana ![](dodge/bandana.png),
-Headband ![](dodge/headband.png),
-Regular Shades  ![](dodge/regularshades.png),
-Classic Shades ![](dodge/classicshades.png),
-Small Shades  ![](dodge/smallshades.png),
-Big Shades  ![](dodge/bigshades.png),
-Eye Patch   ![](dodge/eyepatch.png),
-Nerd Glasses  ![](dodge/nerdglasses.png),
-3D Glasses ![](dodge/3dglasses.png),
-Tiara ![](dodge/tiara.png)
+- Hat  -
+  Bandana ![](dodge/bandana.png),
+  Beanie ![](dodge/beanie.png),
+  Cap  ![](dodge/cap.png),
+  Cap Forward ![](dodge/capforward.png),
+  Cowboy Hat ![](dodge/cowboyhat.png),
+  Fedora ![](dodge/fedora.png),
+  Headband ![](dodge/headband.png),
+  Knitted Cap ![](dodge/knittedcap.png),
+  Tiara ![](dodge/tiara.png),
+  Top Hat ![](dodge/tophat.png)
+- Hair -
+  Crazy Hair ![](dodge/crazyhair.png)
+- Eyes -
+  3D Glasses ![](dodge/3dglasses.png),
+  Big Shades  ![](dodge/bigshades.png),
+  Classic Shades ![](dodge/classicshades.png),
+  Eye Patch   ![](dodge/eyepatch.png),
+  Nerd Glasses  ![](dodge/nerdglasses.png),
+  Regular Shades  ![](dodge/regularshades.png),
+  Small Shades  ![](dodge/smallshades.png)
 
 
 (Source: [Punk (Building) Blocks - Dodge Series (24x24)](https://github.com/cryptopunksnotdead/punks.blocks#dodge-series-24x24))
@@ -305,13 +311,108 @@ Zombie ![](original/zombie.png),
 Ape ![](original/ape.png),
 Alien ![](original/alien.png)
 
+<!-- note:
+  sort attributes a-z for now - why? why not?
+-->
 
 Attributes -
-Hair -
-<br>
-Hat -
-<br>
-
+- Hat -
+  Bandana (m/f)
+  ![](original/m/bandana.png)
+  ![](original/f/bandana.png),
+  Beanie (m)
+  ![](original/m/beanie.png),
+  Cap (m/f)
+  ![](original/m/cap.png)
+  ![](original/f/cap.png),
+  Cap Forward (m)
+  ![](original/m/capforward.png),
+  Cowboy Hat (m)
+  ![](original/m/cowboyhat.png),
+  Do-rag (m)
+  ![](original/m/dorag.png),
+  Fedora (m)
+  ![](original/m/fedora.png),
+  Headband (m/f)
+  ![](original/m/headband.png)
+  ![](original/f/headband.png),
+  Hoodie (m)
+  ![](original/m/hoodie.png),
+  Knitted Cap (m/f)
+  ![](original/m/knittedcap.png)
+  ![](original/f/knittedcap.png),
+  Pilot Helmet (f)
+  ![](original/f/pilothelmet.png),
+  Police Cap (m)
+  ![](original/m/policecap.png),
+  Tassle Hat (f)
+  ![](original/f/tasslehat.png),
+  Tiara (f)
+  ![](original/f/tiara.png),
+  Top Hat (m)
+  ![](original/m/tophat.png)
+- Hair -
+  Blonde Bob (f)
+  ![](original/f/blondebob.png),
+  Blonde Short (f)
+  ![](original/f/blondeshort.png),
+  Clown Hair Green (m/f)
+  ![](original/m/clownhairgreen.png)
+  ![](original/f/clownhairgreen.png),
+  Crazy Hair (m/f)
+  ![](original/m/crazyhair.png)
+  ![](original/f/crazyhair.png),
+  Dark Hair (f)
+  ![](original/f/darkhair.png),
+  Frumpy Hair (m/f)
+  ![](original/m/frumpyhair.png)
+  ![](original/f/frumpyhair.png),
+  Half Shaved (f)
+  ![](original/f/halfshaved.png),
+  Messy Hair (m/f)
+  ![](original/m/messyhair.png)
+  ![](original/f/messyhair.png),
+  Mohawk (m/f)
+  ![](original/m/mohawk.png)
+  ![](original/f/mohawk.png),
+  Mohawk Dark (m/f)
+  ![](original/m/mohawkdark.png)
+  ![](original/f/mohawkdark.png),
+  Mohawk Thin (m/f)
+  ![](original/m/mohawkthin.png)
+  ![](original/f/mohawkthin.png),
+  Orange Side (f)
+  ![](original/f/orangeside.png),
+  Peak Spike (m)
+  ![](original/m/peakspike.png),
+  Pigtails (f)
+  ![](original/f/pigtails.png),
+  Pink With Hat (f)
+  ![](original/f/pinkwithhat.png),
+  Purple Hair (m)
+  ![](original/m/purplehair.png),
+  Red Mohawk (f)
+  ![](original/f/redmohawk.png),
+  Shaved Head (m)
+  ![](original/m/shavedhead.png),
+  Straight Hair (f)
+  ![](original/f/straighthair.png),
+  Straight Hair Blonde (f)
+  ![](original/f/straighthairblonde.png),
+  Straight Hair Dark (f)
+  ![](original/f/straighthairdark.png),
+  Stringy Hair (m/f)
+  ![](original/m/stringyhair.png)
+  ![](original/f/stringyhair.png),
+  Vampire Hair (m)
+  ![](original/m/vampirehair.png),
+  Wild Blonde (f)
+  ![](original/f/wildblonde.png),
+  Wild Hair (m/f)
+  ![](original/m/wildhair.png)
+  ![](original/f/wildhair.png),
+  Wild White Hair (f)
+  ![](original/f/wildwhitehair.png)
 - Eyes -
   3D Glasses (m/f)
    ![](original/m/3dglasses.png)
@@ -440,11 +541,11 @@ Hat -
 
 <!-- break -->
 
+(Source: [Punk (Building) Blocks - Original Series (24x24)](https://github.com/cryptopunksnotdead/punks.blocks#https://github.com/cryptopunksnotdead/punks.blocks#original-cryptopunks-series-2424))
+
+
 Bonus - Let's add Laser Eyes (m) ![](original/m/lasereyes.png),
 Laser Eyes Gold (m) ![](original/m/lasereyesgold.png).
-
-
-(Source: [Punk (Building) Blocks - Original Series (24x24)](https://github.com/cryptopunksnotdead/punks.blocks#https://github.com/cryptopunksnotdead/punks.blocks#original-cryptopunks-series-2424))
 
 
 
