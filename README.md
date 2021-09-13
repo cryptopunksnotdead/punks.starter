@@ -311,11 +311,52 @@ Hair -
 <br>
 Hat -
 <br>
-Eyes (Glasses) -
-<br>
-Eyes (Makeup) -
-<br>
 
+- Eyes -
+  3D Glasses (m/f)
+   ![](original/m/3dglasses.png)
+   ![](original/f/3dglasses.png),
+  Big Shades (m/f)
+  ![](original/m/bigshades.png)
+  ![](original/f/bigshades.png),
+  Classic Shades (m/f)
+  ![](original/m/classicshades.png)
+  ![](original/f/classicshades.png),
+  Eye Mask (m/f)
+  ![](original/m/eyemask.png)
+  ![](original/f/eyemask.png),
+  Eye Patch (m/f)
+  ![](original/m/eyepatch.png)
+  ![](original/f/eyepatch.png),
+  Horned Rim Glasses (m/f)
+  ![](original/m/hornedrimglasses.png)
+  ![](original/f/hornedrimglasses.png),
+  Nerd Glasses (m/f)
+  ![](original/m/nerdglasses.png)
+  ![](original/f/nerdglasses.png),
+  Regular Shades (m/f)
+  ![](original/m/regularshades.png)
+  ![](original/f/regularshades.png),
+  Small Shades (m)
+  ![](original/m/smallshades.png),
+  VR (m/f)
+  ![](original/m/vr.png)
+  ![](original/f/vr.png),
+  Welding Goggles (f)
+  ![](original/f/weldinggoggles.png)
+- Eyes (Makeup) -
+  Blue Eye Shadow (f)
+  ![](original/f/blueeyeshadow.png),
+  Clown Eyes Blue (m/f)
+  ![](original/m/clowneyesblue.png)
+  ![](original/f/clowneyesblue.png),
+  Clown Eyes Green (m/f)
+  ![](original/m/clowneyesgreen.png)
+  ![](original/f/clowneyesgreen.png),
+  Green Eye Shadow (f)
+  ![](original/f/greeneyeshadow.png),
+  Purple Eye Shadow (f)
+  ![](original/f/purpleeyeshadow.png)
 - Blemishes -
   Mole (m/f)
    ![](original/m/mole.png)
@@ -325,7 +366,7 @@ Eyes (Makeup) -
    ![](original/f/rosycheeks.png),
   Spots (m/f)
    ![](original/m/spots.png)
-   ![](original/f/spots.png),
+   ![](original/f/spots.png)
 - Nose -
   Clown Nose (m/f)
    ![](original/m/clownnose.png)
@@ -333,21 +374,21 @@ Eyes (Makeup) -
 - Ears -
   Earring (m/f)
    ![](original/m/earring.png)
-   ![](original/f/earring.png),
+   ![](original/f/earring.png)
 - Mouth -
   Buck Teeth (m)
    ![](original/m/buckteeth.png),
   Frown (m)
    ![](original/m/frown.png),
   Smile (m)
-   ![](original/m/smile.png),
+   ![](original/m/smile.png)
 - Mouth (Makeup) -
   Black Lipstick (f)
    ![](original/f/blacklipstick.png),
   Hot Lipstick (f)
    ![](original/f/hotlipstick.png),
   Purple Lipstick (f)
-   ![](original/f/purplelipstick.png),
+   ![](original/f/purplelipstick.png)
 - Mouth Prop -
   Cigarette (m/f)
    ![](original/m/cigarette.png)
@@ -360,7 +401,7 @@ Eyes (Makeup) -
    ![](original/f/pipe.png),
   Vape (m/f)
    ![](original/m/vape.png)
-   ![](original/f/vape.png),
+   ![](original/f/vape.png)
 - Beard -
   Big Beard (m)
    ![](original/m/bigbeard.png),
@@ -385,7 +426,7 @@ Eyes (Makeup) -
   Normal Beard Black (m)
    ![](original/m/normalbeardblack.png),
   Shadow Beard (m)
-   ![](original/m/shadowbeard.png),
+   ![](original/m/shadowbeard.png)
 - Neck Accessory -
   Choker (f)
    ![](original/f/choker.png),
@@ -396,6 +437,8 @@ Eyes (Makeup) -
    ![](original/m/silverchain.png)
    ![](original/f/silverchain.png)
 
+
+<!-- break -->
 
 Bonus - Let's add Laser Eyes (m) ![](original/m/lasereyes.png),
 Laser Eyes Gold (m) ![](original/m/lasereyesgold.png).
