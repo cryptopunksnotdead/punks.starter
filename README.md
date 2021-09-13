@@ -306,11 +306,44 @@ Ape ![](original/ape.png),
 Alien ![](original/alien.png)
 
 Attributes -
-
+Rosy Cheeks (m/f)
+![](original/m/rosycheeks.png)
+![](original/f/rosycheeks.png),
+Luxurious Beard (m)
+![](original/m/luxuriousbear.png),
+Clown Hair Green (m/f)
+![](original/m/clownhairgreen.png)
+![](original/f/clownhairgreen.png),
+Mohawk Dark (m/f)
+![](original/m/mohawkdark.png)
+![](original/f/mohawkdark.png),
+Cowboy Hat (m)
+![](original/m/cowboyhat.png),
+Mustache (m)
+![](original/m/mustache.png),
+Clown Nose (m/f)
+![](original/m/clownnose.png)
+![](original/f/clownnose.png),
+Cigarette (m/f)
+![](original/m/cigarette.png)
+![](original/f/cigarette.png),
+Nerd Glasses (m/f)
+![](original/m/nerdglasses.png)
+![](original/f/nerdglasses.png),
+Regular Shades (m/f)
+![](original/m/regularshades.png)
+![](original/f/regularshades.png),
 
 [...]
 
+
+
+Bonus - Let's add Laser Eyes (m) ![](original/m/lasereyes.png),
+Laser Eyes Gold (m) ![](original/m/lasereyesgold.png).
+
+
 (Source: [Punk (Building) Blocks - Original Series (24x24)](https://github.com/cryptopunksnotdead/punks.blocks#https://github.com/cryptopunksnotdead/punks.blocks#original-cryptopunks-series-2424))
+
 
 
 
