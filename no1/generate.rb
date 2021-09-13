@@ -4,12 +4,12 @@
 #   $ ruby no1/generate.rb
 
 
-require './generate'
+require './boot'
 
 
 recs = read_csv( './no1/dodge.csv' )
 puts "  #{recs.size} punk(s)"
-#=>  25 records
+#=>  25 punk(s)
 
 
 art = Art.new( dir: './dodge' )
