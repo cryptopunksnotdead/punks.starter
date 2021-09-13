@@ -864,6 +864,53 @@ And let's have a looksie at the biggie 20x versions:
 
 
 
+
+### Step 3 - Bonus: Generate an All-In-One Composite Image
+
+Again let's generate an all-in-one composite image holding the complete
+collection in a 10x10 grid.
+
+``` ruby
+require './boot'
+
+
+recs = read_csv( './no2/punks.csv' )
+puts "  #{recs.size} punk(s)"
+#=>  100 punk(s)
+
+
+art = Art.new( dir: './original',
+               qualifier: { 'm' => ['Male 1', 'Male 2', 'Male 3', 'Male 4',
+                                    'Zombie',
+                                    'Ape',
+                                    'Alien'],
+                            'f' => ['Female 1', 'Female 2', 'Female 3', 'Female 4'],
+                          }
+             )
+
+
+## 10x10 grid with every tile 24x24
+punks = CompositeImage.new( 10, 10 )
+
+recs.each_with_index do |rec,i|
+  punk = art.generate( rec )
+  punks << punk
+end
+
+punks.save( './o/no2/punks.png')
+```
+
+Yes, that's it.
+Run the script to generate algorithmically your collection
+in an all-in-one composite.
+
+Open up `punks.png` to have a looksie.
+
+![](i/no2/punks.png)
+
+
+
+
 To be continued...
 
 
