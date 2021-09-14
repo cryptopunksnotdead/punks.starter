@@ -159,7 +159,7 @@ recs.each_with_index do |rec,i|
   punk = art.generate( rec )
 
   punk.save( "./o/no1/#{name}.png" )
-  punk.zoom(20).save( "./o/no1/#{name}x20.png" )
+  punk.zoom(20).save( "./o/no1/#{name}@20x.png" )
 end
 ```
 
@@ -167,29 +167,29 @@ Yes, that's it.
 Run the script to generate algorithmically your collection.
 
 In the `/o` directory you will now find
-two images per punk (in the orginal format, that is, 24x24
-and x20, that is, 480x480) and get:
+two images per punk - in the orginal format, that is, 24x24
+and 20x, that is, 480x480 - and get:
 
 ```
 no1/
   punk0.png
-  punk0x20.png
+  punk0@20x.png
   punk1.png
-  punk1x20.png
+  punk1@20x.png
   punk2.png
-  punk2x20.png
+  punk2@20x.png
   punk3.png
-  punk3x20.png
+  punk3@20x.png
   punk4.png
-  punk4x20.png
+  punk4@20x.png
   punk5.png
-  punk5x20.png
+  punk5@20x.png
   punk6.png
-  punk6x20.png
+  punk6@20x.png
   punk7.png
-  punk7x20.png
+  punk7@20x.png
   punk8.png
-  punk8x20.png
+  punk8@20x.png
   ...
 ```
 
@@ -222,15 +222,15 @@ Let's open up `punk0.png` to `punk24.png`:
 ![](i/no1/punk24.png)
 
 
-And let's have a looksie at the biggie 20x versions:
+And let's have a looksie at the biggie 20x (480x480) versions:
 
-![](i/no1/punk0x20.png)
+![](i/no1/punk0@20x.png)
 
-![](i/no1/punk1x20.png)
+![](i/no1/punk1@20x.png)
 
 [...]
 
-![](i/no1/punk24x20.png)
+![](i/no1/punk24@20x.png)
 
 
 
@@ -702,7 +702,7 @@ recs.each_with_index do |rec,i|
   punk = art.generate( rec )
 
   punk.save( "./o/no2/#{name}.png" )
-  punk.zoom(20).save( "./o/no2/#{name}x20.png" )
+  punk.zoom(20).save( "./o/no2/#{name}@20x.png" )
 end
 ```
 
@@ -722,29 +722,29 @@ Yes, that's it.
 Run the script to generate algorithmically your collection.
 
 In the `/o` directory you will now find
-two images per punk (in the orginal format, that is, 24x24
-and x20, that is, 480x480) and get:
+two images per punk - in the orginal format, that is, 24x24
+and 20x, that is, 480x480 - and get:
 
 ```
 no2/
   punk0.png
-  punk0x20.png
+  punk0@20x.png
   punk1.png
-  punk1x20.png
+  punk1@20x.png
   punk2.png
-  punk2x20.png
+  punk2@20x.png
   punk3.png
-  punk3x20.png
+  punk3@20x.png
   punk4.png
-  punk4x20.png
+  punk4@20x.png
   punk5.png
-  punk5x20.png
+  punk5@20x.png
   punk6.png
-  punk6x20.png
+  punk6@20x.png
   punk7.png
-  punk7x20.png
+  punk7@20x.png
   punk8.png
-  punk8x20.png
+  punk8@20x.png
   ...
 ```
 
@@ -852,15 +852,15 @@ Let's open up `punk0.png` to `punk99.png`:
 ![](i/no2/punk99.png)
 
 
-And let's have a looksie at the biggie 20x versions:
+And let's have a looksie at the biggie 20x (480x480) versions:
 
-![](i/no2/punk0x20.png)
+![](i/no2/punk0@20x.png)
 
-![](i/no2/punk1x20.png)
+![](i/no2/punk1@20x.png)
 
 [...]
 
-![](i/no2/punk99x20.png)
+![](i/no2/punk99@20x.png)
 
 
 
@@ -911,6 +911,230 @@ Open up `punks.png` to have a looksie.
 
 
 
+
+## Collection №3 -  The First One Hundred Pixel Art Punks - The Black & White (Pencil Drawing) Sketch Edition
+
+Let's redo the the first one hundred pixel art punks collection
+and let's pick a pixel art special effect.
+
+Tip:  See [**Pixel Art Special Effects Gallery / Cheatsheet - Free Ideas & Recipes for Starting Your Own CryptoPunks Collection Today**](https://github.com/cryptopunksnotdead/programming-cryptopunks/blob/master/A1_special_effects.md)
+in the free (online) Programming CryptoPunks & Copypasta Step-by-Step Book(let).
+
+
+
+### Step 1 -  Generate A List of Your Pixel Art Collection in Tabular Text Format (Spreadsheet)
+
+Same as in collection №2 above.
+Let's (re)use [`punks.csv`](no3/punks.csv).
+
+
+### Step 2  - Generate All Pixel Art Images in Original Format and In 20x
+
+
+Same as in collection №2 above.
+Plus let's try the black & white (pencil drawing) sketch special effect.
+
+
+``` ruby
+#  [..]
+
+recs.each_with_index do |rec,i|
+  name = "punk#{i}"
+  punk = art.generate( rec )
+
+  punk_sketch = punk.sketch( 1, line: 1 )
+  punk_sketch.save( "./o/no3/#{name}.png" )
+
+  punk_sketch = punk.sketch( 20, line: 4 )
+  punk_sketch.save( "./o/no3/#{name}@20x.png" )
+end
+```
+
+Note: The minimum format for a black & white (pencil drawing) sketch
+is 49x49px (24\*1 + 25\*1 = 49px), that is,  24 "inner" white pixels and 25 "outline" black pixels.
+And the 20x version becomes 580x580px (20\*24 + 4\*25 = 580px),
+that is, with a 24*20 "inner"
+white pixel and 25*4 "outline" black pixels.
+
+
+Yes, that's it.
+Run the script to generate algorithmically your collection.
+
+In the `/o` directory you will now find
+two images per punk - in the orginal format, that is, 49x49
+and 20x, that is, 580x580 - and get:
+
+```
+no3/
+  punk0.png
+  punk0@20x.png
+  punk1.png
+  punk1@20x.png
+  punk2.png
+  punk2@20x.png
+  punk3.png
+  punk3@20x.png
+  punk4.png
+  punk4@20x.png
+  punk5.png
+  punk5@20x.png
+  punk6.png
+  punk6@20x.png
+  punk7.png
+  punk7@20x.png
+  punk8.png
+  punk8@20x.png
+  ...
+```
+
+Let's open up `punk0.png` to `punk99.png`:
+
+![](i/no3/punk0.png)
+![](i/no3/punk1.png)
+![](i/no3/punk2.png)
+![](i/no3/punk3.png)
+![](i/no3/punk4.png)
+![](i/no3/punk5.png)
+![](i/no3/punk6.png)
+![](i/no3/punk7.png)
+![](i/no3/punk8.png)
+![](i/no3/punk9.png)
+![](i/no3/punk10.png)
+![](i/no3/punk11.png)
+![](i/no3/punk12.png)
+![](i/no3/punk13.png)
+![](i/no3/punk14.png)
+![](i/no3/punk15.png)
+![](i/no3/punk16.png)
+![](i/no3/punk17.png)
+![](i/no3/punk18.png)
+![](i/no3/punk19.png)
+![](i/no3/punk20.png)
+![](i/no3/punk21.png)
+![](i/no3/punk22.png)
+![](i/no3/punk23.png)
+![](i/no3/punk24.png)
+![](i/no3/punk25.png)
+![](i/no3/punk26.png)
+![](i/no3/punk27.png)
+![](i/no3/punk28.png)
+![](i/no3/punk29.png)
+![](i/no3/punk30.png)
+![](i/no3/punk31.png)
+![](i/no3/punk32.png)
+![](i/no3/punk33.png)
+![](i/no3/punk34.png)
+![](i/no3/punk35.png)
+![](i/no3/punk36.png)
+![](i/no3/punk37.png)
+![](i/no3/punk38.png)
+![](i/no3/punk39.png)
+![](i/no3/punk40.png)
+![](i/no3/punk41.png)
+![](i/no3/punk42.png)
+![](i/no3/punk43.png)
+![](i/no3/punk44.png)
+![](i/no3/punk45.png)
+![](i/no3/punk46.png)
+![](i/no3/punk47.png)
+![](i/no3/punk48.png)
+![](i/no3/punk49.png)
+![](i/no3/punk50.png)
+![](i/no3/punk51.png)
+![](i/no3/punk52.png)
+![](i/no3/punk53.png)
+![](i/no3/punk54.png)
+![](i/no3/punk55.png)
+![](i/no3/punk56.png)
+![](i/no3/punk57.png)
+![](i/no3/punk58.png)
+![](i/no3/punk59.png)
+![](i/no3/punk60.png)
+![](i/no3/punk61.png)
+![](i/no3/punk62.png)
+![](i/no3/punk63.png)
+![](i/no3/punk64.png)
+![](i/no3/punk65.png)
+![](i/no3/punk66.png)
+![](i/no3/punk67.png)
+![](i/no3/punk68.png)
+![](i/no3/punk69.png)
+![](i/no3/punk70.png)
+![](i/no3/punk71.png)
+![](i/no3/punk72.png)
+![](i/no3/punk73.png)
+![](i/no3/punk74.png)
+![](i/no3/punk75.png)
+![](i/no3/punk76.png)
+![](i/no3/punk77.png)
+![](i/no3/punk78.png)
+![](i/no3/punk79.png)
+![](i/no3/punk80.png)
+![](i/no3/punk81.png)
+![](i/no3/punk82.png)
+![](i/no3/punk83.png)
+![](i/no3/punk84.png)
+![](i/no3/punk85.png)
+![](i/no3/punk86.png)
+![](i/no3/punk87.png)
+![](i/no3/punk88.png)
+![](i/no3/punk89.png)
+![](i/no3/punk90.png)
+![](i/no3/punk91.png)
+![](i/no3/punk92.png)
+![](i/no3/punk93.png)
+![](i/no3/punk94.png)
+![](i/no3/punk95.png)
+![](i/no3/punk96.png)
+![](i/no3/punk97.png)
+![](i/no3/punk98.png)
+![](i/no3/punk99.png)
+
+
+And let's have a looksie at the biggie 20x (580x580) versions:
+
+![](i/no3/punk0@20x.png)
+
+![](i/no3/punk1@20x.png)
+
+[...]
+
+![](i/no3/punk99@20x.png)
+
+
+
+### Step 3 - Bonus: Generate an All-In-One Composite Image
+
+Same as in collection №2 above.
+Plus let's try the black & white (pencil drawing) sketch special effect.
+
+
+``` ruby
+#  [..]
+
+## 10x10 grid with every tile 49x49
+punks = CompositeImage.new( 10, 10, width: 49, height: 49 )
+
+recs.each_with_index do |rec,i|
+  punk = art.generate( rec )
+
+  punk_sketch = punk.sketch( 1, line: 1 )
+
+  punks << punk_sketch
+end
+
+punks.save( './o/no3/punks.png')
+```
+
+Yes, that's it.
+Run the script to generate algorithmically your collection
+in an all-in-one composite.
+
+Open up `punks.png` to have a looksie.
+
+![](i/no3/punks.png)
+
+
 To be continued...
 
 
@@ -953,7 +1177,7 @@ composite = CompositeImage.new( 10, 3, width: 125, height: 125 )
 
 **Q: I cannot get the `./generate.rb` script to run [in Powershell / in Sublime / in ...]?**
 
-A: Make sure you run the script in the "top-level", that is, `/punks.starter` and you use `no1/generate.rb` or `no2/generate.rb`:
+A: Make sure you run the script in the "top-level", that is, `/punks.starter` and you use `no1/generate.rb` or `no2/generate.rb` or `no3/generate.rb`:
 
 ```
 /punks.starter
@@ -962,6 +1186,9 @@ A: Make sure you run the script in the "top-level", that is, `/punks.starter` an
       dodge.csv
       generate.rb
    /no2
+      punks.csv
+      generate.rb
+   /no3
       punks.csv
       generate.rb
 ```

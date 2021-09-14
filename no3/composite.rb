@@ -1,13 +1,13 @@
 ###############
 # to run use:
 #
-#   $ ruby no2/generate.rb
+#   $ ruby no3/composite.rb
 
 
 require './boot'
 
 
-recs = read_csv( './no2/punks.csv' )
+recs = read_csv( './no3/punks.csv' )
 puts "  #{recs.size} punk(s)"
 #=>  100 punk(s)
 
@@ -21,11 +21,18 @@ art = Art.new( dir: './original',
                           }
              )
 
+
+## 10x10 grid with every tile 49x49
+punks = CompositeImage.new( 10, 10, width: 49, height: 49 )
+
 recs.each_with_index do |rec,i|
-  name = "punk#{i}"
   punk = art.generate( rec )
 
-  punk.save( "./o/no2/#{name}.png" )
-  punk.zoom(20).save( "./o/no2/#{name}@20x.png" )
+  punk_sketch = punk.sketch( 1, line: 1 )
+
+  punks << punk_sketch
 end
+
+punks.save( './o/no3/punks.png')
+
 

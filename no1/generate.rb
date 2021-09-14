@@ -19,6 +19,6 @@ recs.each_with_index do |rec,i|
   punk = art.generate( rec )
 
   punk.save( "./o/no1/#{name}.png" )
-  punk.zoom(20).save( "./o/no1/#{name}x20.png" )
+  punk.zoom(20).save( "./o/no1/#{name}@20x.png" )
 end
 
