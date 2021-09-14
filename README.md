@@ -11,6 +11,16 @@ Step 3 - Bonus: Generate an All-In-One Composite Image
 
 
 
+Sample Collections
+
+- [Collection №1 -  Twenty-Five Dodge Pixel Art Punks](#collection-1----twenty-five-dodge-pixel-art-punks)
+- [Collection №2 -  The First One Hundred Pixel Art Punks](#collection-2----the-first-one-hundred-pixel-art-punks)
+- [Collection №3 -  The First One Hundred Pixel Art Punks - The Black & White (Pencil Drawing) Sketch Edition](#collection-3----the-first-one-hundred-pixel-art-punks---the-black--white-pencil-drawing-sketch-edition)
+
+
+
+
+
 ## Collection №1 -  Twenty-Five Dodge Pixel Art Punks
 
 Let's start with an exclusive twenty-five Shiba Inu dogs
@@ -953,8 +963,8 @@ end
 Note: The minimum format for a black & white (pencil drawing) sketch
 is 49x49px (24\*1 + 25\*1 = 49px), that is,  24 "inner" white pixels and 25 "outline" black pixels.
 And the 20x version becomes 580x580px (20\*24 + 4\*25 = 580px),
-that is, with a 24*20 "inner"
-white pixel and 25*4 "outline" black pixels.
+that is, with a 24\*20 "inner"
+white pixel and 25\*4 "outline" black pixels.
 
 
 Yes, that's it.
