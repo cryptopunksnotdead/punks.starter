@@ -553,7 +553,7 @@ Attributes (by category and a-z):
 
 <!-- break -->
 
-(Source: [Punk (Building) Blocks - Basic Series (24x24)](https://github.com/cryptopunksnotdead/punks.blocks#https://github.com/cryptopunksnotdead/punks.blocks#basic-punks-series-2424))
+(Source: [Punk (Building) Blocks - Basic Series (24x24)](https://github.com/cryptopunksnotdead/punks.blocks#basic-punks-series-2424))
 
 
 Bonus - Let's add Laser Eyes (m) ![](basic/m/lasereyes.png),
