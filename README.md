@@ -27,7 +27,7 @@ Let's start with an exclusive twenty-five Shiba Inu dogs
 pixel art collection. Much wow. Super rare.
 
 Let's copy and (re)use all punk (building) blocks
-in the dodge series (24x24):
+in the dodge series (24×24):
 
 Classic ![](dodge/classic.png),
 Dark ![](dodge/dark.png),
@@ -63,7 +63,7 @@ Attributes (by category and a-z):
   Small Shades  ![](dodge/smallshades.png)
 
 
-(Source: [Punk (Building) Blocks - Dodge Series (24x24)](https://github.com/cryptopunksnotdead/punks.blocks#dodge-series-24x24))
+(Source: [Punk (Building) Blocks - Dodge Series (24×24)](https://github.com/cryptopunksnotdead/punks.blocks#dodge-series-2424))
 
 
 
@@ -150,7 +150,7 @@ Zombie,     Knitted Cap,  Regular Shades
 Now the "magic" let's read in the list
 in the comma-separated values (.CSV) format
 and generate all pixel art images in the original format
-(24x24) and in 20x (480x480).
+(24×24) and in 20x (480×480).
 
 
 ``` ruby
@@ -177,8 +177,8 @@ Yes, that's it.
 Run the script to generate algorithmically your collection.
 
 In the `/o` directory you will now find
-two images per punk - in the orginal format, that is, 24x24
-and 20x, that is, 480x480 - and get:
+two images per punk - in the orginal format, that is, 24×24
+and 20x, that is, 480×480 - and get:
 
 ```
 no1/
@@ -232,7 +232,7 @@ Let's open up `punk0.png` to `punk24.png`:
 ![](i/no1/punk24.png)
 
 
-And let's have a looksie at the biggie 20x (480x480) versions:
+And let's have a looksie at the biggie 20x (480×480) versions:
 
 ![](i/no1/punk0@20x.png)
 
@@ -262,7 +262,7 @@ and so on.
 ### Step 3 - Bonus: Generate an All-In-One Composite Image
 
 Let's generate an all-in-one composite image holding the complete
-collection in a 5x5 grid.
+collection in a 5×5 grid.
 
 ``` ruby
 require './boot'
@@ -276,7 +276,7 @@ puts "  #{recs.size} punk(s)"
 art = Art.new( dir: './dodge' )
 
 
-## 5x5 grid with every tile 24x24
+## 5×5 grid with every tile 24×24
 punks = CompositeImage.new( 5, 5 )
 
 recs.each_with_index do |rec,i|
@@ -304,12 +304,12 @@ Open up `punks.png` to have a looksie.
 ## Collection №2 -  The First One Hundred Pixel Art Punks
 
 Let's take on a bigger pixel art collection.
-Let's generate a pixel-perfect copy of the first one hundred punks in the original Larva Labs series in the classic 24x24
+Let's generate a pixel-perfect copy of the first one hundred punks in the original Larva Labs series in the classic 24×24
 format.
 
 
 Let's copy and (re)use all punk (building) blocks
-in the basic series (24x24):
+in the basic series (24×24):
 
 Male 1/2/3/4 ![](basic/male1.png)
 ![](basic/male2.png)
@@ -553,7 +553,7 @@ Attributes (by category and a-z):
 
 <!-- break -->
 
-(Source: [Punk (Building) Blocks - Basic Series (24x24)](https://github.com/cryptopunksnotdead/punks.blocks#basic-punks-series-2424))
+(Source: [Punk (Building) Blocks - Basic Series (24×24)](https://github.com/cryptopunksnotdead/punks.blocks#basic-punks-series-2424))
 
 
 Bonus - Let's add Laser Eyes (m) ![](basic/m/lasereyes.png),
@@ -688,7 +688,7 @@ with Laser Eyes and Laser Eyes Gold.
 Now the "magic" let's read in the list
 in the comma-separated values (.CSV) format
 and generate all pixel art images in the original format
-(24x24) and in 20x (480x480).
+(24×24) and in 20x (480×480).
 
 
 ``` ruby
@@ -733,8 +733,8 @@ Yes, that's it.
 Run the script to generate algorithmically your collection.
 
 In the `/o` directory you will now find
-two images per punk - in the orginal format, that is, 24x24
-and 20x, that is, 480x480 - and get:
+two images per punk - in the orginal format, that is, 24×24
+and 20x, that is, 480×480 - and get:
 
 ```
 no2/
@@ -863,7 +863,7 @@ Let's open up `punk0.png` to `punk99.png`:
 ![](i/no2/punk99.png)
 
 
-And let's have a looksie at the biggie 20x (480x480) versions:
+And let's have a looksie at the biggie 20x (480×480) versions:
 
 ![](i/no2/punk0@20x.png)
 
@@ -879,7 +879,7 @@ And let's have a looksie at the biggie 20x (480x480) versions:
 ### Step 3 - Bonus: Generate an All-In-One Composite Image
 
 Again let's generate an all-in-one composite image holding the complete
-collection in a 10x10 grid.
+collection in a 10×10 grid.
 
 ``` ruby
 require './boot'
@@ -900,7 +900,7 @@ art = Art.new( dir: './basic',
              )
 
 
-## 10x10 grid with every tile 24x24
+## 10×10 grid with every tile 24×24
 punks = CompositeImage.new( 10, 10 )
 
 recs.each_with_index do |rec,i|
@@ -962,8 +962,8 @@ end
 ```
 
 Note: The minimum format for a black & white (pencil drawing) sketch
-is 49x49px (24\*1 + 25\*1 = 49px), that is,  24 "inner" white pixels and 25 "outline" black pixels.
-And the 20x version becomes 580x580px (20\*24 + 4\*25 = 580px),
+is 49×49px (24\*1 + 25\*1 = 49px), that is,  24 "inner" white pixels and 25 "outline" black pixels.
+And the 20x version becomes 580×580px (20\*24 + 4\*25 = 580px),
 that is, with a 24\*20 "inner"
 white pixel and 25\*4 "outline" black pixels.
 
@@ -972,8 +972,8 @@ Yes, that's it.
 Run the script to generate algorithmically your collection.
 
 In the `/o` directory you will now find
-two images per punk - in the orginal format, that is, 49x49
-and 20x, that is, 580x580 - and get:
+two images per punk - in the orginal format, that is, 49×49
+and 20x, that is, 580×580 - and get:
 
 ```
 no3/
@@ -1102,7 +1102,7 @@ Let's open up `punk0.png` to `punk99.png`:
 ![](i/no3/punk99.png)
 
 
-And let's have a looksie at the biggie 20x (580x580) versions:
+And let's have a looksie at the biggie 20x (580×580) versions:
 
 ![](i/no3/punk0@20x.png)
 
@@ -1123,7 +1123,7 @@ Plus let's try the black & white (pencil drawing) sketch special effect.
 ``` ruby
 #  [..]
 
-## 10x10 grid with every tile 49x49
+## 10×10 grid with every tile 49×49
 punks = CompositeImage.new( 10, 10, width: 49, height: 49 )
 
 recs.each_with_index do |rec,i|
@@ -1160,22 +1160,22 @@ To be continued...
 
 ### Frequently Asked Questions (F.A.Qs)
 
-**Q:  Can I use a different pixel format for the collection e.g. 16x16 (instead of the classic 24x24)?**
+**Q:  Can I use a different pixel format for the collection e.g. 16×16 (instead of the classic 24×24)?**
 
-A: Yes,  it works with any square pixel size (e.g. 16x16, 24x24, 32x32).
-Note: If you use the `CompositeImage` the default width x height is set to 24 x 24 - if you use a different size
+A: Yes,  it works with any square pixel size (e.g. 16×16, 24×24, 32×32).
+Note: If you use the `CompositeImage` the default width × height is set to 24 × 24 - if you use a different size
 you have to pass in width and height e.g.
 
 ``` ruby
-# 5x5 grid with every tile 16x16
+# 5×5 grid with every tile 16×16
 composite = CompositeImage.new( 5, 5, width: 16, height: 16 )
 ```
 
-**Q: I am trying to make a composite of 30 variations with a base size of 125x125 px each. I can't seem to figure out how to adjust the settings to make it generate a composite without all of the results overlapping each other. Any ideas?**
+**Q: I am trying to make a composite of 30 variations with a base size of 125×125 px each. I can't seem to figure out how to adjust the settings to make it generate a composite without all of the results overlapping each other. Any ideas?**
 
 The CompositeImage defaults to width: 24, height: 24, thus, if you use a different dimension / canvas
 you have to pass along the "custom" width and height.
-Example with a 10x3 grid (equal to 30 tiles / variations)  and 125x125 width x height:
+Example with a 10×3 grid (equal to 30 tiles / variations)  and 125×125 width x height:
 
 ``` ruby
 composite = CompositeImage.new( 10, 3, width: 125, height: 125 )
