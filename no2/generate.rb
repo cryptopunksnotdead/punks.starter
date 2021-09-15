@@ -12,7 +12,7 @@ puts "  #{recs.size} punk(s)"
 #=>  100 punk(s)
 
 
-art = Art.new( dir: './original',
+art = Art.new( dir: './basic',
                qualifier: { 'm' => ['Male 1', 'Male 2', 'Male 3', 'Male 4',
                                     'Zombie',
                                     'Ape',

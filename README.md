@@ -105,7 +105,7 @@ Alien,      Classic Shades
 Yes, that's it.
 For the list format let's use the comma-separated values (.CSV) format supported by all spreadsheet programs.
 Every line is a record of a punk
-made up of the basic type  and one or more attributes.
+made up of the original type  and one or more attributes.
 
 Note: Let's NOT add the index number (0,1,2,3, and so on).
 Why? That way you can easily
@@ -307,20 +307,21 @@ Let's take on a bigger pixel art collection.
 Let's generate a pixel-perfect copy of the first one hundred punks in the original Larva Labs series in the classic 24x24
 format.
 
-Let's copy and (re)use all punk (building) blocks
-in the original series (24x24):
 
-Male 1/2/3/4 ![](original/male1.png)
-![](original/male2.png)
-![](original/male3.png)
-![](original/male4.png),
-Female 1/2/3/4 ![](original/female1.png)
-![](original/female2.png)
-![](original/female3.png)
-![](original/female4.png),
-Zombie ![](original/zombie.png),
-Ape ![](original/ape.png),
-Alien ![](original/alien.png)
+Let's copy and (re)use all punk (building) blocks
+in the basic series (24x24):
+
+Male 1/2/3/4 ![](basic/male1.png)
+![](basic/male2.png)
+![](basic/male3.png)
+![](basic/male4.png),
+Female 1/2/3/4 ![](basic/female1.png)
+![](basic/female2.png)
+![](basic/female3.png)
+![](basic/female4.png),
+Zombie ![](basic/zombie.png),
+Ape ![](basic/ape.png),
+Alien ![](basic/alien.png)
 
 <!-- note:
   sort attributes a-z for now - why? why not?
@@ -329,234 +330,234 @@ Alien ![](original/alien.png)
 Attributes (by category and a-z):
 - Hat -
   Bandana (m/f)
-  ![](original/m/bandana.png)
-  ![](original/f/bandana.png),
+  ![](basic/m/bandana.png)
+  ![](basic/f/bandana.png),
   Beanie (m)
-  ![](original/m/beanie.png),
+  ![](basic/m/beanie.png),
   Cap (m/f)
-  ![](original/m/cap.png)
-  ![](original/f/cap.png),
+  ![](basic/m/cap.png)
+  ![](basic/f/cap.png),
   Cap Forward (m)
-  ![](original/m/capforward.png),
+  ![](basic/m/capforward.png),
   Cowboy Hat (m)
-  ![](original/m/cowboyhat.png),
+  ![](basic/m/cowboyhat.png),
   Do-rag (m)
-  ![](original/m/dorag.png),
+  ![](basic/m/dorag.png),
   Fedora (m)
-  ![](original/m/fedora.png),
+  ![](basic/m/fedora.png),
   Headband (m/f)
-  ![](original/m/headband.png)
-  ![](original/f/headband.png),
+  ![](basic/m/headband.png)
+  ![](basic/f/headband.png),
   Hoodie (m)
-  ![](original/m/hoodie.png),
+  ![](basic/m/hoodie.png),
   Knitted Cap (m/f)
-  ![](original/m/knittedcap.png)
-  ![](original/f/knittedcap.png),
+  ![](basic/m/knittedcap.png)
+  ![](basic/f/knittedcap.png),
   Pilot Helmet (f)
-  ![](original/f/pilothelmet.png),
+  ![](basic/f/pilothelmet.png),
   Police Cap (m)
-  ![](original/m/policecap.png),
+  ![](basic/m/policecap.png),
   Tassle Hat (f)
-  ![](original/f/tasslehat.png),
+  ![](basic/f/tasslehat.png),
   Tiara (f)
-  ![](original/f/tiara.png),
+  ![](basic/f/tiara.png),
   Top Hat (m)
-  ![](original/m/tophat.png)
+  ![](basic/m/tophat.png)
 - Hair -
   Blonde Bob (f)
-  ![](original/f/blondebob.png),
+  ![](basic/f/blondebob.png),
   Blonde Short (f)
-  ![](original/f/blondeshort.png),
+  ![](basic/f/blondeshort.png),
   Clown Hair Green (m/f)
-  ![](original/m/clownhairgreen.png)
-  ![](original/f/clownhairgreen.png),
+  ![](basic/m/clownhairgreen.png)
+  ![](basic/f/clownhairgreen.png),
   Crazy Hair (m/f)
-  ![](original/m/crazyhair.png)
-  ![](original/f/crazyhair.png),
+  ![](basic/m/crazyhair.png)
+  ![](basic/f/crazyhair.png),
   Dark Hair (f)
-  ![](original/f/darkhair.png),
+  ![](basic/f/darkhair.png),
   Frumpy Hair (m/f)
-  ![](original/m/frumpyhair.png)
-  ![](original/f/frumpyhair.png),
+  ![](basic/m/frumpyhair.png)
+  ![](basic/f/frumpyhair.png),
   Half Shaved (f)
-  ![](original/f/halfshaved.png),
+  ![](basic/f/halfshaved.png),
   Messy Hair (m/f)
-  ![](original/m/messyhair.png)
-  ![](original/f/messyhair.png),
+  ![](basic/m/messyhair.png)
+  ![](basic/f/messyhair.png),
   Mohawk (m/f)
-  ![](original/m/mohawk.png)
-  ![](original/f/mohawk.png),
+  ![](basic/m/mohawk.png)
+  ![](basic/f/mohawk.png),
   Mohawk Dark (m/f)
-  ![](original/m/mohawkdark.png)
-  ![](original/f/mohawkdark.png),
+  ![](basic/m/mohawkdark.png)
+  ![](basic/f/mohawkdark.png),
   Mohawk Thin (m/f)
-  ![](original/m/mohawkthin.png)
-  ![](original/f/mohawkthin.png),
+  ![](basic/m/mohawkthin.png)
+  ![](basic/f/mohawkthin.png),
   Orange Side (f)
-  ![](original/f/orangeside.png),
+  ![](basic/f/orangeside.png),
   Peak Spike (m)
-  ![](original/m/peakspike.png),
+  ![](basic/m/peakspike.png),
   Pigtails (f)
-  ![](original/f/pigtails.png),
+  ![](basic/f/pigtails.png),
   Pink With Hat (f)
-  ![](original/f/pinkwithhat.png),
+  ![](basic/f/pinkwithhat.png),
   Purple Hair (m)
-  ![](original/m/purplehair.png),
+  ![](basic/m/purplehair.png),
   Red Mohawk (f)
-  ![](original/f/redmohawk.png),
+  ![](basic/f/redmohawk.png),
   Shaved Head (m)
-  ![](original/m/shavedhead.png),
+  ![](basic/m/shavedhead.png),
   Straight Hair (f)
-  ![](original/f/straighthair.png),
+  ![](basic/f/straighthair.png),
   Straight Hair Blonde (f)
-  ![](original/f/straighthairblonde.png),
+  ![](basic/f/straighthairblonde.png),
   Straight Hair Dark (f)
-  ![](original/f/straighthairdark.png),
+  ![](basic/f/straighthairdark.png),
   Stringy Hair (m/f)
-  ![](original/m/stringyhair.png)
-  ![](original/f/stringyhair.png),
+  ![](basic/m/stringyhair.png)
+  ![](basic/f/stringyhair.png),
   Vampire Hair (m)
-  ![](original/m/vampirehair.png),
+  ![](basic/m/vampirehair.png),
   Wild Blonde (f)
-  ![](original/f/wildblonde.png),
+  ![](basic/f/wildblonde.png),
   Wild Hair (m/f)
-  ![](original/m/wildhair.png)
-  ![](original/f/wildhair.png),
+  ![](basic/m/wildhair.png)
+  ![](basic/f/wildhair.png),
   Wild White Hair (f)
-  ![](original/f/wildwhitehair.png)
+  ![](basic/f/wildwhitehair.png)
 - Eyes -
   3D Glasses (m/f)
-   ![](original/m/3dglasses.png)
-   ![](original/f/3dglasses.png),
+   ![](basic/m/3dglasses.png)
+   ![](basic/f/3dglasses.png),
   Big Shades (m/f)
-  ![](original/m/bigshades.png)
-  ![](original/f/bigshades.png),
+  ![](basic/m/bigshades.png)
+  ![](basic/f/bigshades.png),
   Classic Shades (m/f)
-  ![](original/m/classicshades.png)
-  ![](original/f/classicshades.png),
+  ![](basic/m/classicshades.png)
+  ![](basic/f/classicshades.png),
   Eye Mask (m/f)
-  ![](original/m/eyemask.png)
-  ![](original/f/eyemask.png),
+  ![](basic/m/eyemask.png)
+  ![](basic/f/eyemask.png),
   Eye Patch (m/f)
-  ![](original/m/eyepatch.png)
-  ![](original/f/eyepatch.png),
+  ![](basic/m/eyepatch.png)
+  ![](basic/f/eyepatch.png),
   Horned Rim Glasses (m/f)
-  ![](original/m/hornedrimglasses.png)
-  ![](original/f/hornedrimglasses.png),
+  ![](basic/m/hornedrimglasses.png)
+  ![](basic/f/hornedrimglasses.png),
   Nerd Glasses (m/f)
-  ![](original/m/nerdglasses.png)
-  ![](original/f/nerdglasses.png),
+  ![](basic/m/nerdglasses.png)
+  ![](basic/f/nerdglasses.png),
   Regular Shades (m/f)
-  ![](original/m/regularshades.png)
-  ![](original/f/regularshades.png),
+  ![](basic/m/regularshades.png)
+  ![](basic/f/regularshades.png),
   Small Shades (m)
-  ![](original/m/smallshades.png),
+  ![](basic/m/smallshades.png),
   VR (m/f)
-  ![](original/m/vr.png)
-  ![](original/f/vr.png),
+  ![](basic/m/vr.png)
+  ![](basic/f/vr.png),
   Welding Goggles (f)
-  ![](original/f/weldinggoggles.png)
+  ![](basic/f/weldinggoggles.png)
 - Eyes (Makeup) -
   Blue Eye Shadow (f)
-  ![](original/f/blueeyeshadow.png),
+  ![](basic/f/blueeyeshadow.png),
   Clown Eyes Blue (m/f)
-  ![](original/m/clowneyesblue.png)
-  ![](original/f/clowneyesblue.png),
+  ![](basic/m/clowneyesblue.png)
+  ![](basic/f/clowneyesblue.png),
   Clown Eyes Green (m/f)
-  ![](original/m/clowneyesgreen.png)
-  ![](original/f/clowneyesgreen.png),
+  ![](basic/m/clowneyesgreen.png)
+  ![](basic/f/clowneyesgreen.png),
   Green Eye Shadow (f)
-  ![](original/f/greeneyeshadow.png),
+  ![](basic/f/greeneyeshadow.png),
   Purple Eye Shadow (f)
-  ![](original/f/purpleeyeshadow.png)
+  ![](basic/f/purpleeyeshadow.png)
 - Blemishes -
   Mole (m/f)
-   ![](original/m/mole.png)
-   ![](original/f/mole.png),
+   ![](basic/m/mole.png)
+   ![](basic/f/mole.png),
   Rosy Cheeks (m/f)
-   ![](original/m/rosycheeks.png)
-   ![](original/f/rosycheeks.png),
+   ![](basic/m/rosycheeks.png)
+   ![](basic/f/rosycheeks.png),
   Spots (m/f)
-   ![](original/m/spots.png)
-   ![](original/f/spots.png)
+   ![](basic/m/spots.png)
+   ![](basic/f/spots.png)
 - Nose -
   Clown Nose (m/f)
-   ![](original/m/clownnose.png)
-   ![](original/f/clownnose.png),
+   ![](basic/m/clownnose.png)
+   ![](basic/f/clownnose.png),
 - Ears -
   Earring (m/f)
-   ![](original/m/earring.png)
-   ![](original/f/earring.png)
+   ![](basic/m/earring.png)
+   ![](basic/f/earring.png)
 - Mouth -
   Buck Teeth (m)
-   ![](original/m/buckteeth.png),
+   ![](basic/m/buckteeth.png),
   Frown (m)
-   ![](original/m/frown.png),
+   ![](basic/m/frown.png),
   Smile (m)
-   ![](original/m/smile.png)
+   ![](basic/m/smile.png)
 - Mouth (Makeup) -
   Black Lipstick (f)
-   ![](original/f/blacklipstick.png),
+   ![](basic/f/blacklipstick.png),
   Hot Lipstick (f)
-   ![](original/f/hotlipstick.png),
+   ![](basic/f/hotlipstick.png),
   Purple Lipstick (f)
-   ![](original/f/purplelipstick.png)
+   ![](basic/f/purplelipstick.png)
 - Mouth Prop -
   Cigarette (m/f)
-   ![](original/m/cigarette.png)
-   ![](original/f/cigarette.png),
+   ![](basic/m/cigarette.png)
+   ![](basic/f/cigarette.png),
   Medical Mask (m/f)
-   ![](original/m/medicalmask.png)
-   ![](original/f/medicalmask.png),
+   ![](basic/m/medicalmask.png)
+   ![](basic/f/medicalmask.png),
   Pipe (m/f)
-   ![](original/m/pipe.png)
-   ![](original/f/pipe.png),
+   ![](basic/m/pipe.png)
+   ![](basic/f/pipe.png),
   Vape (m/f)
-   ![](original/m/vape.png)
-   ![](original/f/vape.png)
+   ![](basic/m/vape.png)
+   ![](basic/f/vape.png)
 - Beard -
   Big Beard (m)
-   ![](original/m/bigbeard.png),
+   ![](basic/m/bigbeard.png),
   Chinstrap (m)
-   ![](original/m/chinstrap.png),
+   ![](basic/m/chinstrap.png),
   Front Beard (m)
-   ![](original/m/frontbeard.png),
+   ![](basic/m/frontbeard.png),
   Front Beard Dark (m)
-   ![](original/m/frontbearddark.png),
+   ![](basic/m/frontbearddark.png),
   Goat (m)
-   ![](original/m/goat.png),
+   ![](basic/m/goat.png),
   Handlebars (m)
-   ![](original/m/handlebars.png),
+   ![](basic/m/handlebars.png),
   Luxurious Beard (m)
-   ![](original/m/luxuriousbeard.png),
+   ![](basic/m/luxuriousbeard.png),
   Mustache (m)
-   ![](original/m/mustache.png),
+   ![](basic/m/mustache.png),
   Muttonchops (m)
-   ![](original/m/muttonchops.png),
+   ![](basic/m/muttonchops.png),
   Normal Beard (m)
-   ![](original/m/normalbeard.png),
+   ![](basic/m/normalbeard.png),
   Normal Beard Black (m)
-   ![](original/m/normalbeardblack.png),
+   ![](basic/m/normalbeardblack.png),
   Shadow Beard (m)
-   ![](original/m/shadowbeard.png)
+   ![](basic/m/shadowbeard.png)
 - Neck Accessory -
   Choker (f)
-   ![](original/f/choker.png),
+   ![](basic/f/choker.png),
   Gold Chain (m/f)
-   ![](original/m/goldchain.png)
-   ![](original/f/goldchain.png),
+   ![](basic/m/goldchain.png)
+   ![](basic/f/goldchain.png),
   Silver Chain (m/f)
-   ![](original/m/silverchain.png)
-   ![](original/f/silverchain.png)
+   ![](basic/m/silverchain.png)
+   ![](basic/f/silverchain.png)
 
 
 <!-- break -->
 
-(Source: [Punk (Building) Blocks - Original Series (24x24)](https://github.com/cryptopunksnotdead/punks.blocks#https://github.com/cryptopunksnotdead/punks.blocks#original-cryptopunks-series-2424))
+(Source: [Punk (Building) Blocks - Basic Series (24x24)](https://github.com/cryptopunksnotdead/punks.blocks#https://github.com/cryptopunksnotdead/punks.blocks#basic-punks-series-2424))
 
 
-Bonus - Let's add Laser Eyes (m) ![](original/m/lasereyes.png),
-Laser Eyes Gold (m) ![](original/m/lasereyesgold.png).
+Bonus - Let's add Laser Eyes (m) ![](basic/m/lasereyes.png),
+Laser Eyes Gold (m) ![](basic/m/lasereyesgold.png).
 
 
 
@@ -698,7 +699,7 @@ recs = read_csv( './no2/punks.csv' )
 puts "  #{recs.size} punk(s)"
 #=>  100 punk(s)
 
-art = Art.new( dir: './original',
+art = Art.new( dir: './basic',
                qualifier: { 'm' => ['Male 1', 'Male 2', 'Male 3', 'Male 4',
                                     'Zombie',
                                     'Ape',
@@ -889,7 +890,7 @@ puts "  #{recs.size} punk(s)"
 #=>  100 punk(s)
 
 
-art = Art.new( dir: './original',
+art = Art.new( dir: './basic',
                qualifier: { 'm' => ['Male 1', 'Male 2', 'Male 3', 'Male 4',
                                     'Zombie',
                                     'Ape',
