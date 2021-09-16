@@ -1,3 +1,6 @@
 ### for now do NOT commit generated images in output dir
 /o/
+/sandbox/
+/tmp/
+
 
