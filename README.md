@@ -1,4 +1,8 @@
 
+
+# Pixel Art Collection Quick Starter - Generate Algorithmically Your Own Curated (or Randomized) Collection
+
+
 Table of Contents / Sample Collections
 
 [**Collection №1 -  Twenty-Five Dodge Pixel Art Punks**](#collection-1----twenty-five-dodge-pixel-art-punks)  <br> ![](i/no1/punks.png)
@@ -10,12 +14,8 @@ Table of Contents / Sample Collections
 [**Collection №4 - 111 Cool Blue Aliens (Incl. Females & Super-Rare Apes)**](#collection-4---111-cool-blue-aliens-incl-females--super-rare-apes)  <br> ![](i/no4/punks.png)
 
 
+---
 
-
-
-
-
-# Pixel Art Collection Quick Starter - Generate Algorithmically Your Own Curated (or Randomized) Collection
 
 
 Let's start and generate algorithmically a pixel art collection in three steps:
