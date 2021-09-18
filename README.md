@@ -16,7 +16,7 @@ Sample Collections
 - [Collection №1 -  Twenty-Five Dodge Pixel Art Punks](#collection-1----twenty-five-dodge-pixel-art-punks)
 - [Collection №2 -  The First One Hundred Pixel Art Punks](#collection-2----the-first-one-hundred-pixel-art-punks)
 - [Collection №3 -  The First One Hundred Pixel Art Punks - The Black & White (Pencil Drawing) Sketch Edition](#collection-3----the-first-one-hundred-pixel-art-punks---the-black--white-pencil-drawing-sketch-edition)
-
+- [Collection №4 - 111 Cool Blue Aliens (Incl. Females & Super-Rare Apes)]()
 
 
 
@@ -1144,6 +1144,398 @@ in an all-in-one composite.
 Open up `punks.png` to have a looksie.
 
 ![](i/no3/punks.png)
+
+
+
+
+## Collection №4 - 111 Cool Blue Aliens (Incl. Females & Super-Rare Apes)
+
+
+Let's try a super-rare never-before-seen pixel art collection.
+Let's generate a pixel-perfect copy of all nine
+super-rare cool blue humanoid aliens
+in the original Larva Labs series in the classic 24×24
+format
+and for fun let's add a hundred more
+super-rare never-before-seen aliens incl. females and apes.
+
+
+Let's copy and (re)use punk (building) blocks
+in the female extension 50/50 series (24×24):
+
+Alien Female ![](basic/alienfemale.png)
+
+And in the planet of apes series (24×24):
+
+Alien Ape ![](basic/alienape.png)
+
+
+Bonus - Let's add from the int'l headwear series (24×24)
+for more fun:
+
+Bear Skin (m)  ![](basic/m/bearskin.png),
+Beret (m)  ![](basic/m/beret.png),
+Boater (m)  ![](basic/m/boater.png),
+Fez (m)  ![](basic/m/fez.png),
+Flamenco Hat (f)  ![](basic/f/flamencohat.png),
+Flower Crown (f)  ![](basic/f/flowercrown.png),
+Panama Hat (f)  ![](basic/f/panamahat.png),
+Royal Cocktail Hat (f) ![](basic/f/royalcocktailhat.png),
+Tuque (m)  ![](basic/m/tuque.png),
+Turban (m)  ![](basic/m/turban.png),
+Tyrolean (f) ![](basic/f/tyrolean.png)
+
+
+### Step 1 -  Generate A List of Your Pixel Art Collection in Tabular Text Format (Spreadsheet)
+
+Let's again generate the list of the pixel art collection
+by hand. Let's start with
+the nine super-rare million-dollar aliens from the original LarvaLabs series -
+incl. the top-selling (~$8 million in March, 11th 2021)
+pipe-smoking "Mr Mona Lisa" -
+and wrap up with a hundred never-before-seen aliens
+incl. females and three alien apes.
+
+Yes, let's add some laser eyes to get the buy-in from
+the bitcon maxi club.
+
+
+Example  -  [`aliens.csv`](no4/aliens.csv):
+
+``` csv
+type, attribute1, attribute2, attribute3, attribute4, attribute5
+Alien, Bandana, Regular Shades
+Alien, Cap
+Alien, Headband
+Alien, Earring, Cowboy Hat
+Alien, Bandana, Laser Eyes
+Alien, Do-rag, Small Shades
+Alien, Earring, Knitted Cap
+Alien, Earring, Knitted Cap, Medical Mask
+Alien, Cap Forward, Small Shades, Pipe
+Alien Female, Tiara, Rosy Cheeks
+Alien Female, Pigtails, Gold Chain
+Alien Female, Orange Side, 3D Glasses
+Alien Female, Wild Blonde
+Alien Female, Knitted Cap, Pipe
+Alien Female, Mohawk Dark, VR
+Alien Female, Half Shaved, Small Shades
+Alien, Mohawk Dark, VR
+Alien, Knitted Cap
+Alien, Crazy Hair, Gold Chain
+Alien, Top Hat, Laser Eyes Gold
+Alien, Hoodie, Silver Chain
+Alien, Police Cap
+Alien, Purple Hair, Laser Eyes
+Alien, Beanie, Small Shades, Gold Chain
+Alien, Vampire Hair, Buck Teeth
+Alien, Clown Hair Green, Clown Nose
+Alien, Bear Skin, 3D Glasses, Vape
+Alien, Mohawk Dark, Eye Mask
+Alien, Peak Spike
+Alien, Do-rag
+Alien, Boater, Buck Teeth, Classic Shades, Cigarette
+Alien, Beanie, Cigarette
+Alien Female, Wild White Hair, 3D Glasses
+Alien, Cowboy Hat, VR
+Alien Female, Panama Hat, Spots
+Alien Female, Flamenco Hat
+Alien, Frumpy Hair, 3D Glasses, Cigarette
+Alien, Cap, Laser Eyes Gold
+Alien Ape, Bandana
+Alien Female, Tyrolean, Classic Shades
+Alien, Hoodie, Big Shades
+Alien, Knitted Cap, Small Shades
+Alien, Hoodie, 3D Glasses, Pipe
+Alien, Peak Spike, Silver Chain
+Alien Female, Tassle Hat
+Alien Female, Pilot Helmet, Gold Chain
+Alien, Crazy Hair, Small Shades, Gold Chain
+Alien, Fedora, Small Shades
+Alien, Do-rag, Classic Shades
+Alien, Police Cap, Small Shades
+Alien, Earring, Purple Hair
+Alien, Top Hat, Medical Mask
+Alien, Cap, Nerd Glasses, Cigarette
+Alien, Turban
+Alien Female, Red Mohawk
+Alien Female, Sombrero, Medical Mask
+Alien Female, Top Hat, Gold Chain
+Alien Female, Beanie, Rosy Cheeks
+Alien Female, Mohawk Dark, Clown Eyes Blue, Choker
+Alien, Hoodie, 3D Glasses, Gold Chain, Pipe
+Alien, Earring, Mohawk Dark, Regular Shades
+Alien Female, Fedora, Gold Chain
+Alien Female, Earring, Cowboy Hat, Regular Shades
+Alien, Cowboy Hat, Laser Eyes
+Alien, Earring, Shaved Head, Eye Mask
+Alien Female, Earring, Royal Cocktail Hat, Clown Eyes Green
+Alien, Bandana
+Alien, Do-rag, Eye Patch
+Alien Female, Tiara, Clown Eyes Green
+Alien Female, Police Cap, Regular Shades, Gold Chain
+Alien Female, Earring, Cap, Clown Eyes Blue
+Alien, Stringy Hair, Small Shades, Mole
+Alien Female, Sombrero, Big Shades
+Alien, Cap Forward, Clown Eyes Blue, Silver Chain
+Alien, Vampire Hair, Clown Nose
+Alien Ape, Knitted Cap
+Alien, Clown Hair Green, Eye Mask
+Alien, Earring, Cap, 3D Glasses
+Alien, Mohawk Dark, Big Shades, Cigarette
+Alien Female, Earring, Tyrolean, Regular Shades
+Alien Female, Wild White Hair, Clown Eyes Blue
+Alien, Beanie, Eye Patch
+Alien, Crazy Hair, Small Shades, Silver Chain
+Alien, Tuque, 3D Glasses
+Alien Female, Hoodie, Clown Eyes Green
+Alien, Crazy Hair
+Alien, Earring, Cap Forward, 3D Glasses, Vape
+Alien Female, Pigtails, Nerd Glasses, Cigarette
+Alien Female, Clown Hair Green, Eye Patch
+Alien, Earring, Vampire Hair, Small Shades, Pipe
+Alien Female, Flower Crown, Rosy Cheeks, Regular Shades, Gold Chain, Cigarette
+Alien Female, Do-rag, Eye Patch
+Alien, Fedora, Small Shades, Pipe
+Alien, Beret, VR, Buck Teeth
+Alien, Frumpy Hair, Regular Shades, Cigarette
+Alien, Knitted Cap, Laser Eyes Gold, Cigarette
+Alien, Earring, Bandana
+Alien Female, Panama Hat, Gold Chain
+Alien Female, Tiara, Half Shaved
+Alien, Earring, Cap Forward
+Alien, Mohawk Thin, Mole
+Alien, Fez, Cigarette
+Alien Female, Flamenco Hat, Classic Shades
+Alien Ape, Hoodie
+Alien Female, Pilot Helmet, Clown Eyes Green, Choker
+Alien, Purple Hair, Medical Mask
+Alien, Stringy Hair, Eye Patch
+Alien, Earring, Regular Shades, Gold Chain
+Alien, Knitted Cap, Laser Eyes
+Alien Female, Purple Hair, Big Shades
+Alien Female, Royal Cocktail Hat, 3D Glasses
+```
+
+
+
+### Step 2  - Generate All Pixel Art Images in Original Format and In 20x
+
+Now the "magic" let's read in the list
+in the comma-separated values (.CSV) format
+and generate all pixel art images in the original format
+(24×24) and in 20x (480×480).
+
+Bonus - Let's
+generate an all-in-one composite image holding the complete
+collection in a 10×12 grid.
+
+
+``` ruby
+require './boot'
+
+
+recs = read_csv( './no4/aliens.csv' )
+puts "  #{recs.size} punk(s)"
+#=>  111 punk(s)
+
+
+art = Art.new( dir: './basic',
+               qualifier: { 'm' => ['Male 1', 'Male 2', 'Male 3', 'Male 4',
+                                    'Zombie',
+                                    'Ape',
+                                    'Alien', 'Alien Ape'],
+                            'f' => ['Female 1', 'Female 2', 'Female 3', 'Female 4',
+                                    'Alien Female'],
+                          }
+             )
+
+
+## 10x12 grid with every tile 24×24
+punks = CompositeImage.new( 10, 12 )
+
+
+recs.each_with_index do |rec,i|
+  name = "punk#{i}"
+  punk = art.generate( rec )
+
+  punk.save( "./o/no4/#{name}.png" )
+  punk.zoom(20).save( "./o/no4/#{name}@20x.png" )
+
+  punks << punk  ## add to composite
+end
+
+
+punks.save( './o/no4/punks.png')   ## save composite
+```
+
+What's different from
+Collection №2 -  The First One Hundred Pixel Art Punks?
+
+Two new achetypes, that is, Alien Ape and Alien Female in
+the qualifier setting / configuration.
+Yes, that's it.
+Run the script to generate algorithmically your collection.
+
+
+In the `/o` directory you will now find
+two images per punk - in the orginal format, that is, 24×24
+and 20x, that is, 480×480 - and get:
+
+```
+no4/
+  punk0.png
+  punk0@20x.png
+  punk1.png
+  punk1@20x.png
+  punk2.png
+  punk2@20x.png
+  punk3.png
+  punk3@20x.png
+  punk4.png
+  punk4@20x.png
+  punk5.png
+  punk5@20x.png
+  punk6.png
+  punk6@20x.png
+  punk7.png
+  punk7@20x.png
+  punk8.png
+  punk8@20x.png
+  ...
+```
+
+Let's open up `punk0.png` to `punk110.png`:
+
+![](i/no4/punk0.png)
+![](i/no4/punk1.png)
+![](i/no4/punk2.png)
+![](i/no4/punk3.png)
+![](i/no4/punk4.png)
+![](i/no4/punk5.png)
+![](i/no4/punk6.png)
+![](i/no4/punk7.png)
+![](i/no4/punk8.png)
+![](i/no4/punk9.png)
+![](i/no4/punk10.png)
+![](i/no4/punk11.png)
+![](i/no4/punk12.png)
+![](i/no4/punk13.png)
+![](i/no4/punk14.png)
+![](i/no4/punk15.png)
+![](i/no4/punk16.png)
+![](i/no4/punk17.png)
+![](i/no4/punk18.png)
+![](i/no4/punk19.png)
+![](i/no4/punk20.png)
+![](i/no4/punk21.png)
+![](i/no4/punk22.png)
+![](i/no4/punk23.png)
+![](i/no4/punk24.png)
+![](i/no4/punk25.png)
+![](i/no4/punk26.png)
+![](i/no4/punk27.png)
+![](i/no4/punk28.png)
+![](i/no4/punk29.png)
+![](i/no4/punk30.png)
+![](i/no4/punk31.png)
+![](i/no4/punk32.png)
+![](i/no4/punk33.png)
+![](i/no4/punk34.png)
+![](i/no4/punk35.png)
+![](i/no4/punk36.png)
+![](i/no4/punk37.png)
+![](i/no4/punk38.png)
+![](i/no4/punk39.png)
+![](i/no4/punk40.png)
+![](i/no4/punk41.png)
+![](i/no4/punk42.png)
+![](i/no4/punk43.png)
+![](i/no4/punk44.png)
+![](i/no4/punk45.png)
+![](i/no4/punk46.png)
+![](i/no4/punk47.png)
+![](i/no4/punk48.png)
+![](i/no4/punk49.png)
+![](i/no4/punk50.png)
+![](i/no4/punk51.png)
+![](i/no4/punk52.png)
+![](i/no4/punk53.png)
+![](i/no4/punk54.png)
+![](i/no4/punk55.png)
+![](i/no4/punk56.png)
+![](i/no4/punk57.png)
+![](i/no4/punk58.png)
+![](i/no4/punk59.png)
+![](i/no4/punk60.png)
+![](i/no4/punk61.png)
+![](i/no4/punk62.png)
+![](i/no4/punk63.png)
+![](i/no4/punk64.png)
+![](i/no4/punk65.png)
+![](i/no4/punk66.png)
+![](i/no4/punk67.png)
+![](i/no4/punk68.png)
+![](i/no4/punk69.png)
+![](i/no4/punk70.png)
+![](i/no4/punk71.png)
+![](i/no4/punk72.png)
+![](i/no4/punk73.png)
+![](i/no4/punk74.png)
+![](i/no4/punk75.png)
+![](i/no4/punk76.png)
+![](i/no4/punk77.png)
+![](i/no4/punk78.png)
+![](i/no4/punk79.png)
+![](i/no4/punk80.png)
+![](i/no4/punk81.png)
+![](i/no4/punk82.png)
+![](i/no4/punk83.png)
+![](i/no4/punk84.png)
+![](i/no4/punk85.png)
+![](i/no4/punk86.png)
+![](i/no4/punk87.png)
+![](i/no4/punk88.png)
+![](i/no4/punk89.png)
+![](i/no4/punk90.png)
+![](i/no4/punk91.png)
+![](i/no4/punk92.png)
+![](i/no4/punk93.png)
+![](i/no4/punk94.png)
+![](i/no4/punk95.png)
+![](i/no4/punk96.png)
+![](i/no4/punk97.png)
+![](i/no4/punk98.png)
+![](i/no4/punk99.png)
+![](i/no4/punk100.png)
+![](i/no4/punk101.png)
+![](i/no4/punk102.png)
+![](i/no4/punk103.png)
+![](i/no4/punk104.png)
+![](i/no4/punk105.png)
+![](i/no4/punk106.png)
+![](i/no4/punk107.png)
+![](i/no4/punk108.png)
+![](i/no4/punk109.png)
+![](i/no4/punk110.png)
+
+
+And let's have a looksie at the biggie 20x (480×480) versions:
+
+![](i/no4/punk0@20x.png)
+
+![](i/no4/punk1@20x.png)
+
+[...]
+
+![](i/no4/punk110@20x.png)
+
+
+And open up `punks.png` for the all-in-one composite:
+
+![](i/no4/punks.png)
+
+
 
 
 To be continued...
