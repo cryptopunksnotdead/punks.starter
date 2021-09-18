@@ -11,12 +11,15 @@ Step 3 - Bonus: Generate an All-In-One Composite Image
 
 
 
-Sample Collections
+Table of Contents / Sample Collections
 
-- [**Collection №1 -  Twenty-Five Dodge Pixel Art Punks**](#collection-1----twenty-five-dodge-pixel-art-punks)  <br> ![](i/no1/punks.png)
-- [**Collection №2 -  The First One Hundred Pixel Art Punks**](#collection-2----the-first-one-hundred-pixel-art-punks)  <br> ![](i/no2/punks.png)
-- [**Collection №3 -  The First One Hundred Pixel Art Punks - The Black & White (Pencil Drawing) Sketch Edition**](#collection-3----the-first-one-hundred-pixel-art-punks---the-black--white-pencil-drawing-sketch-edition)  <br> ![](i/no3/punks.png)
-- [**Collection №4 - 111 Cool Blue Aliens (Incl. Females & Super-Rare Apes)**](#collection-4---111-cool-blue-aliens-incl-females--super-rare-apes)  <br> ![](i/no4/punks.png)
+[**Collection №1 -  Twenty-Five Dodge Pixel Art Punks**](#collection-1----twenty-five-dodge-pixel-art-punks)  <br> ![](i/no1/punks.png)
+
+[**Collection №2 -  The First One Hundred Pixel Art Punks**](#collection-2----the-first-one-hundred-pixel-art-punks)  <br> ![](i/no2/punks.png)
+
+[**Collection №3 -  The First One Hundred Pixel Art Punks - The Black & White (Pencil Drawing) Sketch Edition**](#collection-3----the-first-one-hundred-pixel-art-punks---the-black--white-pencil-drawing-sketch-edition)  <br> ![](i/no3/punks.png)
+
+[**Collection №4 - 111 Cool Blue Aliens (Incl. Females & Super-Rare Apes)**](#collection-4---111-cool-blue-aliens-incl-females--super-rare-apes)  <br> ![](i/no4/punks.png)
 
 
 
