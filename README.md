@@ -13,10 +13,10 @@ Step 3 - Bonus: Generate an All-In-One Composite Image
 
 Sample Collections
 
-- [Collection №1 -  Twenty-Five Dodge Pixel Art Punks](#collection-1----twenty-five-dodge-pixel-art-punks)
-- [Collection №2 -  The First One Hundred Pixel Art Punks](#collection-2----the-first-one-hundred-pixel-art-punks)
-- [Collection №3 -  The First One Hundred Pixel Art Punks - The Black & White (Pencil Drawing) Sketch Edition](#collection-3----the-first-one-hundred-pixel-art-punks---the-black--white-pencil-drawing-sketch-edition)
-- [Collection №4 - 111 Cool Blue Aliens (Incl. Females & Super-Rare Apes)]()
+- [**Collection №1 -  Twenty-Five Dodge Pixel Art Punks**](#collection-1----twenty-five-dodge-pixel-art-punks)  <br> ![](i/no1/punks.png)
+- [**Collection №2 -  The First One Hundred Pixel Art Punks**](#collection-2----the-first-one-hundred-pixel-art-punks)  <br> ![](i/no2/punks.png)
+- [**Collection №3 -  The First One Hundred Pixel Art Punks - The Black & White (Pencil Drawing) Sketch Edition**](#collection-3----the-first-one-hundred-pixel-art-punks---the-black--white-pencil-drawing-sketch-edition)  <br> ![](i/no3/punks.png)
+- [**Collection №4 - 111 Cool Blue Aliens (Incl. Females & Super-Rare Apes)**](#collection-4---111-cool-blue-aliens-incl-females--super-rare-apes)  <br> ![](i/no4/punks.png)
 
 
 
@@ -699,14 +699,14 @@ recs = read_csv( './no2/punks.csv' )
 puts "  #{recs.size} punk(s)"
 #=>  100 punk(s)
 
-art = Art.new( dir: './basic',
-               qualifier: { 'm' => ['Male 1', 'Male 2', 'Male 3', 'Male 4',
-                                    'Zombie',
-                                    'Ape',
-                                    'Alien'],
-                            'f' => ['Female 1', 'Female 2', 'Female 3', 'Female 4'],
-                          }
-             )
+art = Art.new( 
+        dir: './basic',
+        qualifier: { 'm' => ['Male 1', 'Male 2', 'Male 3', 'Male 4',
+                             'Zombie',
+                             'Ape',
+                             'Alien'],
+                      'f' => ['Female 1', 'Female 2', 'Female 3', 'Female 4'],
+                   })
 
 recs.each_with_index do |rec,i|
   name = "punk#{i}"
@@ -890,14 +890,14 @@ puts "  #{recs.size} punk(s)"
 #=>  100 punk(s)
 
 
-art = Art.new( dir: './basic',
-               qualifier: { 'm' => ['Male 1', 'Male 2', 'Male 3', 'Male 4',
-                                    'Zombie',
-                                    'Ape',
-                                    'Alien'],
-                            'f' => ['Female 1', 'Female 2', 'Female 3', 'Female 4'],
-                          }
-             )
+art = Art.new( 
+        dir: './basic',
+        qualifier: { 'm' => ['Male 1', 'Male 2', 'Male 3', 'Male 4',
+                             'Zombie',
+                             'Ape',
+                             'Alien'],
+                      'f' => ['Female 1', 'Female 2', 'Female 3', 'Female 4'],
+                   })
 
 
 ## 10×10 grid with every tile 24×24
@@ -1340,15 +1340,15 @@ puts "  #{recs.size} punk(s)"
 #=>  111 punk(s)
 
 
-art = Art.new( dir: './basic',
-               qualifier: { 'm' => ['Male 1', 'Male 2', 'Male 3', 'Male 4',
-                                    'Zombie',
-                                    'Ape',
-                                    'Alien', 'Alien Ape'],
-                            'f' => ['Female 1', 'Female 2', 'Female 3', 'Female 4',
-                                    'Alien Female'],
-                          }
-             )
+art = Art.new( 
+        dir: './basic',
+        qualifier: { 'm' => ['Male 1', 'Male 2', 'Male 3', 'Male 4',
+                             'Zombie',
+                             'Ape',
+                             'Alien', 'Alien Ape'],
+                     'f' => ['Female 1', 'Female 2', 'Female 3', 'Female 4',
+                             'Alien Female'],
+                   })
 
 
 ## 10x12 grid with every tile 24×24
