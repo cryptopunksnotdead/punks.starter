@@ -1,15 +1,3 @@
-# Pixel Art Collection Quick Starter - Generate Algorithmically Your Own Curated (or Randomized) Collection
-
-
-Let's start and generate algorithmically a pixel art collection in three steps:
-
-Step 1 - Generate A List of Your Pixel Art Collection in a Tabular Text Format (Spreadsheet)
-
-Step 2 - Generate All Pixel Art Images in Original Format and In 20x
-
-Step 3 - Bonus: Generate an All-In-One Composite Image
-
-
 
 Table of Contents / Sample Collections
 
@@ -22,6 +10,21 @@ Table of Contents / Sample Collections
 [**Collection №4 - 111 Cool Blue Aliens (Incl. Females & Super-Rare Apes)**](#collection-4---111-cool-blue-aliens-incl-females--super-rare-apes)  <br> ![](i/no4/punks.png)
 
 
+
+
+
+
+
+# Pixel Art Collection Quick Starter - Generate Algorithmically Your Own Curated (or Randomized) Collection
+
+
+Let's start and generate algorithmically a pixel art collection in three steps:
+
+Step 1 - Generate A List of Your Pixel Art Collection in a Tabular Text Format (Spreadsheet)
+
+Step 2 - Generate All Pixel Art Images in Original Format and In 20x
+
+Step 3 - Bonus: Generate an All-In-One Composite Image
 
 
 ## Collection №1 -  Twenty-Five Dodge Pixel Art Punks
