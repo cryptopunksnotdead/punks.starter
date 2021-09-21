@@ -705,7 +705,7 @@ recs = read_csv( './no2/punks.csv' )
 puts "  #{recs.size} punk(s)"
 #=>  100 punk(s)
 
-art = Art.new( 
+art = Art.new(
         dir: './basic',
         qualifier: { 'm' => ['Male 1', 'Male 2', 'Male 3', 'Male 4',
                              'Zombie',
@@ -896,7 +896,7 @@ puts "  #{recs.size} punk(s)"
 #=>  100 punk(s)
 
 
-art = Art.new( 
+art = Art.new(
         dir: './basic',
         qualifier: { 'm' => ['Male 1', 'Male 2', 'Male 3', 'Male 4',
                              'Zombie',
@@ -1346,7 +1346,7 @@ puts "  #{recs.size} punk(s)"
 #=>  111 punk(s)
 
 
-art = Art.new( 
+art = Art.new(
         dir: './basic',
         qualifier: { 'm' => ['Male 1', 'Male 2', 'Male 3', 'Male 4',
                              'Zombie',
@@ -1578,6 +1578,29 @@ Example with a 10×3 grid (equal to 30 tiles / variations)  and 125×125 width x
 ``` ruby
 composite = CompositeImage.new( 10, 3, width: 125, height: 125 )
 ```
+
+**Q: Is it possible to have more attributes, that is, seven instead of the five used in the sample collection №2?**
+
+Yes, you can use as many attributes as you like
+(no limit really other than the computer processing power and memory) for the scripts / collections.
+
+If you want to use seven attributes - add two more attributes to the tabular dataset - change:
+
+```
+type, attribute1, attribute2, attribute3, attribute4, attribute5
+Female 2, Earring, Blonde Bob, Green Eye Shadow
+...
+```
+
+to
+```
+type, attribute1, attribute2, attribute3, attribute4, attribute5, attribute6, attribute7
+Female 2, Earring, Blonde Bob, Green Eye Shadow
+...
+```
+
+That's it.  By the way - the column names are "arbitrary", that is, yes you can use any name e.g. try hair, eyes, mouth, neck or such instead of attribute1, attribute2, etc.
+
 
 
 
