@@ -1,5 +1,10 @@
 
 
+Note: See [**/punks.whitelabel**](https://github.com/cryptopunksnotdead/punks.whitelabel) - 
+The Free White Label Punk Quick Starter Edition - that lets you (re)create from zero / scratch a pixel-perfect copy of the 10 000 cryptopunks collection (anno 2017).
+
+---
+
 # Pixel Art Collection Quick Starter - Generate Algorithmically Your Own Curated (or Randomized) Collection
 
 
