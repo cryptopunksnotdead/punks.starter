@@ -1637,6 +1637,8 @@ $ ruby no1/generate.rb          # start in /punks.starter
 ```
 
 
+<!--
+
 **Q: When running `ruby no1/generate.rb` (in /punks.starter) I get the error `wrong number of arguments (given 2, expected 1) (ArgumentError)` after upgrading to ruby 3.x, before that all was fine, please help.**
 
 ```
@@ -1672,14 +1674,11 @@ puts "  #{recs.size} record(s)"
 Of course you might change `dodge.csv` to `punks.csv` or such and the record size will be different
 depending on how many records you have and so on.
 
-
-
+-->
 
 
 
 ## Questions? Comments?
 
 Post them on the [CryptoPunksDev reddit](https://old.reddit.com/r/CryptoPunksDev). Thanks.
-
-
 
